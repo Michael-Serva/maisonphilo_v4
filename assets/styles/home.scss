@@ -11,6 +11,16 @@ section#top-page {
   height: 1400px;
   background-repeat: no-repeat;
 }
+/* Section top-page */
+section#top-page {
+  .title {
+    text-shadow: 8px 8px 6px #043106 !important;
+  }
+  .sub-title {
+    text-shadow: 8px 8px 6px $gray-300 !important;
+  }
+}
+
 /* Section services */
 section#services {
   height: auto;
@@ -23,8 +33,8 @@ section#maisonphilo {
 }
 /* Section about */
 section#about {
+  padding-top: 5rem;
   height: auto;
-  padding: 5rem;
   .btn-circle {
     width: 250px;
     height: 250px;
@@ -44,9 +54,11 @@ section#about {
     width: 16rem;
   }
 }
-/* Section connexion */
-section#connection {
-  height: 500px;
+/* Section commitment */
+section#commitment {
+  height: auto;
+  padding: 5rem;
+  background-color: $gray-300;
 }
 /* media queries laptop */
 @media (min-width: 1000px) {
@@ -72,4 +84,3 @@ section#connection {
     }
   }
 }
-

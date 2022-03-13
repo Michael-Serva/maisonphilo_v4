@@ -50,13 +50,14 @@
                         <div class="typed fw-bold text-font display-3"></div>
                     </h1>
                     <div class="fs-2 p-2 d-flex flex-column">
-                        <span class="text-success">Maison Philo</span>
-                        <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
+                        <span class="text-success text-center">Maison Philo</span>
+                        <span class="text-black text-end">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
                     </div>
                 </div>
                 <img src={{asset("images/objective.png")}} class="img-fluid" alt="objectif" data-aos="fade-left" data-aos-duration="3000">
             </section>
-            <section id="about" class="d-flex flex-column justify-content-center">
+            {# Section about #}
+            <section id="about" class="d-flex flex-column align-items-center justify-content-center">
                 <div class="text-center container-fluid mb-5">
                     {% include "components/atoms/homeTitle.html.twig" with {
                         content : "A Propos"
@@ -103,20 +104,22 @@
                 </div>
 
             </section>
-            {# Section connection #}
-            <section id="connection" class="row justify-content-evenly gx-0">
-                <div class="col-12 text-center">
+            {# Section commitment #}
+            <section id="commitment" class="row justify-content-evenly gx-0">
+                <div class="col-12 text-center mb-5">
                     {% include "components/atoms/homeTitle.html.twig" with {
-                        content : "Nos engagements pour le développement durable"
-                    } %}</div>
-                <div class="col-lg-3 text-center">
-                    <img src={{ asset('images/sante.png') }} alt="Bonne santé et bien être">
+                        content : "Nos engagements"
+                    } %}
+                    <p class="text-muted fs-2">Pour le développement durable</p>
                 </div>
-                <div class="col-lg-3 text-center">
-                    <img src={{ asset('images/travail.png') }} alt="Travail décent et croissance économique">
+                <div class="col-lg-3 text-center mb-5 btn-square">
+                    <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
                 </div>
-                <div class="col-lg-3 text-center">
-                    <img src={{ asset('images/ville.png') }} alt="Villes et communautés durables">
+                <div class="col-lg-3 text-center mb-5 btn-square">
+                    <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
+                </div>
+                <div class="col-lg-3 text-center mb-5 btn-square">
+                    <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
                 </div>
             </section>
             {# Section contact #}
