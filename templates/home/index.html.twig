@@ -4,12 +4,13 @@
 {% endblock %}
 
 {% block body %}
-    <div data-spy="scroll" data-target="#mainNav" data-offset="0">
+    <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
         {% include "components/organisms/homeNavbar.html.twig" %}
         <section id="top-page" class="d-flex justify-content-center align-items-center flex-column">
-            <p class="display-3 text-monospace fw-bold title text-light">
-                Bienvenue chez
-                <span class="text-nowrap">Maison Philo</span>
+            <p class="display-1 text-monospace fw-bold text-light text-center">
+                <span class="title">Bienvenue chez</span>
+                <br>
+                <span class="text-success-800 sub-title">Maison Philo</span>
             </p>
             <a href="#maisonphilo" class="btn btn-success mt-5 text-uppercase fs-2">En savoir plus</a>
         </section>
@@ -63,8 +64,6 @@
                     <span class="fs-2 text-muted">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
                 </div>
                 <div class="mx-auto mt-5 d-flex flex-column">
-
-
                     {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Qui sommes nous?",
                         content : "Elle s’appelait Philo… C’était ma Mémé.",
@@ -81,7 +80,6 @@
                         position : "start",
                         alt : "Vieillisement en Afrique",
                         href : ""
-
                     } %}
 
                     {% include "components/molecules/aboutDescription.html.twig" with {
@@ -122,8 +120,6 @@
                 </div>
             </section>
             {# Section contact #}
-            <section id="contact" class="row">.</section>
-
-
+            <section id="contact" class="row"></section>
         </div>
     {% endblock %}
