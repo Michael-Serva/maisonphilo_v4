@@ -1,0 +1,74 @@
+@import "./variables";
+
+.active {
+  color: $warning;
+}
+/* Top page */
+section#top-page {
+  background-image: url("../../public/images/couple.jpg");
+  background-size: cover;
+  height: 600px;
+  background-repeat: no-repeat;
+}
+/* Section services */
+section#services {
+  height: auto;
+  padding: 5rem;
+}
+/* Section philo */
+section#maisonphilo {
+  height: auto;
+  padding: 5rem 0;
+}
+/* Section about */
+section#about {
+  height: auto;
+  padding: 5rem;
+  .btn-circle {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 200px;
+    border: 10px solid $gray-300;
+  }
+  .position-circle-text-end {
+    position: absolute;
+    top: 0;
+    left: 18rem;
+    width: 16rem;
+  }
+  .position-circle-text-start {
+    position: absolute;
+    top: 0;
+    right: 18rem;
+    width: 16rem;
+  }
+}
+/* Section connexion */
+section#connection {
+  height: 500px;
+}
+/* media queries laptop */
+@media (min-width: 1000px) {
+  section#top-page {
+    height: 900px;
+  }
+  section#services {
+    height: auto;
+  }
+  section#about {
+    height: auto;
+    .position-circle-text-end {
+      position: absolute;
+      top: 0;
+      left: 18rem;
+      width: 30rem;
+    }
+    .position-circle-text-start {
+      position: absolute;
+      top: 0;
+      right: 18rem;
+      width: 30rem;
+    }
+  }
+}
+
