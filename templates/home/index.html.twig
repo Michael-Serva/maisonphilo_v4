@@ -29,7 +29,6 @@
                        font :  "fa-solid fa-share-nodes"
                    } %}
 
-
                     {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Petites annonces",
                        content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
@@ -105,20 +104,20 @@
 
             </section>
             {# Section commitment #}
-            <section id="commitment" class="row justify-content-evenly gx-0">
+            <section id="commit" class="row justify-content-evenly gx-0">
                 <div class="col-12 text-center mb-5">
                     {% include "components/atoms/homeTitle.html.twig" with {
                         content : "Nos engagements"
                     } %}
                     <p class="text-muted fs-2">Pour le développement durable</p>
                 </div>
-                <div class="col-lg-3 text-center mb-5 btn-square">
+                <div class="col-lg-4 text-center mb-5 btn-square">
                     <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
                 </div>
-                <div class="col-lg-3 text-center mb-5 btn-square">
+                <div class="col-lg-4 text-center mb-5 btn-square">
                     <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
                 </div>
-                <div class="col-lg-3 text-center mb-5 btn-square">
+                <div class="col-lg-4 text-center mb-5 btn-square">
                     <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
                 </div>
             </section>

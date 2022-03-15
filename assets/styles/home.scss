@@ -3,16 +3,13 @@
 .active {
   color: $warning;
 }
+
 /* Top page */
 section#top-page {
-  background-image: url("../../public/images/couple.jpg");
+  background-image: url("../../public/images/africa.jpg");
   background-size: cover;
-  background-color: $success-800;
-  height: 1400px;
+  height: 100vh;
   background-repeat: no-repeat;
-}
-/* Section top-page */
-section#top-page {
   .title {
     text-shadow: 8px 8px 6px #043106 !important;
   }
@@ -23,12 +20,11 @@ section#top-page {
 
 /* Section services */
 section#services {
-  height: auto;
   padding: 5rem;
 }
 /* Section philo */
 section#maisonphilo {
-  height: auto;
+  height: 100vh;
   padding: 5rem 0;
 }
 /* Section about */
@@ -55,15 +51,17 @@ section#about {
   }
 }
 /* Section commitment */
-section#commitment {
-  height: auto;
+section#commit {
+  height: 100vh;
   padding: 5rem;
   background-color: $gray-300;
 }
 /* media queries laptop */
 @media (min-width: 1000px) {
   section#top-page {
-    height: 900px;
+    background-image: url("../../public/images/couple.jpg");
+    background-size: cover;
+    height: 100vh;
   }
   section#services {
     height: auto;
