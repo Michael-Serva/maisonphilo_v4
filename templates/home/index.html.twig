@@ -9,27 +9,27 @@
         {# top-page #}
         <section id="top-page" class="d-flex justify-content-center align-items-center flex-column">
             <p class="display-1 text-monospace fw-bold text-light text-center">
-                <span class="title">Bienvenue chez</span>
-                <br>
-                <span class="text-success-800 sub-title">Maison Philo</span>
+                <span class="js-title"></span>
             </p>
-            <div class="text-light display-5 mt-3 text-center container">
+            <div class="display-5 mt-3 text-center fw-bold text-title">
                 Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
             <a href="#" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
         </section>
         {# services #}
-        <section id="services" class="d-flex align-items-center justify-content-center">
-            <div class="text-center">
+        <section id="services" class="d-flex align-items-center text-center">
+            <div class="container-fluid row justify-content-center">
                 {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
                 } %}
 
-
                 {% include "components/atoms/fontCircle.html.twig" with {
-                       title : "Partage d'information",
-                       content : "Vous cherchez une information pouvant aider au bien-être de nos aînés ? Alors, Bienvenue sur cet espace collaboratif qui présente les informations déjà portées à notre connaissance. Si vous disposez d'information pas encore publiée sur ce site, n’hésitez pas à nous les partager!",
-                       font :  "fa-solid fa-share-nodes"
-                   } %}
+                    title : "Partage d'information",
+                    content : "Vous cherchez une information pouvant aider au bien-être de nos aînés ?
+                    Vous disposez d'information pas encore publiée sur ce site ?
+                    Bienvenue sur cet espace collaboratif !
+                    ",
+                    font :  "fa-solid fa-share-nodes"
+                } %}
 
                 {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Petites annonces",
@@ -48,8 +48,8 @@
         {# vision #}
         <section id="vision" class="bg-warning-200 d-flex align-items-center">
             <div class="row justify-content-center container-fluid">
-                <h1 class="text-dark display-2 text-center col-12"></h1>
-                <div class="display-4 p-2 col-10 text-center">
+                <h1 class="text-dark display-1 text-center col-12 js-vision fw-bold mb-5 text-font-1"></h1>
+                <div class="display-4 p-2 col-10 text-center mt-5">
                     <span class="text-success fw-bold d-block">Maison Philo</span>
                     <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
                 </div>

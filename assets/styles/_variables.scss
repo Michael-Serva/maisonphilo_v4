@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 $success-800: #043106;
+$primary-800: #3131da;
 $warning: #ffc107;
+$warning-300: #ebc248;
 $warning-200: #f0dca0;
 $gray-300: #ebe8e8;
 
 .text-font-1 {
   font-family: "Montserrat", sans-serif;
+}
+.text-warning-300{
+  color: $warning-300;
+}
+.text-primary-800{
+  color: $primary-800;
 }
 .text-success-800 {
   color: $success-800;

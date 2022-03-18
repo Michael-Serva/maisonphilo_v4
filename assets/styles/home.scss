@@ -16,6 +16,12 @@ section#top-page {
   .sub-title {
     text-shadow: 8px 8px 6px $gray-300 !important;
   }
+  div {
+    background-color: lightcyan;
+    opacity: 60%;
+  }.text-title{
+    color: $success-800;
+  }
 }
 
 /* Section services */
@@ -64,9 +70,11 @@ section#commit {
   section#top-page {
     background-image: url("../../public/images/couple.jpg");
     background-size: cover;
-    height: 100vh;
   }
   section#services {
+    height: auto;
+  }
+  section#vision{
     height: auto;
   }
 
