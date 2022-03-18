@@ -1,4 +1,7 @@
 {% extends 'base.html.twig' %}
+{% block header %}
+    {% include "components/atoms/homeNavButton.html.twig" %}
+{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {{encore_entry_link_tags('home')}}

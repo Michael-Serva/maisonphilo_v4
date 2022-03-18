@@ -6,65 +6,66 @@
 {% block body %}
     <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
         {% include "components/organisms/homeNavbar.html.twig" %}
+        {# top-page #}
         <section id="top-page" class="d-flex justify-content-center align-items-center flex-column">
             <p class="display-1 text-monospace fw-bold text-light text-center">
                 <span class="title">Bienvenue chez</span>
                 <br>
                 <span class="text-success-800 sub-title">Maison Philo</span>
             </p>
-            <a href="#maisonphilo" class="btn btn-success mt-5 text-uppercase fs-2">En savoir plus</a>
+            <div class="text-light display-5 mt-3 text-center container">
+                Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
+            <a href="#" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
         </section>
+        {# services #}
         <section id="services" class="d-flex align-items-center justify-content-center">
             <div class="text-center">
                 {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
                 } %}
-                <div class="text-muted fs-2 mx-auto mt-3 w-75">
-                    Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
-                <div class="col-12 row mt-5 justify-content-evenly">
 
-                    {% include "components/atoms/fontCircle.html.twig" with {
+
+                {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Partage d'information",
                        content : "Vous cherchez une information pouvant aider au bien-être de nos aînés ? Alors, Bienvenue sur cet espace collaboratif qui présente les informations déjà portées à notre connaissance. Si vous disposez d'information pas encore publiée sur ce site, n’hésitez pas à nous les partager!",
                        font :  "fa-solid fa-share-nodes"
                    } %}
 
-                    {% include "components/atoms/fontCircle.html.twig" with {
+                {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Petites annonces",
                        content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
                        font : "fa-solid fa-laptop"
                    } %}
 
-                    {% include "components/atoms/fontCircle.html.twig" with {
+                {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Actions sociales",
                        content : "Venez retrouver nos ONG partenaires ainsi que les actions sociales dédiées à nos parents âgés que nous soutenons.",
                        font : "fa-solid fa-hand-holding-heart"
                    } %}
 
+            </div>
+        </section>
+        {# vision #}
+        <section id="vision" class="bg-warning-200 d-flex align-items-center">
+            <div class="row justify-content-center container-fluid">
+                <h1 class="text-dark display-2 text-center col-12"></h1>
+                <div class="display-4 p-2 col-10 text-center">
+                    <span class="text-success fw-bold d-block">Maison Philo</span>
+                    <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
                 </div>
-            </section>
-            <section id="maisonphilo" class="bg-warning-200 d-flex align-items-center">
-                <div class="">
-                    <h1 class="text-dark display-2 text-center  text-font-family-1">
-                        <div class="typed fw-bold text-font display-3"></div>
-                    </h1>
-                    <div class="fs-2 p-2 d-flex flex-column">
-                        <span class="text-success text-center">Maison Philo</span>
-                        <span class="text-black text-end">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
-                    </div>
-                </div>
-                <img src={{asset("images/objective.png")}} class="img-fluid" alt="objectif" data-aos="fade-left" data-aos-duration="3000">
-            </section>
-            {# Section about #}
-            <section id="about" class="d-flex flex-column align-items-center justify-content-center">
-                <div class="text-center container-fluid mb-5">
-                    {% include "components/atoms/homeTitle.html.twig" with {
+                <img src={{asset("images/objective.png")}} class="img-fluid col-5" alt="objectif" data-aos="fade-left" data-aos-duration="3000">
+            </div>
+        </section>
+        {# Section about #}
+        <section id="about" class="d-flex flex-column align-items-center justify-content-center">
+            <div class="text-center container-fluid mb-5">
+                {% include "components/atoms/homeTitle.html.twig" with {
                         content : "A Propos"
                     } %}
-                    <span class="fs-2 text-muted">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
-                </div>
-                <div class="mx-auto mt-5 d-flex flex-column">
-                    {% include "components/molecules/aboutDescription.html.twig" with {
+                <span class="fs-2 text-muted">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
+            </div>
+            <div class="mx-auto mt-5 d-flex flex-column">
+                {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Qui sommes nous?",
                         content : "Elle s’appelait Philo… C’était ma Mémé.",
                         images : "philo.jpg",
@@ -73,7 +74,7 @@
                         href : ""
                     } %}
 
-                    {% include "components/molecules/aboutDescription.html.twig" with {
+                {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Vieillisement en Afrique",
                         content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
                         images : "afrique.png",
@@ -82,7 +83,7 @@
                         href : ""
                     } %}
 
-                    {% include "components/molecules/aboutDescription.html.twig" with {
+                {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Vieillissement dans le monde",
                         content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
                         images : "monde.jpg",
@@ -91,7 +92,7 @@
                         href : ""                       
                     } %}
 
-                    {% include "components/molecules/aboutDescription.html.twig" with {
+                {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Téléchargez notre E-Book",
                         content : "",
                         images : "logo_maison_philo2.png",
@@ -100,28 +101,28 @@
                         href : ""
                     } %}
 
-                </div>
+            </div>
 
-            </section>
-            {# Section commitment #}
-            <section id="commit" class="row justify-content-evenly gx-0">
-                <div class="col-12 text-center mb-5">
-                    {% include "components/atoms/homeTitle.html.twig" with {
+        </section>
+        {# Section commitment #}
+        <section id="commit" class="row justify-content-evenly gx-0">
+            <div class="col-12 text-center mb-5">
+                {% include "components/atoms/homeTitle.html.twig" with {
                         content : "Nos engagements"
                     } %}
-                    <p class="text-muted fs-2">Pour le développement durable</p>
-                </div>
-                <div class="col-lg-4 text-center mb-5 btn-square">
-                    <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
-                </div>
-                <div class="col-lg-4 text-center mb-5 btn-square">
-                    <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
-                </div>
-                <div class="col-lg-4 text-center mb-5 btn-square">
-                    <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
-                </div>
-            </section>
-            {# Section contact #}
-            <section id="contact" class="row"></section>
-        </div>
-    {% endblock %}
+                <p class="text-muted fs-2">Pour le développement durable</p>
+            </div>
+            <div class="col-lg-4 text-center mb-5 btn-square">
+                <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
+            </div>
+            <div class="col-lg-4 text-center mb-5 btn-square">
+                <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
+            </div>
+            <div class="col-lg-4 text-center mb-5 btn-square">
+                <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
+            </div>
+        </section>
+        {# Section contact #}
+        <section id="contact" class="row"></section>
+    </div>
+{% endblock %}
