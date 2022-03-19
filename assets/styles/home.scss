@@ -3,11 +3,23 @@
 .active {
   color: $warning;
 }
-
+.float-button {
+  top: 30vh;
+  position: fixed;
+  top: 30vh;
+  right: 0vh;
+}
+.return-up{
+  bottom: 5vh;
+  position: fixed;
+  right: 1vh;
+  padding: 5px;
+}
 /* Top page */
 section#top-page {
   background-image: url("../../public/images/africa.jpg");
   background-size: cover;
+  background-position: center center;
   height: 100vh;
   background-repeat: no-repeat;
   .title {
@@ -16,11 +28,8 @@ section#top-page {
   .sub-title {
     text-shadow: 8px 8px 6px $gray-300 !important;
   }
-  div {
-    background-color: lightcyan;
-    opacity: 60%;
-  }.text-title{
-    color: $success-800;
+  .text-title {
+    color: rgb(129, 126, 126);
   }
 }
 
@@ -64,17 +73,18 @@ section#commit {
 }
 /* media queries laptop */
 @media only screen and (min-width: 1000px) {
-  .float-button a{
+  .float-button a {
     display: none;
   }
   section#top-page {
     background-image: url("../../public/images/couple.jpg");
     background-size: cover;
+    background-position: center center;
   }
   section#services {
     height: auto;
   }
-  section#vision{
+  section#vision {
     height: auto;
   }
 

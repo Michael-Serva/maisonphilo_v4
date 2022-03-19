@@ -35,3 +35,11 @@ $gray-300: #ebe8e8;
   border: 5px solid $warning;
   border-radius: 50%;
 }
+.c4-izmir {
+    --primary-color: transparent;
+    --secondary-color: #D0206E;
+    --transition-duration: 500ms;
+    --border-width: 6px;
+    --overlay-opacity: .5;
+    --text-color: #043106;
+}

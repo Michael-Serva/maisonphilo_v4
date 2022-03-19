@@ -895,6 +895,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@ciar4n/izmir@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ciar4n/izmir/-/izmir-1.0.1.tgz#6263302b06a1b3d379f3bcde7359298f76ea46f6"
+  integrity sha512-ZrGBqDxwLyZ9hLnH/E5zD8fJZDTNx3+XSh/7poUX7zxcPCSbAnX/1pkYbYaHNhLKANEizp1YEPI3EzRFeY6M/Q==
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"

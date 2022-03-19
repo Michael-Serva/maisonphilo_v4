@@ -1,6 +1,11 @@
 <div class="position-relative">
     <a href={{href}}>
-        <img src={{asset('images/' ~ images) | imagine_filter('thumb')}} alt={{alt}} class="rounded-circle btn-circle">
+        <figure class="c4-izmir c4-image-rotate-right p-3">
+            <img src={{asset('images/' ~ images) | imagine_filter('thumb')}} alt={{alt}} class="rounded-circle btn-circle">
+            <figcaption>
+                <h3>Cliquer ici</h3>
+            </figcaption>
+        </figure>
         <div class="text-success-800 position-circle-text-{{position}}">
             <span class="fs-1 fw-bold d-block">
                 {{title}}
