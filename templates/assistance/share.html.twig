@@ -1,0 +1,36 @@
+{% extends 'assistance/layout.html.twig' %}
+
+{% block title %}Hello AssistanceController!
+{% endblock %}
+
+{% block body %}
+    {# Top-page #}
+    <section id="#top-page" class="bg-success-800">
+        <div class="container-fluid row justify-content-center">
+            <img src={{asset('images/share.jpg')}} alt="" class="col-lg-3 col-md-12 img-responsive">
+            <div class="col-lg-9 row">
+                <h1 class="col-lg-12 text-light display-1 text-monospace w-100">Téléchargez notre e-book</h1>
+                <div class="text-end">
+                    <a href="" class="btn btn-success fs-1 border border-light px-5">Sélectionnez un pays</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {# Connection #}
+    <section id="connection" class="mt-3">
+        <div class="container-fluid row">
+            <img src={{ asset('images/logo_maison_philo2.png') | imagine_filter('logo') }} alt="" class="col-lg-2">
+            <div class="col-lg-3 offset-4 d-flex justify-content-between">
+                <i class="fa-solid fa-pen display-5"></i>
+                <p class="fs-1 text-primary-800">
+                    <span class="d-block">Partagez</span>
+                    <span>vos infos</span>
+                </p>
+            </div>
+            <div class="offset-lg-1 col-lg-2">
+                <a href="" class="btn btn-success px-4">Connectez-vous</a>
+            </div>
+        </div>
+    </section>
+    {#  #}
+{% endblock %}
