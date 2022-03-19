@@ -4,10 +4,12 @@
   color: $warning;
 }
 .float-button {
+  z-index: 999;
   top: 30vh;
   position: fixed;
   top: 30vh;
   right: 0vh;
+  opacity: 75%;
 }
 .return-up{
   bottom: 5vh;

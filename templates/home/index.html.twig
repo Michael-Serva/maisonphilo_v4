@@ -7,16 +7,16 @@
     <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
         {% include "components/organisms/homeNavbar.html.twig" %}
         {# top-page #}
-        <section id="top-page" class="d-flex justify-content-center align-items-center flex-column">
+        <section id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
             <p class="display-1 text-monospace fw-bold text-light text-center">
                 <span class="js-title"></span>
             </p>
             <div class="display-5 mt-3 text-center fw-bold text-title">
                 Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
-            <a href="#" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
+            <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
         </section>
         {# services #}
-        <section id="services" class="d-flex align-items-center text-center">
+        <section id="services" class="d-flex align-items-center text-center" data-aos="fade-up" data-aos-duration="3000">
             <div class="container-fluid row justify-content-center">
                 {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
@@ -46,7 +46,7 @@
             </div>
         </section>
         {# vision #}
-        <section id="vision" class="bg-warning-200 d-flex align-items-center">
+        <section id="vision" class="bg-warning-200 d-flex align-items-center" data-aos="fade-up" data-aos-duration="3000">
             <div class="row justify-content-center container-fluid">
                 <div class="col-10 col-lg-6">
                     <h1 class="text-dark display-1 text-center  js-vision fw-bold mb-5 text-font-1"></h1>
@@ -60,7 +60,7 @@
             </div>
         </section>
         {# Section about #}
-        <section id="about" class="d-flex flex-column align-items-center justify-content-center">
+        <section id="about" class="d-flex flex-column align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="3000">
             <div class="text-center container-fluid mb-5">
                 {% include "components/atoms/homeTitle.html.twig" with {
                         content : "A Propos"
