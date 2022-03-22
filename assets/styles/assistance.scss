@@ -1,0 +1,37 @@
+.return-up {
+  bottom: 5vh;
+  position: fixed;
+  right: 1vh;
+  padding: 5px;
+}
+.back {
+  top: 5vh;
+  position: fixed;
+  left: 1vh;
+  padding: 5px;
+}
+/* section share-to-page */
+/* section connection */
+/* section theme */
+section#theme {
+  .btn-lg {
+    font-size: 3em;
+  }
+}
+/* section country */
+section#country {
+  background-image: url("../../public/images/country.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 13vh;
+}
+@media only screen and (min-width: 1000px) {
+  /* section country */
+  section#country {
+    height: 25vh;
+  }
+  .back,
+  .return-up {
+    display: none;
+  }
+}
