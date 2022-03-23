@@ -9,14 +9,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Template
- * @Route("/assistance")
+ * @Route("/country")
  */
-class AssistanceController extends AbstractController
+class CountryController extends AbstractController
 {
     /**
      * @Route("/")
      */
-    public function share()
+    public function index()
     {
     }
 }

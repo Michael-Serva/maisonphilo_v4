@@ -1,0 +1,20 @@
+{% extends 'country/layout.html.twig' %}
+
+{% block title %}Informations par pays
+{% endblock %}
+
+{% block body %}
+    <section id="top-page">
+        <h1 class="display-1 text-warning-300 text-center fw-bold font-monospace mt-5">Informations par pays</h1>
+        <section id="hospital" class="row">
+            <h2 class="display-2 text-success-800 text-center my-5 fw-bold">Côte d'ivoire</h2>
+            <h3 class="text-primary-800 display-3 text-center col-12 fw-bold my-5">Hôpitaux & Centres médicaux</h3>
+            {% include "components/molecules/hospitalDescription.html.twig" with {
+                title : "Centre hospitalier et Universitaire d'Angré",
+                subTitle : "Hôpital à Cocody, Abidjan, Côte d'Ivoire",
+                description : "Vous y trouverez un service gériatrie",
+                contact : "Contact: +225 2722496400 - info@chuangre.ci"
+            } %}
+        </section>
+    </section>
+{% endblock %}
