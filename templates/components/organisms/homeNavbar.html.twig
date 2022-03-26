@@ -6,30 +6,31 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-monospace" id="navbarCollapse">
-            <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-uppercase fw-bold fs-3">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0 text-uppercase fw-bold">
                 <li class="nav-tem">
-                    <a class="nav-link " aria-current="page" href="#services">Services</a>
+                    <a class="nav-link" aria-current="page" href="#services">Services</a>
                 </li>
-                  <li class="nav-tem">
-                    <a class="nav-link " aria-current="page" href="#vision">Vision</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#about">A propos</a>
+                <li class="nav-tem">
+                    <a class="nav-link" aria-current="page" href="#vision">Vision</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="#commit">Engagements</a>
+                    <a class="nav-link" aria-current="page" href="#about">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#commit">Engagements</a>
                 </li>
             </ul>
             <div class="dropdown">
                 <button class="btn btn-transparent text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-hospital-user"></i>
                     Espace utilisateur
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li>
-                        <a class="dropdown-item" href="#">S'enregistrer</a>
+                        <a class="dropdown-item fs-1" href={{ path('app_register') }}>S'enregistrer</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">Se connecter</a>
+                        <a class="dropdown-item fs-1" href={{ path('app_login') }}>Se connecter</a>
                     </li>
                 </ul>
             </div>

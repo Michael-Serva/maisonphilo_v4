@@ -1,5 +1,18 @@
-
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
 @import "./variables";
+
+.return-up {
+    bottom: 5vh;
+    position: fixed;
+    right: 1vh;
+    padding: 5px;
+  }
+  .back {
+    top: 5vh;
+    position: fixed;
+    left: 1vh;
+    padding: 5px;
+  }
+

@@ -1,6 +1,12 @@
 @import "./variables";
-a{
+a {
   text-decoration: none;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color:$success-800;
 }
 .active {
   color: $warning;
@@ -13,7 +19,7 @@ a{
   right: 0vh;
   opacity: 75%;
 }
-.return-up{
+.return-up {
   bottom: 5vh;
   position: fixed;
   right: 1vh;
