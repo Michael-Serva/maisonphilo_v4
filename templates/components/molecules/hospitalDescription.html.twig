@@ -2,9 +2,16 @@
     <h4 class="display-4 fw-bold text-success-800 text-center my-3">{{title}}</h4>
     <div class="fs-1 text-center">
         <span class="d-block">{{subTitle}}</span>
-        <span class="d-block">{{description}}</span>
-        <span class="text-muted fst-italic d-block">{{contact}}</span>
+        <span class="d-block">{{description | raw}}</span>
+        <p class="text-muted fst-italic d-block">
+            <span class="d-block">
+                <i class="fa-solid fa-phone"></i>
+                {{phoneNumber | default('Auncun téléphone connu')}}
+            </span>
+            <span class="d-block">
+                <i class="fa-solid fa-at"></i>
+                {{email | default('Aucun mail connu')}}
+            </span>
+        </p>
     </div>
-    <div class="text-center">
-        <img src={{ asset('images/chu.png') }} class="img-fluid img-thumbnail my-3" alt="..."></div>
 </div>
