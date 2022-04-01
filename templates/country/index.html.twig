@@ -1,33 +1,35 @@
-{% extends 'country/layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Informations par pays
-{% endblock %}
+{% block title %}Country index{% endblock %}
 
 {% block body %}
-    <section id="top-page">
-        <h1 class="display-1 text-warning-300 text-center fw-bold font-monospace">
-            Informations par pays
-        </h1>
-        <h2 class="display-2 text-success-800 text-center my-5 fw-bold">
-            Côte d'ivoire
-        </h2>
-        <section id="country-top-page" class="d-flex align-items-center">
-            <h3 class="text-light display-3 text-center col-12 fw-bold my-5 title">
-                Hôpitaux & Centres médicaux
-            </h3>
-        </section>
-        <section id="hospital" class="row container-fluid mx-auto">
-            {% for hospital in hospitals %}
-                {% include "components/molecules/hospitalDescription.html.twig" with {
-                    title :hospital.name,
-                    subTitle : hospital.subTitle,
-                    description : hospital.content,
-                    phoneNumber : hospital.phoneNumber,
-                    email : hospital.email
-                } %}
-            {% endfor %}
+    <h1>Country index</h1>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for country in countries %}
+            <tr>
+                <td>{{ country.id }}</td>
+                <td>{{ country.name }}</td>
+                <td>
+                    <a href="{{ path('app_country_show', {'id': country.id}) }}">show</a>
+                    <a href="{{ path('app_country_edit', {'id': country.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        </section>
-    </section>
+    <a href="{{ path('app_country_new') }}">Create new</a>
 {% endblock %}

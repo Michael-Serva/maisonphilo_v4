@@ -58,14 +58,12 @@
         {# section country #}
         <section id="country" class=" d-flex align-items-end justify-content-center">
             <div class="form-floating opacity-75 mb-5">
-                <select class="form-select rounded-pill" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected>Votre recherche concerne quel pays?</option>
-                    {% for country in countries %}
-                        <option value={{country.id}}>
-                            {{country.name}}
-                        </option>
-                    {% endfor %}
-                </select>
+
+
+                {% for country in countries %}
+                    <a href="{{ path('app_country_show', {'id': country.id}) }}" class="btn btn-light">{{country.name}}</a>
+                {% endfor %}
+
                 {#  <label for="floatingSelect">Côte d'Ivoire</label> #}
             </div>
         </section>
