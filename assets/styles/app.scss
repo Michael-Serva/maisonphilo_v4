@@ -4,20 +4,26 @@
 @import "./_variables";
 
 .return-up {
-z-index: 999;    bottom: 5vh;
-    position: fixed;
-    right: 1vh;
-    padding: 5px;
-  }
-  .back {
-    top: 5vh;
-    position: fixed;
-    left: 1vh;
-    padding: 5px;
-  }
-  #top-page{
-      min-height: 80vh;
-  }
-  #footer{
-      min-height: 20vh;
-  }
+  z-index: 999;
+  bottom: 5vh;
+  position: fixed;
+  right: 1vh;
+  padding: 5px;
+}
+.back {
+  top: 5vh;
+  position: fixed;
+  left: 1vh;
+  padding: 5px;
+}
+#top-page {
+  min-height: 80vh;
+}
+#footer {
+  min-height: 20vh;
+}
+
+section#history,
+.text-justify {
+  text-align: justify;
+}
