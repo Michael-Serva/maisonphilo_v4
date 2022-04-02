@@ -48,6 +48,11 @@ class Hospital
      */
     private $country;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isValid;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class Hospital
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getIsValid(): ?bool
+    {
+        return $this->isValid;
+    }
+
+    public function setIsValid(?bool $isValid): self
+    {
+        $this->isValid = $isValid;
 
         return $this;
     }

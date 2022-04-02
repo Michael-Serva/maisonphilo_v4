@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CountryField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
@@ -28,7 +29,8 @@ class HospitalCrudController extends AbstractCrudController
             TextEditorField::new('content'),
             TelephoneField::new('phoneNumber'),
             EmailField::new('email'),
-            AssociationField::new('country')
+            AssociationField::new('country'),
+            BooleanField::new('isValid')
         ];
     }
 }
