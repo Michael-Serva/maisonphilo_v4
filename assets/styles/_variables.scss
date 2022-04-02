@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 
 $success-800: #043106;
-$primary-800: #0c0cb4;
+$primary-800: rgb(40, 40, 247);
 $warning: #ffc107;
 $warning-300: #ebc248;
 $warning-200: #f0dca0;
 $gray-300: #ebe8e8;
-
+.text-font-script{
+  font-family: 'Imperial Script', cursive;}
 .text-font-1 {
   font-family: "Montserrat", sans-serif;
 }

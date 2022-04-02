@@ -4,7 +4,7 @@
 @import "./_variables";
 
 .return-up {
-    bottom: 5vh;
+z-index: 999;    bottom: 5vh;
     position: fixed;
     right: 1vh;
     padding: 5px;

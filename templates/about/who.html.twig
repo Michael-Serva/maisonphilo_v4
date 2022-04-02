@@ -1,0 +1,36 @@
+{% extends 'about/layout.html.twig' %}
+{% set pageName = "Qui sommes nous?" %}
+{% block title %}
+    {{pageName}}
+{% endblock %}
+
+{% block body %}
+    <section id="top-page">
+        <section id="who-top-page" class="d-flex align-items-center justify-content-center">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+                pageName : pageName
+            } %}
+        </section>
+        <div id="who" class="d-flex align-items-center justify-content-center">
+            <div class="row container-fluid justify-content-center">
+                <a href={{ path('app_about_history') }} class="col-10 col-lg-4 text-center my-5">
+                    <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
+                        <img src={{asset('images/philo.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid rounded">
+                        <figcaption>
+                            <h3 class="text-light display-5 fw-bold">Notre histoire</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="" class="col-10 col-lg-4 text-center my-5">
+                    <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
+                        <img src={{asset('images/birds.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid rounded">
+                        <figcaption>
+                            <h3 class="text-light display-5 fw-bold">Objectif & vision</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
