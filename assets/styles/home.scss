@@ -39,8 +39,8 @@ section#top-page {
     text-shadow: 8px 8px 6px $gray-300 !important;
   }
   .text-title {
-    color: rgb(86, 87, 90);
-    background-color: #fff;
+    color: #2a5454;
+    background-color: wheat;
     opacity: 65%;
   }
 }
@@ -48,6 +48,13 @@ section#top-page {
 /* Section services */
 section#services {
   padding: 5rem;
+  .circle {
+    height: 100px;
+    width: 100px;
+    background-color: #f9cd47;
+    border: 5px solid $warning;
+    border-radius: 50%;
+  }
 }
 /* Section vision */
 section#vision {
@@ -61,14 +68,17 @@ section#about {
   .btn-circle {
     width: 250px;
     height: 250px;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     border: 10px solid $gray-300;
+    background-color: #f9cd47;
   }
- 
+  .title{
+    margin-bottom: 5rem;
+  }
 }
 /* Section commitment */
 section#commit {
-  height: 100vh;
+  height: auto;
   padding: 5rem;
   background-color: $gray-300;
 }
@@ -93,6 +103,9 @@ section#commit {
   }
 
   section#about {
+    height: auto;
+  }
+  section#commit{
     height: auto;
   }
 }

@@ -1,21 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
 
 $success-800: #043106;
-$primary-800: rgb(40, 40, 247);
+$primary-200: #83a8cb;
+$primary-800: #445c72;
 $warning: #ffc107;
 $warning-300: #ebc248;
 $warning-200: #f0dca0;
+$warning-100: #eadaac;
 $gray-300: #ebe8e8;
-.text-font-script{
-  font-family: 'Imperial Script', cursive;}
+.text-font-script {
+  font-family: "Imperial Script", cursive;
+}
 .text-font-1 {
   font-family: "Montserrat", sans-serif;
 }
-.text-warning-300{
+.text-justify {
+  text-align: justify;
+}
+.text-warning-300 {
   color: $warning-300;
 }
-.text-primary-800{
+.text-primary-800 {
   color: $primary-800;
 }
 .text-success-800 {
@@ -24,24 +30,24 @@ $gray-300: #ebe8e8;
 .bg-success-800 {
   background-color: $success-800;
 }
-.bg-warning-200{
-    background-color: $warning-200;
+.bg-primary-200 {
+  background-color: $primary-200;
+}
+.bg-warning-200 {
+  background-color: $warning-200;
+}
+.bg-warning-100 {
+  background-color: $warning-100;
 }
 .btn-success {
   background-color: $success-800;
 }
-.circle {
-  height: 100px;
-  width: 100px;
-  background-color: $warning;
-  border: 5px solid $warning;
-  border-radius: 50%;
-}
+
 .c4-izmir {
-    --primary-color: transparent;
-    --secondary-color: #D0206E;
-    --transition-duration: 500ms;
-    --border-width: 6px;
-    --overlay-opacity: .5;
-    --text-color: #043106;
+  --primary-color: transparent;
+  --secondary-color: #d0206e;
+  --transition-duration: 500ms;
+  --border-width: 6px;
+  --overlay-opacity: 0.5;
+  --text-color: #043106;
 }
