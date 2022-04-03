@@ -8,7 +8,7 @@
         {% include "components/organisms/homeNavbar.html.twig" %}
         {# top-page #}
         <section id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
-            <p class="display-1 text-monospace fw-bold text-light text-center">
+            <p class="display-1 fw-bold text-light text-center">
                 <span class="js-title"></span>
             </p>
             <div class="display-5 mt-3 text-center fw-bold text-title">
@@ -16,8 +16,8 @@
             <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
         </section>
         {# services #}
-        <section id="services" class="d-flex align-items-center text-center" data-aos="fade-up" data-aos-duration="3000">
-            <div class="container-fluid row justify-content-center">
+        <section id="services" class="d-flex align-items-center text-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
+            <div class="row justify-content-center">
                 {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
                 } %}
@@ -60,23 +60,21 @@
                     </div>
                 </div>
 
-                <img src={{asset("images/objective.png")}} class="img-fluid col-lg-8 col-xlg-6" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
+                <img src={{asset("images/objective.png") | imagine_filter('thumb')}} class="img-fluid col-lg-5 col-xlg-6 col-6" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
             </div>
         </section>
         {# Section about #}
-        <section id="about" class="d-flex flex-column align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="3000">
-            <div class="text-center container-fluid mb-5">
+        <section id="about" class="d-flex flex-column align-items-center justify-content-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
+            <div class="text-center mb-5">
                 {% include "components/atoms/homeTitle.html.twig" with {
                         content : "A Propos"
                     } %}
-                <span class="fs-2 text-muted">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
+                <span class="fs-1 text-muted">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
             </div>
-            <div class="mx-auto mt-5 d-flex flex-column">
                 {% include "components/molecules/aboutDescription.html.twig" with {
                         title : "Qui sommes nous?",
                         content : "Elle s’appelait Philo… C’était ma Mémé.",
                         images : "philo.jpg",
-                        position : "end",
                         alt : "Mémé Philomène",
                         href : "app_about_who"
                     } %}
@@ -85,7 +83,6 @@
                         title : "Vieillisement en Afrique",
                         content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
                         images : "afrique.png",
-                        position : "start",
                         alt : "Vieillisement en Afrique",
                         href : "app_about_africa"
                     } %}
@@ -94,7 +91,6 @@
                         title : "Vieillissement dans le monde",
                         content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
                         images : "monde.jpg",
-                        position : "end",
                         alt : "Vieillissement dans le monde",
                         href : "app_about_world"                       
                     } %}
@@ -103,30 +99,28 @@
                         title : "Téléchargez notre E-Book",
                         content : "",
                         images : "logo_maison_philo2.png",
-                        position : "start",
                         alt : "MaisonPhilo",
                         href : "app_home_index"
                     } %}
 
-            </div>
 
         </section>
         {# Section commitment #}
-        <section id="commit" class="row justify-content-evenly gx-0">
-            <div class="col-12 text-center mb-5">
+        <section id="commit" class="row gx-0">
+            <div class="col-12 text-center mb-5 container-fluid">
                 {% include "components/atoms/homeTitle.html.twig" with {
                         content : "Nos engagements"
                     } %}
                 <p class="text-muted fs-2">Pour le développement durable</p>
             </div>
-            <div class="col-lg-4 text-center mb-5 btn-square">
+            <div class="col-lg-4 text-center mb-5 btn-square gx-3">
 
                 <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
-                <p class="d-block fs-1 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
+                <p class="d-block fs-1 text-justif">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
             </div>
             <div class="col-lg-4 text-center mb-5 btn-square">
                 <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
-                <p class="d-block fs-1 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
+                <p class="d-block fs-1 text-justify">yoooooooo sum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
             </div>
             <div class="col-lg-4 text-center mb-5 btn-square">
                 <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
@@ -134,6 +128,6 @@
             </div>
         </section>
         {# Section contact #}
-        <section id="contact" class="row"></section>
+        <section id="contact" class="row container-fluid"></section>
     </div>
 {% endblock %}

@@ -6,7 +6,7 @@ a {
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color:$success-800;
+  background-color: $success-800;
 }
 .active {
   color: $warning;
@@ -59,21 +59,10 @@ section#about {
   .btn-circle {
     width: 250px;
     height: 250px;
-    margin-bottom: 200px;
+    margin-bottom: 5vh;
     border: 10px solid $gray-300;
   }
-  .position-circle-text-end {
-    position: absolute;
-    top: 0;
-    left: 18rem;
-    width: 16rem;
-  }
-  .position-circle-text-start {
-    position: absolute;
-    top: 0;
-    right: 18rem;
-    width: 16rem;
-  }
+ 
 }
 /* Section commitment */
 section#commit {
@@ -100,17 +89,5 @@ section#commit {
 
   section#about {
     height: auto;
-    .position-circle-text-end {
-      position: absolute;
-      top: 0;
-      left: 18rem;
-      width: 30rem;
-    }
-    .position-circle-text-start {
-      position: absolute;
-      top: 0;
-      right: 18rem;
-      width: 30rem;
-    }
   }
 }
