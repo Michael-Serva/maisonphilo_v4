@@ -27,7 +27,7 @@ a {
 }
 /* Top page */
 section#top-page {
-  background-image: url("../../public/images/africa.jpg");
+  background-image: url("../../public/images/test.jpg");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -39,7 +39,9 @@ section#top-page {
     text-shadow: 8px 8px 6px $gray-300 !important;
   }
   .text-title {
-    color: rgb(129, 126, 126);
+    color: rgb(86, 87, 90);
+    background-color: #fff;
+    opacity: 65%;
   }
 }
 
@@ -75,8 +77,11 @@ section#commit {
   .float-button a {
     display: none;
   }
+  .text-title {
+    color: rgb(77, 77, 77);
+  }
   section#top-page {
-    background-image: url("../../public/images/couple.jpg");
+    background-image: url("../../public/images/test.jpg");
     background-size: cover;
     background-position: center center;
   }
