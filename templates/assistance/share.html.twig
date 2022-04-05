@@ -58,15 +58,22 @@
         {# section country #}
         <section id="country" class=" d-flex align-items-end justify-content-center">
             <div class="form-floating opacity-75 mb-5">
-
-
                 {% for country in countries %}
                     <a href="{{ path('app_country_show', {'id': country.id}) }}" class="btn btn-light">{{country.name}}</a>
                 {% endfor %}
-
                 {#  <label for="floatingSelect">Côte d'Ivoire</label> #}
             </div>
         </section>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            {% for country in countries %}
+                <option value={{country.id}}>
+                    <a href="{{ path('app_country_show', {'id': country.id}) }}">
+                        {{country.name}}
+                    </a>
+                </option>
+            {% endfor %}
+        </select>
         {# section share-bottom-page #}
         <section id="share-bottom-page" class="container-fluid display-5 my-3 text-center">
             <p class="d-block">Les Informations reportées ci-dessous ont été obtenues grâce à des campagnes de collecte d'information que nous avons menées via des questionnaires et des interviews.</p>

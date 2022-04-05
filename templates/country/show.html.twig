@@ -8,23 +8,34 @@
         <h2 class="display-2 text-success-800 text-center my-5 fw-bold">
             {{country.name}}
         </h2>
-        <section id="country-top-page" class="d-flex align-items-center">
-            <h3 class="text-light display-3 text-center col-12 fw-bold my-5 title">
-                Hôpitaux & Centres médicaux
-            </h3>
-        </section>
-        <section id="hospital" class="row container-fluid mx-auto">
-            {% for hospital in hospitals %}
-                {% include "components/molecules/hospitalDescription.html.twig" with {
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <section id="country-top-page" class="d-flex align-items-center">
+                            <h3 class="text-light display-3 text-center col-12 fw-bold my-5 title">
+                                Hôpitaux & Centres médicaux
+                            </h3>
+                        </section>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <section id="hospital" class="row container-fluid mx-auto">
+                            {% for hospital in hospitals %}
+                                {% include "components/molecules/hospitalDescription.html.twig" with {
                     title :hospital.name,
                     subTitle : hospital.subTitle,
                     description : hospital.content,
                     phoneNumber : hospital.phoneNumber,
                     email : hospital.email
                 } %}
-            {% endfor %}
+                            {% endfor %}
+                        </section>
+                    </div>
+                </div>
+            </div>
 
-
-        </section>
+        </div>
     </section>
 {% endblock %}

@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
 
+$accordion-icon-color: white !important;
+$accordion-icon-color: white;
+$accordion-color: white;
+$accordion-icon-active-color: white;
+$accordion-button-active-color: white;
+
+$accordion-button-icon: url("../../public/images/africa.jpg")!important;
+$accordion-button-active-icon: url("../../public/images/afrique.png")!important;
+
+
+
 $success-800: #043106;
 $primary-200: #83a8cb;
 $primary-800: #445c72;
