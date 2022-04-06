@@ -5,14 +5,17 @@
 
 {% block body %}
     <section id="top-page">
-        <h2 class="display-2 text-success-800 text-center my-5 fw-bold">
-            {{country.name}}
-        </h2>
+        <section id="country-top-page">
+            <h2 class="display-2 text-success-800 text-center my-5 fw-bold">
+                {{country.name}}
+            </h2>
+        </section>
+
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <section id="country-top-page" class="d-flex align-items-center">
+                        <section id="country-theme" class="d-flex align-items-center">
                             <h3 class="text-light display-3 text-center col-12 fw-bold my-5 title">
                                 Hôpitaux & Centres médicaux
                             </h3>

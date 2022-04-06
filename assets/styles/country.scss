@@ -2,10 +2,12 @@
 h3.title {
   text-shadow: 2px 10px $success-800;
 }
-$accordion-icon-color: white;
-
+/* section country top page */
+section#country-top-page{
+  height: 20vh;
+}
 /* section country */
-section#country-top-page {
+section#country-theme {
   background-image: url("../../public/images/chu.png");
   background-size: cover;
   background-position: center center;
