@@ -1,17 +1,17 @@
 {% extends 'home/layout.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Page d'accueil
 {% endblock %}
 
 {% block body %}
     <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
         {% include "components/organisms/homeNavbar.html.twig" %}
-        {# top-page #}
         <section id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
+        {# top-page #}
             <p class="display-1 fw-bold text-light text-center">
                 <span class="js-title"></span>
             </p>
-            <div class="display-5 mt-3 fw-bold text-title container text-justify">
+            <div class="display-5 mt-3 fw-bold text-title container text-center">
                 Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
             <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
         </section>
@@ -29,7 +29,8 @@
                     Bienvenue sur cet espace collaboratif !
                     ",
                     font :  "fa-solid fa-share-nodes",      
-                    path_link : "app_assistance_share"
+                    path_link : "app_assistance_share",
+                    img : "data_share.jpg",
 
                 } %}
 
@@ -37,14 +38,16 @@
                        title : "Petites annonces",
                        content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
                        font : "fa-solid fa-laptop",
-                       path_link : "app_assistance_share"
+                       path_link : "app_assistance_share",
+                       img : "annoncer.jpg",
                    } %}
 
                 {% include "components/atoms/fontCircle.html.twig" with {
                        title : "Actions sociales",
                        content : "Venez retrouver nos ONG partenaires ainsi que les actions sociales dédiées à nos parents âgés que nous soutenons.",
                        font : "fa-solid fa-hand-holding-heart",
-                       path_link : "app_assistance_share"
+                       path_link : "app_assistance_share",
+                       img : "action_sociale.jpg",
                    } %}
 
             </div>
@@ -53,14 +56,14 @@
         <section id="vision" class="bg-warning-100 d-flex align-items-center" data-aos="fade-up" data-aos-duration="3000">
             <div class="row justify-content-center container-fluid">
                 <div class="col-10 col-lg-6 mb-5">
-                    <h1 class="text-dark display-1 text-center  js-vision fw-bold mb-5 text-font-1"></h1>
+                    <h1 class="text-dark display-1 text-center js-vision fw-bold mb-5 text-font-1"></h1>
                     <div class="display-4 p-2  text-center my-5">
                         <span class="text-success fw-bold d-block">Maison Philo</span>
                         <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
                     </div>
                 </div>
 
-                <img src={{asset("images/objective.png") | imagine_filter('thumb')}} class="img-fluid col-lg-5 col-xlg-6 col-6" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
+                <img src={{asset("images/objective.png") | imagine_filter('thumb')}} class="img-fluid col-lg-3 col-xlg-3 col-8" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
             </div>
         </section>
         {# Section about #}

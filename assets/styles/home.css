@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
+.text-font-script {
+  font-family: "Imperial Script", cursive;
+}
+
+.text-font-1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-warning-300 {
+  color: #ebc248;
+}
+
+.text-primary-800 {
+  color: #445c72;
+}
+
+.text-success-800 {
+  color: #043106;
+}
+
+.bg-success-800 {
+  background-color: #043106;
+}
+
+.bg-primary-200 {
+  background-color: #83a8cb;
+}
+
+.bg-warning-200 {
+  background-color: #f0dca0;
+}
+
+.bg-warning-100 {
+  background-color: #eadaac;
+}
+
+.btn-success {
+  background-color: #043106;
+}
+
+.c4-izmir {
+  --primary-color: transparent;
+  --secondary-color: #d0206e;
+  --transition-duration: 500ms;
+  --border-width: 6px;
+  --overlay-opacity: 0.5;
+  --text-color: #043106;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #043106;
+}
+
+.active {
+  color: #ffc107;
+}
+
+.float-button {
+  z-index: 999;
+  top: 30vh;
+  position: fixed;
+  top: 30vh;
+  right: 0vh;
+  opacity: 75%;
+}
+
+.return-up {
+  bottom: 5vh;
+  position: fixed;
+  right: 1vh;
+  padding: 5px;
+}
+
+/* Top page */
+section#top-page {
+  background-image: url("../../public/images/test.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+section#top-page .title {
+  text-shadow: 8px 8px 6px #043106 !important;
+}
+
+section#top-page .sub-title {
+  text-shadow: 8px 8px 6px #ebe8e8 !important;
+}
+
+section#top-page .text-title {
+  color: #2a5454;
+  background-color: wheat;
+  opacity: 65%;
+}
+
+/* Section services */
+section#services {
+  padding: 5rem;
+}
+
+section#services .circle {
+  height: 100px;
+  width: 100px;
+  background-color: #f9cd47;
+  border: 5px solid #ffc107;
+  border-radius: 50%;
+}
+
+/* Section vision */
+section#vision {
+  height: 100vh;
+  padding: 5rem 0;
+}
+
+/* Section about */
+section#about {
+  padding-top: 5rem;
+  height: auto;
+}
+
+section#about .btn-circle {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 3vh;
+  border: 10px solid #ebe8e8;
+  background-color: #f9cd47;
+}
+
+section#about .title {
+  margin-bottom: 5rem;
+}
+
+/* Section commitment */
+section#commit {
+  height: auto;
+  padding: 5rem;
+  background-color: #ebe8e8;
+}
+
+/* media queries laptop */
+@media only screen and (min-width: 1000px) {
+  nav img {
+    width: 70px;
+  }
+  section#services, section#vision, section#about, section#commit, section#top-page {
+    padding-top: 200px;
+  }
+  .float-button a {
+    display: none;
+  }
+  .text-title {
+    color: #4d4d4d;
+  }
+  section#top-page {
+    background-image: url("../../public/images/test.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  section#services {
+    height: auto;
+  }
+  section#vision {
+    height: auto;
+  }
+  section#vision h1 {
+    height: 20vh;
+  }
+  section#about {
+    height: auto;
+  }
+  section#commit {
+    height: auto;
+  }
+}
+/*# sourceMappingURL=home.css.map */

@@ -4,6 +4,7 @@
   right: 1vh;
   padding: 5px;
 }
+
 .back {
   top: 5vh;
   position: fixed;
@@ -15,11 +16,10 @@
 * share page
 * section theme
 */
-section#theme {
-  .btn-lg {
-    font-size: 3em;
-  }
+section#theme .btn-lg {
+  font-size: 3em;
 }
+
 /* section country */
 section#country {
   background-image: url("../../public/images/country.jpg");
@@ -27,6 +27,7 @@ section#country {
   background-size: cover;
   height: 13vh;
 }
+
 @media only screen and (min-width: 1000px) {
   /* country page */
   /* section country */
@@ -37,10 +38,9 @@ section#country {
 * share page
 * section theme
 */
-  section#theme {
-    .btn-lg {
-      font-size: 1.5em;
-      width: 50vw!important;
-    }
+  section#theme .btn-lg {
+    font-size: 1.5em;
+    width: 50vw !important;
   }
 }
+/*# sourceMappingURL=assistance.css.map */

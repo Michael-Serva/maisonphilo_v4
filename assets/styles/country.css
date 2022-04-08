@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
+.text-font-script {
+  font-family: "Imperial Script", cursive;
+}
+
+.text-font-1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-warning-300 {
+  color: #ebc248;
+}
+
+.text-primary-800 {
+  color: #445c72;
+}
+
+.text-success-800 {
+  color: #043106;
+}
+
+.bg-success-800 {
+  background-color: #043106;
+}
+
+.bg-primary-200 {
+  background-color: #83a8cb;
+}
+
+.bg-warning-200 {
+  background-color: #f0dca0;
+}
+
+.bg-warning-100 {
+  background-color: #eadaac;
+}
+
+.btn-success {
+  background-color: #043106;
+}
+
+.c4-izmir {
+  --primary-color: transparent;
+  --secondary-color: #d0206e;
+  --transition-duration: 500ms;
+  --border-width: 6px;
+  --overlay-opacity: 0.5;
+  --text-color: #043106;
+}
+
+h3.title {
+  text-shadow: 2px 10px #043106;
+}
+
+/* section country top page */
+section#country-top {
+  height: 10vh;
+}
+
+/* section country */
+section#country-theme {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 100vw;
+}
+
+section.country-hospital {
+  background-image: url("../../public/images/chu.png");
+}
+
+section.country-market {
+  background-image: url("../../public/images/africa.jpg");
+}
+
+section.country-specialist {
+  background-color: #014545;
+}
+
+section.country-association {
+  background-color: brown;
+}
+
+section.country-service {
+  background-color: #2aa54f;
+}
+
+section.country-state-service {
+  background-color: #411b88;
+}
+
+section.country-static {
+  background-color: #5b1344;
+}
+
+section.country-plus {
+  background-color: #bcd434;
+}
+/*# sourceMappingURL=country.css.map */

@@ -14,7 +14,7 @@ var options = {
 var typed = new Typed('.js-title', options);
 
 var options1 = {
-    strings: ['<span class="text-success-800 d-block">Contribuer au</span><span class="text-primary-800 d-block">Bien vieillir</span><span class="">en</span><span class="text-warning-300 d-block">Afrique</span>'],
+    strings: ['<span class="text-success-800 d-block">Contribuer au</span><span class="text-primary-800 d-block">Bien vieillir</span><span class="">en </span><span class="text-warning-300">Afrique</span>'],
     typeSpeed: 40,
     loop: true,
     loopCount: 10,
