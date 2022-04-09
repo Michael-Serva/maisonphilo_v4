@@ -80,7 +80,7 @@ class CountryController extends AbstractController
      */
     public function delete(Request $request, Country $country, CountryRepository $countryRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$country->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $country->getId(), $request->request->get('_token'))) {
             $countryRepository->remove($country);
         }
 

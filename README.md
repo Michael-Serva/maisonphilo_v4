@@ -1,10 +1,15 @@
 # Maison Philo
 
+## Production environment
+
+PHP 7.4.9
+
+
 ## Initialisation
 
 `symfony server:run`
 Wampserver Mysql 5.7.31
-Symfony 4.28.1
+Symfony 5.4.7
 
 ### Php fixer
 
