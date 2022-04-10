@@ -60,7 +60,7 @@
               <h1 class="display-1 text-light font-monospace d-block text-center">Informations par pays</h1>
             {# select country #}
             <select id="js-list" class="form-select-lg mb-3" aria-label="Default select example">
-                <option selected disabled value="0">Veuillez selectionner un pays</option>
+                <option disabled value="0">Veuillez selectionner un pays</option>
                 {% for country in countries %}
                     <option value={{country.id}}>
                         {{country.name}}

@@ -29,9 +29,15 @@ class Country
      */
     private $hospitals;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Partner::class, mappedBy="country")
+     */
+    private $partners;
+
     public function __construct()
     {
         $this->hospitals = new ArrayCollection();
+        $this->partners = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -87,5 +93,32 @@ class Country
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection<int, Partner>
+     */
+    public function getPartners(): Collection
+    {
+        return $this->partners;
+    }
+
+    public function addPartner(Partner $partner): self
+    {
+        if (!$this->partners->contains($partner)) {
+            $this->partners[] = $partner;
+            $partner->addCountry($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartner(Partner $partner): self
+    {
+        if ($this->partners->removeElement($partner)) {
+            $partner->removeCountry($this);
+        }
+
+        return $this;
     }
 }

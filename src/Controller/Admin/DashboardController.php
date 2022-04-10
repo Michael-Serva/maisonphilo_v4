@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Country;
 use App\Entity\Hospital;
+use App\Entity\Partner;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -31,5 +32,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Country', 'fa fa-globe', Country::class);
         yield MenuItem::linkToCrud('Hospital', 'fa fa-hospital', Hospital::class);
+        yield MenuItem::linkToCrud('Partner', 'fa fa-globe', Partner::class);
     }
 }
