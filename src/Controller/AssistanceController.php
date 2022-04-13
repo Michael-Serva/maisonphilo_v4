@@ -17,11 +17,19 @@ class AssistanceController extends AbstractController
     /**
      * @Route("/")
      */
-    public function share(CountryRepository $countryRepository)
+    public function share(CountryRepository $countryRepository): array
     {
         $country = $countryRepository->findAll();
         return [
             'countries' => $country
         ];
+    }
+
+    /**
+     * @Route("/social")
+     */
+    public function social(): array
+    {
+        return [];
     }
 }

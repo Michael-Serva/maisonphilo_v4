@@ -1,0 +1,47 @@
+{% extends 'assistance/layout.html.twig' %}
+{% set page = "Actions sociales" %}
+{% block title %}
+    {{page}}
+{% endblock %}
+
+{% block body %}
+    <section
+        id="top-page">
+        {# Top-page #}
+        <div class="flag bg-success-800 text-light display-1 d-flex justify-content-center align-items-center text-font-2">
+            {{page}}
+        </div>
+        <section id="social-top-page" class="py-5">
+            <div class="row container-fluid justify-content-center">
+                <p class="display-5 text-success-800 text-font-2">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
+                <div class="pb-3 col-7 d-flex flex-column justify-content-center align-items-center">
+
+                    <ul class="fs-1 text-muted">
+                        <li>vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone</li>
+                        <li>vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...</li>
+                    </ul>
+
+                </div>
+                <div class="col-5 col-lg4 d-flex flex-column  justify-content-end -items-center">
+                    <img src={{asset('images/heart.jpg')}} alt="homme africain" class=" img-responsive w-100">
+                    <div class="text-center mt-auto py-3">
+                        <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1 text-center ">Contactez-nous!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="container-fluid">
+            <p class="display-5 text-success-800 text-font-2">Nous vous proposons un espace sur lequel vous pourrez:</p>
+            <ul class="fs-1 text-muted ms-3">
+                <li>Présenter votre structure</li>
+                <li>Présenter une action spécifique</li>
+                <li>Exprimer vos attentes et besoins</li>
+            </ul>
+        </section>
+        <section id="middle-social" class="d-flex align-items-center justify-content-center container-fluid">
+            <p class="fs-1 fw-bold font-monospace text-center container-fluid text-light">Le monde associatif est un acteur majeur de la prise en charge de nos Anciens en Afrique. Aussi, mettre en lumière vos actions est l’expression de la dimension sociale qui est essentielle dans l’ADN de <span class="text-success-800">Maison Philo</span>.
+            </p>
+        </section>
+
+    </section>
+{% endblock %}

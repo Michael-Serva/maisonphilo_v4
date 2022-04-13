@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,AAAA,SAAS,CAAC;EACf,gBAAgB,EAAE,uCAAuC;EACzD,eAAe,EAAE,KAAK;EACtB,mBAAmB,EAAE,aAAa;EAClC,MAAM,EAAE,KAAK;EACb,iBAAiB,EAAE,SAAS;CAC7B",
-    "sources": [
-        "security.scss"
-    ],
-    "names": [],
-    "file": "security.css"
-}

@@ -1,4 +1,4 @@
-    <a href={{ path(href) }} class="text-center">
+    <a href={{ path(href) }} class="text-center my-5">
         <div class="text-success-800 container">
             <span class="display-5 fw-bold d-block">
                 {{title}}
@@ -8,7 +8,7 @@
             </span>
         </div>
         <figure class="c4-izmir c4-image-rotate-right p-3" data-aos="fade-down" data-aos-duration="3000">
-            <img src={{asset('images/' ~ images) | imagine_filter('thumb')}} alt={{alt}} class="rounded-circle btn-circle">
+            <img src={{asset('images/' ~ images) | imagine_filter('thumb')}} alt={{alt}} class="rounded-circle border border-dark">
             <figcaption>
                 <h3>Cliquer ici</h3>
             </figcaption>

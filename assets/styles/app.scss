@@ -1,7 +1,7 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
-@import "./_variables";
+@import "./_variables.scss";
 
 .return-up {
   z-index: 999;
@@ -19,9 +19,6 @@
 }
 #top-page {
   min-height: 80vh;
-}
-#footer {
-  min-height: 20vh;
 }
 
 section#history,
@@ -46,5 +43,8 @@ section#history,
   }
   .fs-1{
     font-size: 1.2em!important;
+  }
+  #top-page {
+    min-height: 90vh;
   }
 }
