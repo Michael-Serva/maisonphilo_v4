@@ -18,7 +18,7 @@ class PartnerCrudController extends AbstractCrudController
         return Partner::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -33,5 +33,4 @@ class PartnerCrudController extends AbstractCrudController
             EmailField::new('email')
         ];
     }
-   
 }

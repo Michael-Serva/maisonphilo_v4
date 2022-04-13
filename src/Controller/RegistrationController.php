@@ -32,7 +32,7 @@ class RegistrationController extends AbstractController
         UserPasswordHasherInterface $userPasswordHasher,
         UserAuthenticatorInterface $userAuthenticator,
         RegistrationAuthenticator $authenticator,
-        EntityManagerInterface $entityManager,
+        EntityManagerInterface $entityManager
     ): Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -51,7 +51,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-           $this->redirectToRoute('app_login');
+            $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/register.html.twig', [
