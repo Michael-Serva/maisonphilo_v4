@@ -34,6 +34,11 @@ class Country
      */
     private $partners;
 
+    /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    private $code;
+
     public function __construct()
     {
         $this->hospitals = new ArrayCollection();
@@ -118,6 +123,18 @@ class Country
         if ($this->partners->removeElement($partner)) {
             $partner->removeCountry($this);
         }
+
+        return $this;
+    }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(?string $code): self
+    {
+        $this->code = $code;
 
         return $this;
     }

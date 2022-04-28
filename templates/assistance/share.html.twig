@@ -5,7 +5,7 @@
 
 {% block body %}
     <section
-        id="top-page" class="my-5">
+        id="top-page" class="">
         {# Top-page #}
         <section id="share-top-page" class="bg-success-800 py-3">
             <div class="row container-fluid">
@@ -62,8 +62,8 @@
             <select id="js-list" class="form-select-lg mb-3" aria-label="Default select example">
                 <option disabled value="0">Veuillez selectionner un pays</option>
                 {% for country in countries %}
-                    <option value={{country.id}}>
-                        {{country.name}}
+                    <option value={{country.code}}>
+                        {{country.name | country_name}}
                     </option>
                 {% endfor %}
             </select>

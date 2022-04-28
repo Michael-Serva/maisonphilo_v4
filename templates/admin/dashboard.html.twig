@@ -1,0 +1,20 @@
+{% extends "@!EasyAdmin/page/content.html.twig" %}
+
+{% set pageTitle = "Dashboard" %}
+
+{% block title %}
+    {{pageTitle | trans}}
+{% endblock %}
+
+{% block content_title %}
+    {{pageTitle | trans}}
+{% endblock %}
+
+{% block page_actions %}
+    <a href="{{path('app_home_index')}}" class="btn-dark btn-lg text-end">Back to Maisonphilo</a>
+{% endblock %}
+
+{% block main %}
+    <div class="text-center">
+        <img src="{{asset('images/logo_maison_philo2.png')}}" class="img-responsive w-50" alt="ceos"></div>
+{% endblock %}

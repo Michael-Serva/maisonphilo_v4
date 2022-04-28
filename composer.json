@@ -35,6 +35,7 @@
         "symfony/property-access": "5.4.*",
         "symfony/property-info": "5.4.*",
         "symfony/proxy-manager-bridge": "5.4.*",
+        "symfony/rate-limiter": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/security-bundle": "5.4.*",
         "symfony/serializer": "5.4.*",
@@ -50,6 +51,7 @@
         "twig/cssinliner-extra": "^3.3",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/inky-extra": "^3.3",
+        "twig/intl-extra": "^3.3",
         "twig/markdown-extra": "^3.3",
         "twig/twig": "^2.12|^3.0"
     },

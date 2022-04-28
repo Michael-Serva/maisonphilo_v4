@@ -6,7 +6,7 @@
 
 {% block body %}
     <section id="top-page">
-        <section id="who-top-page" class="d-flex align-items-center justify-content-center">
+        <section id="who-top-pag" class="d-flex align-items-center bg-success-800 justify-content-center py-5">
             {% include "components/atoms/aboutTitle.html.twig" with {
                 pageName : pageName
             } %}
@@ -15,7 +15,7 @@
             <div class="row container-fluid justify-content-center">
                 <a href={{ path('app_about_history') }} class="col-10 col-lg-4 text-center my-5">
                     <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
-                        <img src={{asset('images/philo.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid rounded">
+                        <img src={{asset('images/philo.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid p-1 rounded">
                         <figcaption>
                             <h3 class="text-light display-5 fw-bold">Notre histoire</h3>
                         </figcaption>
@@ -23,7 +23,7 @@
                 </a>
                 <a href={{ path('app_about_objective') }} class="col-10 col-lg-4 text-center my-5">
                     <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
-                        <img src={{asset('images/birds.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid rounded">
+                        <img src={{asset('images/birds.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid p-1 rounded">
                         <figcaption>
                             <h3 class="text-light display-5 fw-bold">Objectif & vision</h3>
                         </figcaption>

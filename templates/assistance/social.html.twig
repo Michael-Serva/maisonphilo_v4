@@ -8,39 +8,62 @@
     <section
         id="top-page">
         {# Top-page #}
-        <div class="flag bg-success-800 text-light display-1 d-flex justify-content-center align-items-center text-font-2">
-            {{page}}
+        <div id="social-top-page" class="bg-success-800 text-center py-5">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+                pageName : page
+            } %}
         </div>
         <section id="social-top-page" class="py-5">
-            <div class="row container-fluid justify-content-center">
-                <p class="display-5 text-success-800 text-font-2">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
-                <div class="pb-3 col-7 d-flex flex-column justify-content-center align-items-center">
-
+            <div class="row container-fluid ms-5">
+                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
+                <div class="pb-3 col-7 d-flex flex-column align-items-center">
+                    <p class="display-5 text-success-800 fw-bold mb-4 hide">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
                     <ul class="fs-1 text-muted">
-                        <li>vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone</li>
-                        <li>vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...</li>
+                        <li class="mb-2">Vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone</li>
+                        <li>Vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...</li>
                     </ul>
 
                 </div>
-                <div class="col-5 col-lg4 d-flex flex-column  justify-content-end -items-center">
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-center">
                     <img src={{asset('images/heart.jpg')}} alt="homme africain" class=" img-responsive w-100">
-                    <div class="text-center mt-auto py-3">
-                        <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1 text-center ">Contactez-nous!</a>
-                    </div>
+                </div>
+                <div class="py-3 my-3 mb-5">
+                    <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1">Contactez-nous!</a>
+                </div>
+                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">Nous vous proposons un espace sur lequel vous pourrez:</p>
+                <div class="pb-3 col-7 d-flex flex-column">
+                    <p class="display-5 text-success-800 fw-bold mb-4 hide">Nous vous proposons un espace sur lequel vous pourrez:</p>
+                    <ul class="fs-1 text-muted">
+                        <li class="mb-2">Présenter votre structure</li>
+                        <li class="mb-2">Présenter une action spécifique</li>
+                        <li>Exprimer vos attentes et besoins</li>
+                    </ul>
+                </div>
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-end">
+                    <img src={{asset('images/aging.jpg')}} alt="homme africain" class=" img-responsive w-100">
                 </div>
             </div>
         </section>
-        <section id="contact" class="container-fluid">
-            <p class="display-5 text-success-800 text-font-2">Nous vous proposons un espace sur lequel vous pourrez:</p>
-            <ul class="fs-1 text-muted ms-3">
-                <li>Présenter votre structure</li>
-                <li>Présenter une action spécifique</li>
-                <li>Exprimer vos attentes et besoins</li>
-            </ul>
-        </section>
+        <section id="contact" class="container-fluid d-flex flex-column"></section>
         <section id="middle-social" class="d-flex align-items-center justify-content-center container-fluid">
-            <p class="fs-1 fw-bold font-monospace text-center container-fluid text-light">Le monde associatif est un acteur majeur de la prise en charge de nos Anciens en Afrique. Aussi, mettre en lumière vos actions est l’expression de la dimension sociale qui est essentielle dans l’ADN de <span class="text-success-800">Maison Philo</span>.
+            <p class="fs-1 fw-bold text-center m-2 text-light">Le monde associatif est un acteur majeur de la prise en charge de nos Anciens en Afrique. Aussi, mettre en lumière vos actions est l’expression de la dimension sociale qui est essentielle dans l’ADN de
+                <em class="fs-1">Maison Philo</em>.
             </p>
+        </section>
+        <section id="bottom-social" class="container">
+            <p class="display-3 fw-bold text-capitalize text-center mt-5 text-success-800">ASSOCIATION A L'HONNEUR</p>
+            <p class="display-4 fw-bold text-warning-300">L'âge d'or</p>
+            <div class="text-muted fs-1">
+                <p class="">ONG à ADRESSE, Côte d'Ivoire</p>
+                <p class="">Fondée en 2015, cette ONG à pour objectif la sensibilisation des populations sur l’existence des personnes âgées afin de les valoriser et leur permettre de connaître l’épanouissement.
+                </p>
+                <p class="">Actions menées : Lorem ipsum dolor sit amet con</p>
+                <p class="">Contact: Mme Apata</p>
+                +225 45544546 46646</div>
+            <div class="py-3 my-3 mb-5">
+                <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1">En savoir plus</a>
+            </div>
+            <a href=""><i class="fa-regular fa-hand-holding-heart"></i></a>
         </section>
 
     </section>

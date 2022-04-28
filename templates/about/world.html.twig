@@ -1,0 +1,55 @@
+{% extends 'about/layout.html.twig' %}
+{% set pageName = "Vieillissement dans le monde" %}
+{% block title %}
+    {{pageName}}
+{% endblock %}
+
+{% block body %}
+    <section id="top-page">
+        <section id="who-top-page" class="d-flex align-items-center justify-content-center">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+            pageName : pageName
+        } %}
+        </section>
+        <section id="world" class="container-fluid d-flex flex-column align-items-center justify-content-center">
+            <section id="top-world" class="fs-1 text-muted">
+                <div class="display-5 text-warning-300 fw-bold "></div>
+                <div class=" fs-1 my-5">
+                    <p>
+                        La population mondiale est estimée à 7,7 milliards de personnes en 2020. Les projections à 2050 prévoient une croissance de plus de 25% de la population mondiale qui devrait être de l’ordre de 9.7 milliards.
+                    </p>
+                    <div class="row container-fluid align-items-center my-5">
+                        <div class="col">
+                            <img src={{ asset('images/africa_aging_green.jpg') }} class="img-fluid" alt="">
+                        </div>
+                        <div class="row col">
+                            <div class="col-12">
+                                <img src={{ asset('images/asians.jpg') }} class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12">
+                                <img src={{ asset('images/india.jpg') }} class="img-fluid" alt="">
+                            </div>
+
+                            <div class="col-12">
+                                <img src={{ asset('images/euro_aging_kids.jpg') }} class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <img src={{ asset('images/aging_couple.jpg') }} class="img-fluid" alt="">
+                        </div>
+
+                    </div>
+                    {# mosaique de photos #}
+                    <p>Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,<span class="text-warning-300">
+                            estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.</span>
+                    </p>
+                </div>
+                <p class="text-success-800 display-5 fw-bold text-center">Répartition de la population totale et des personnes âgées de 60 ans & plus par zone géographique en 2020 et selon les projections 2050
+                </p>
+
+            </section>
+
+        </section>
+    </section>
+{% endblock %}
