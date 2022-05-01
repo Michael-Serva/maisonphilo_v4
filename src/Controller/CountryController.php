@@ -50,7 +50,7 @@ class CountryController extends AbstractController
     }
 
     /**
-     * @Route("/{code}", name="app_country_show", methods={"GET"})
+     * @Route("/show", name="app_country_show", methods={"GET"})
      */
     public function show(Country $country, HospitalRepository $hospitalRepository): Response
     {
