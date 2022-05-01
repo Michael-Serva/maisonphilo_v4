@@ -16,17 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CountryController extends AbstractController
 {
-  
     /**
-     * @Route("/{code}", name="app_country_index", methods={"GET"})
+     * @Route("/", name="app_country_index", methods={"GET"})
      */
-    public function index(CountryRepository $countryRepository, HospitalRepository $hospitalRepository, Country $country): Response
+    public function index(CountryRepository $countryRepository): Response
     {
         return $this->render('country/index.html.twig', [
-            'country' => $country,
-            'hospitals' => $hospitalRepository->hospitalShow($country)
         ]);
-
     }
 
     /**
@@ -50,7 +46,7 @@ class CountryController extends AbstractController
     }
 
     /**
-     * @Route("/show", name="app_country_show", methods={"GET"})
+     * @Route("/{code}", name="app_country_show", methods={"GET"})
      */
     public function show(Country $country, HospitalRepository $hospitalRepository): Response
     {
