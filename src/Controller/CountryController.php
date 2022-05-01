@@ -19,9 +19,12 @@ class CountryController extends AbstractController
     /**
      * @Route("/", name="app_country_index", methods={"GET"})
      */
-    public function index(CountryRepository $countryRepository): Response
+    public function index(CountryRepository $countryRepository, Country $country, HospitalRepository $hospitalRepository
+    ): Response
     {
-        return $this->render('country/index.html.twig', [
+        return $this->render('country/show.html.twig', [
+            'country' => $country,
+            'hospitals' => $hospitalRepository->hospitalShow($country)
         ]);
     }
 
