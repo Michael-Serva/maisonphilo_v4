@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CountryController extends AbstractController
 {
     /**
-     * @Route("/index", name="app_country_index", methods={"GET"})
+     * @Route("/", name="app_country_index", methods={"GET"})
      */
     public function index(CountryRepository $countryRepository): Response
     {
