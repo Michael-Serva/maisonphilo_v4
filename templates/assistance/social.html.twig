@@ -13,18 +13,22 @@
                 pageName : page
             } %}
         </div>
-        <section id="social-top-page" class="py-5">
-            <div class="row container-fluid ms-5">
-                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
+        <section class="py-5 container-fluid d-flex justify-content-center">
+            <div class="row col-lg-10 col-12 justify-content-center">
+                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">{% trans %}Vous êtes une association, une ONG ou toute autre structure à vocation sociale:{% endtrans %}
+                </p>
                 <div class="pb-3 col-7 d-flex flex-column align-items-center">
-                    <p class="display-5 text-success-800 fw-bold mb-4 hide">Vous êtes une association, une ONG ou toute autre structure à vocation sociale:</p>
+                    <p class="display-5 text-success-800 fw-bold mb-4 hide">{% trans %}
+                        Vous êtes une association, une ONG ou toute autre structure à vocation sociale:{% endtrans %}</p>
                     <ul class="fs-1 text-muted">
-                        <li class="mb-2">Vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone</li>
-                        <li>Vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...</li>
+                        <li class="mb-2">{% trans %}
+                            Vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone{% endtrans %}</li>
+                        <li>{% trans %}Vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...{% endtrans %}
+                        </li>
                     </ul>
 
                 </div>
-                <div class="col-5 col-lg-3 d-flex flex-column justify-content-center">
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-center container-fluid">
                     <img src={{asset('images/heart.jpg')}} alt="homme africain" class=" img-responsive w-100">
                 </div>
                 <div class="py-3 my-3 mb-5">
@@ -39,18 +43,18 @@
                         <li>Exprimer vos attentes et besoins</li>
                     </ul>
                 </div>
-                <div class="col-5 col-lg-3 d-flex flex-column justify-content-end">
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-end container-fluid">
                     <img src={{asset('images/aging.jpg')}} alt="homme africain" class=" img-responsive w-100">
                 </div>
             </div>
         </section>
-        <section id="contact" class="container-fluid d-flex flex-column"></section>
+        <section id="contact" class="container-fluid d-flex flex-column container-fluid"></section>
         <section id="middle-social" class="d-flex align-items-center justify-content-center container-fluid">
             <p class="fs-1 fw-bold text-center m-2 text-light">Le monde associatif est un acteur majeur de la prise en charge de nos Anciens en Afrique. Aussi, mettre en lumière vos actions est l’expression de la dimension sociale qui est essentielle dans l’ADN de
                 <em class="fs-1">Maison Philo</em>.
             </p>
         </section>
-        <section id="bottom-social" class="container">
+        <section id="bottom-social" class="container-fluid d-flex flex-column col-lg-10">
             <p class="display-3 fw-bold text-capitalize text-center mt-5 text-success-800">ASSOCIATION A L'HONNEUR</p>
             <p class="display-4 fw-bold text-warning-300">L'âge d'or</p>
             <div class="text-muted fs-1">
@@ -63,7 +67,12 @@
             <div class="py-3 my-3 mb-5">
                 <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1">En savoir plus</a>
             </div>
-            <a href=""><i class="fa-regular fa-hand-holding-heart"></i></a>
+            <p class="fs-1 fw-bold">
+            {% trans %}Pour retrouver les associations précédemment à l'honneur{% endtrans %}
+                <a href="">cliquez ici
+                </a>
+            </p>
+
         </section>
 
     </section>

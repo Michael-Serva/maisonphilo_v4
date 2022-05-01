@@ -5,11 +5,12 @@
 
 {% block body %}
     <section id="top-page">
-        <section id="country-top" class="d-flex align-items-center justify-content-center">
-            <h2 class="display-2 text-success-800 fw-bold">
-                {{country.name}}
-            </h2>
-        </section>
+
+        <div id="social-top-page" class="bg-success-800 text-center py-5">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+                pageName : country.name | country_name
+            } %}
+        </div>
 
         <div
             class="accordion" id="accordionExample">
@@ -54,6 +55,9 @@
                 <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <section id="hospital" class="row container-fluid mx-auto">
+                        <pre>
+                            {{ dump(hospitals) }}
+                        </pre>
                             {% for hospital in hospitals %}
                                 {% include "components/molecules/hospitalDescription.html.twig" with {
                                     title :hospital.name,
@@ -67,7 +71,7 @@
                     </div>
                 </div>
             </div>
-             {# item specialist #}
+            {# item specialist #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
@@ -93,7 +97,8 @@
                         </section>
                     </div>
                 </div>
-            </div> {# item association #}
+            </div>
+            {# item association #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
@@ -119,7 +124,8 @@
                         </section>
                     </div>
                 </div>
-            </div> {# item service #}
+            </div>
+            {# item service #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
@@ -146,7 +152,7 @@
                     </div>
                 </div>
             </div>
-             {# item state-service #}
+            {# item state-service #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
@@ -172,13 +178,14 @@
                         </section>
                     </div>
                 </div>
-            </div> {# item statistic #}
+            </div>
+            {# item statistic #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSeven">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
                         <section id="country-theme" class="d-flex align-items-center country-statistic">
                             <h3 class="text-light display-3 text-center col-12 fw-bold my-5 title">
-                               Statistiques
+                                Statistiques
                             </h3>
                         </section>
                     </button>
@@ -198,7 +205,8 @@
                         </section>
                     </div>
                 </div>
-            </div> {# item plus #}
+            </div>
+            {# item plus #}
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingEight">
                     <button class="accordion-button border-none p-0 bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">

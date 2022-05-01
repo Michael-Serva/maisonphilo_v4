@@ -5,51 +5,63 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-page">
-        <section id="who-top-page" class="d-flex align-items-center justify-content-center">
-            {% include "components/atoms/aboutTitle.html.twig" with {
-            pageName : pageName
-        } %}
-        </section>
-        <section id="world" class="container-fluid d-flex flex-column align-items-center justify-content-center">
-            <section id="top-world" class="fs-1 text-muted">
-                <div class="display-5 text-warning-300 fw-bold "></div>
-                <div class=" fs-1 my-5">
-                    <p>
-                        La population mondiale est estimée à 7,7 milliards de personnes en 2020. Les projections à 2050 prévoient une croissance de plus de 25% de la population mondiale qui devrait être de l’ordre de 9.7 milliards.
-                    </p>
-                    <div class="row container-fluid align-items-center my-5">
-                        <div class="col">
-                            <img src={{ asset('images/africa_aging_green.jpg') }} class="img-fluid" alt="">
-                        </div>
-                        <div class="row col">
-                            <div class="col-12">
-                                <img src={{ asset('images/asians.jpg') }} class="img-fluid" alt="">
-                            </div>
-                            <div class="col-12">
-                                <img src={{ asset('images/india.jpg') }} class="img-fluid" alt="">
-                            </div>
-
-                            <div class="col-12">
-                                <img src={{ asset('images/euro_aging_kids.jpg') }} class="img-fluid" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <img src={{ asset('images/aging_couple.jpg') }} class="img-fluid" alt="">
-                        </div>
-
+    {% embed "components/organisms/fullPage.html.twig" %}
+        {% block content %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "La population mondiale est estimée à 7,7 milliards de personnes en 2020. Les projections à 2050 prévoient une croissance de plus de 25% de la population mondiale qui devrait être de l’ordre de 9.7 milliards."
+                    } %}
+                    <div class="col">
+                        <img src={{asset('images/africa_aging_green.jpg')}} alt="Homme africain agé sur fond orange" class="img-fluid">
                     </div>
-                    {# mosaique de photos #}
-                    <p>Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,<span class="text-warning-300">
-                            estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.</span>
-                    </p>
-                </div>
-                <p class="text-success-800 display-5 fw-bold text-center">Répartition de la population totale et des personnes âgées de 60 ans & plus par zone géographique en 2020 et selon les projections 2050
-                </p>
+                    <div class="col">
+                        <div class="">
+                            <img src={{asset('images/asians.jpg')}} alt="Homme africain agé avec un chapeau" class="img-fluid">
+                        </div>
+                        <div class="">
+                            <img src={{asset('images/india.jpg')}} alt="Homme africain âgé pris en charge par une infirmière" class="img-fluid">
+                        </div>
+                        <div class="">
+                            <img src={{asset('images/euro_aging_kids.jpg')}} alt="Personnes noires âgées dans un village" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src={{asset('images/aging_couple.jpg')}} alt="Femme noire âgée" class="img-fluid">
+                    </div>
+                    {% include "components/atoms/paragraph.html.twig" with {
+                  content: "Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,<span class='text-warning-300'>
+                            estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.</span>"
+                    } %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en 
+                        <a href={{ asset('images/doc/africa_aging.pdf') }}>cliquant ici.</a>"
+                    } %}
+                {% endblock %}
 
-            </section>
-
-        </section>
-    </section>
+            {% endembed  %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+                    {% include "components/atoms/subTitle.html.twig" with {
+                            content: "Répartition de la population totale et des personnes âgées de 60 ans & plus par zone géographique en 2020 et selon les projections 2050"
+                    } %}
+                    <div class="text-center">
+                        <img src={{asset('images/world_aging.png')}} class="border border-secondary img-fluid" alt="Répartition vieillissement dans le monde">
+                    </div>
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "L’Europe et l’Amérique du nord sont les continents qui présentent les proportions les plus importantes de personnes âgées de 60 ans & plus, que ce soit en 2020 ou sur la base des projections à 2050."
+                    } %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "D’ici 2050, la population âgée de 60 ans & plus devrait représenter près d’un quart de la population totale en Asie, en Amérique latine & Caraïbes ainsi qu’en Oceanie."
+                    } %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "Une lecture basée sur les proportions suggère au contraire que même en 2050, l’Afrique devrait rester un continent jeune. En effet, la proportion de personnes âgées de 60 ans & plus devrait rester à moins de 10% en 2050. Cependant, lorsqu’on revient aux données brutes, on note que le nombre des membres de cette tranche d’âge devrait passer de 74 millions d’individus en 2020 à 235 millions en 2050 soit plus qu’un triplement du nombre de séniors !"
+                    } %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "Il y a donc un réel enjeu de préparation de l’environnement, des infrastructures, des solutions et politiques de prise en charge de ces futurs nombreux séniors africains."
+                    } %}
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed  %}
 {% endblock %}

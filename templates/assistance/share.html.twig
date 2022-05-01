@@ -1,20 +1,20 @@
 {% extends 'assistance/layout.html.twig' %}
 
-{% block title %}Hello AssistanceController!
+{% set pageName = "Partage d'information" %}
+
+{% block title %}
+    {{pageName}}
 {% endblock %}
 
 {% block body %}
     <section
         id="top-page" class="">
         {# Top-page #}
-        <section id="share-top-page" class="bg-success-800 py-3">
-            <div class="row container-fluid">
-                <img src={{asset('images/share.jpg')}} alt="homme africain" class=" img-responsive col-5 col-lg-2 offset-lg-2">
-                <div class="col-7 col-lg-8 d-flex align-items-center justify-content-center text-center">
-                    <h1 class="display-1 text-light col-12 font-monospace">Téléchargez notre e-book</h1>
-                </div>
-            </div>
-        </section>
+        <div id="social-top-page" class="bg-success-800 text-center py-5">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+                pageName : 'Téléchargez notre E-Book'
+            } %}
+        </div>
         {# Connection #}
         <section id="connection" class=" my-5 container-fluid d-none">
             <a href="#" class="btn  btn-success rounded-circle">
@@ -26,7 +26,7 @@
         </section>
         {# theme #}
         <section id="theme">
-            <h1 class="display-1 text-success-800 font-monospace d-block text-center">Informations par thématique</h1>
+            <h1 class="display-1 text-success-800 d-block text-center">Informations par thématique</h1>
             <div class="text-center">
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                 content : "Hôpitaux & Centres médicaux"
@@ -55,12 +55,11 @@
             </div>
         </section>
         {# section country #}
-        <section
-            id="country" class=" d-flex flex-column align-items-center justify-content-end">
-              <h1 class="display-1 text-light font-monospace d-block text-center">Informations par pays</h1>
+        <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly">
+            <h1 class="display-1 text-light font-monospace d-block text-center">Informations par pays</h1>
             {# select country #}
-            <select id="js-list" class="form-select-lg mb-3" aria-label="Default select example">
-                <option disabled value="0">Veuillez selectionner un pays</option>
+            <select id="js-list" class="form-select-lg mb-3 col-8 fs-1" aria-label="Default select example">
+                <option selected value="0">Votre recherche concerne quel pays</option>
                 {% for country in countries %}
                     <option value={{country.code}}>
                         {{country.name | country_name}}

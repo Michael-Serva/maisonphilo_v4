@@ -24,13 +24,13 @@ class HospitalCrudController extends AbstractCrudController
     {
         return [
 
+            BooleanField::new('isValid'),
+            AssociationField::new('country'),
             TextField::new('name'),
             TextField::new('subTitle'),
             TextEditorField::new('content'),
             TelephoneField::new('phoneNumber'),
             EmailField::new('email'),
-            AssociationField::new('country'),
-            BooleanField::new('isValid')
         ];
     }
 }

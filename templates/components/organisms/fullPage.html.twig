@@ -1,0 +1,10 @@
+{% block body %}
+    <section id="top-page" class"container-fluid">
+        <section id="who-top-page" class="d-flex align-items-center justify-content-center mb-5">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+            pageName : pageName
+        } %}
+        </section>
+        {% block content %}{% endblock %}
+    </section>
+{% endblock %}

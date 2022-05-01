@@ -1,0 +1,71 @@
+{% extends 'about/layout.html.twig' %}
+{% set pageName = "Vieillissement en Afrique" %}
+{% block title %}
+    {{pageName}}
+{% endblock %}
+{% block body %}
+    {% embed "components/organisms/fullPage.html.twig" %}
+        {% block content %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé. L’Afrique n’échappe pas à cette amélioration de l’espérance de vie favorable à l’augmentation du nombre de personnes âgées."
+                    } %}
+                    <div class="col">
+                        <img src={{asset('images/aging_bg_orange.jpeg')}} alt="Homme africain agé sur fond orange" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <div class="">
+                            <img src={{asset('images/aging_hat.jpeg')}} alt="Homme africain agé avec un chapeau" class="img-fluid">
+                        </div>
+                        <div class="">
+                            <img src={{asset('images/aging_care.jpeg')}} alt="Homme africain âgé pris en charge par une infirmière" class="img-fluid">
+                        </div>
+                        <div class="">
+                            <img src={{asset('images/village.jpeg')}} alt="Personnes noires âgées dans un village" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src={{asset('images/old_black_woman.jpeg')}} alt="Femme noire âgée" class="img-fluid">
+                    </div>
+                    {% embed "components/atoms/paragraph.html.twig" with {
+                        content: "Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en "
+                    } %}
+                        {% block content %}
+                            <a href={{ asset('doc/africa_aging.pdf') }} target="_blank">
+                                <span>{% trans %}cliquant ici{% endtrans %}</span>
+                            </a>
+                        {% endblock %}
+                    {% endembed %}
+                {% endblock %}
+
+            {% endembed  %}
+            {# end section #}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+                    {% include "components/atoms/subTitle.html.twig" with {
+                        content: "Répartition de la population totale et des personnes âgées de 60 ans & plus par régions africaines selon les projections 2050"
+                    } %}
+                    <div class="text-center">
+                        <img src={{asset('images/afrique.png')}} class="border border-secondary img-fluid" alt="Répartition vieillissement en Afrique">
+                    </div>
+                    {% include "components/atoms/paragraph.html.twig" with {
+                        content: "Si le quasi triplement du nombre de personnes de 60 ans & plus est prévu pour presque toutes les zones d’Afrique d’ici à 2050, des disparités sont néanmoins à noter lorsqu’on analyse les proportions. En effet, en 2020 toutes les zones présentent une proportion de personnes âgées inférieure à 9%. L’Afrique du nord ainsi que le sud de l’Afrique verront cette proportion progresser à 15% et plus tandis que les autres régions devraient voir le taux également progresser mais rester en dessous des 9%."
+                    } %}
+                    {% embed "components/atoms/paragraph.html.twig" with {
+                        content: "Pour en savoir plus, "
+                    } %}
+                        {% block content %}
+                            <a href=''>cliquez ici</a>
+                        {% endblock %}
+                    {% endembed %}
+
+                {% endblock %}
+                {# end section #}
+            {% endembed %}
+
+        {% endblock %}
+        {# end full page #}
+    {% endembed  %}
+    {# end body #}
+{% endblock %}
