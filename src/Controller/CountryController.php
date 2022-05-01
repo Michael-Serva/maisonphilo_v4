@@ -16,14 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CountryController extends AbstractController
 {
-    /**
-     * @Route("/", name="app_country_index", methods={"GET"})
-     */
-    public function index(CountryRepository $countryRepository): Response
-    {
-        return $this->render('country/index.html.twig', [
-        ]);
-    }
 
     /**
      * @Route("/new", name="app_country_new", methods={"GET", "POST"})
