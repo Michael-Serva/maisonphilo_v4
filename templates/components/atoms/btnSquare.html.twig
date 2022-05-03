@@ -1,0 +1,17 @@
+<div class="col-lg-4 text-center mb-5 btn-square gx-lg-5">
+    <img src={{ asset('images/' ~ png) | imagine_filter('thumb') }} alt={{alt}}>
+    <p role="button" class="d-block fs-1 text-justify show{{index}} pe-auto">
+        {{content}}
+        <span class='d-none' id='show{{index}}'>
+            {{hide}}
+        </span>
+        <span class='text-primary text-decoration-underline d-block pe-auto'>
+            <em class='d-block hide{{index}}'>En savoir plus
+                <i class='fa-solid fa-caret-down'></i>
+            </em>
+            <em class='d-none hide{{index}}'>
+                <i class='fa-solid fa-caret-up'></i>
+            </em>
+        </span>
+    </p>
+</div>

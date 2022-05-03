@@ -20,4 +20,15 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import "./scripts/izmir";
 import "./scripts/aos";
+import "./scripts/parallax";
 import "./styles/app.scss";
+
+for (let i = 1; i <= 3; i++) {
+  $(document).ready(function () {
+    $(`.show${i}`).click(function (e) {
+      e.preventDefault();
+      $(`#show${i}`).toggleClass("d-none");
+      $(`.hide${i}`).toggleClass("d-none");
+    });
+  });
+}
