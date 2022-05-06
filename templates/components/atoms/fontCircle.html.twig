@@ -6,10 +6,10 @@
     <p class="text-muted mx-auto display-5">{{content}}</p>
 </div>
  #}
-<a href={{ path(path_link) }} class="col-xlg-4 col-lg-10 mt-5 rounded-circle text-black">
-    <figure class="c4-izmir c4-image-rotate-right p-3" data-aos="fade-down" data-aos-duration="3000">
-        <img src={{asset('images/' ~ img) | imagine_filter('circle')}} alt={{title}} class=" rounded-circle">
-        <figcaption>
+<a href={{ path(path_link) }} class="col-xlg-4 col-lg-10 mt-5 rounded-circle text-black position-relative">
+    <figure class="hover10 p-3" data-aos="fade-down" data-aos-duration="3000">
+        <img src={{asset('images/' ~ img) | imagine_filter('circle')}} alt={{title}} class=" rounded-circle bg-success">
+        <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"> 
             <h3>Cliquer ici</h3>
         </figcaption>
     </figure>

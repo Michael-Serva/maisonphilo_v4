@@ -15,3 +15,7 @@ Symfony 5.4.7
 
 `phpcs -v --standard=PSR12 --ignore=./src/Kernel.php ./src `
 `phpcbf -v --standard=PSR12 --ignore=./src/Kernel.php ./src`
+
+### Coding standard
+
+` npx eslint assets --fix`
