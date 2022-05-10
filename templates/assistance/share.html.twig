@@ -15,6 +15,33 @@
                 pageName : 'Téléchargez notre E-Book'
             } %}
         </div>
+        {# section country #}
+        <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly mt-5">
+            <h1 class="display-1 text-light  d-block text-center fw-bold">Informations par pays</h1>
+            {# select country #}
+            <select id="js-list" class="form-select-lg mb-3 col-5 fs-1" aria-label="Default select example">
+                <label for="">Veuillez sélectionner un pays</label>
+                <option selected value="0">Veuillez sélectionner un pays</option>
+                {% for country in countries %}
+                    <option value={{country.code}}>
+                        {{country.name | country_name}}
+                    </option>
+                {% endfor %}
+            </select>
+            {# dropdown menu #}
+            {#   <div class="btn-group"> <button id="js-list" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans %}Veuillez selectionner un pays{% endtrans %}
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% for country in countries %}
+                                    <li value={{country.code}}>
+                                        {{country.name | country_name}}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div> #}
+
+        </section>
         {# Connection #}
         <section id="connection" class=" my-5 container-fluid d-none">
             <a href="#" class="btn  btn-success rounded-circle">
@@ -26,16 +53,18 @@
         </section>
         {# theme #}
         <section id="theme">
-            <h1 class="display-1 text-success-800 d-block text-center">Informations par thématique</h1>
+            <h1 class="display-1 text-success-800 d-block text-center mt-5 fw-bold">Informations par thématique</h1>
             <div class="text-center">
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Hôpitaux & Centres médicaux"
+                content : "Hôpitaux & Centres médicaux",
+                path: "app_assistance_hospital"
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Commerces spécialisés"
+                content : "Commerces dédiés"
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Annuaire spécialistes locaux"
+                content : "Annuaire spécialistes locaux",
+                path: 'app_assistance_partner'
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                 content : "Annuaire associations"
@@ -54,23 +83,11 @@
                 } %}
             </div>
         </section>
-        {# section country #}
-        <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly">
-            <h1 class="display-1 text-light font-monospace d-block text-center">Informations par pays</h1>
-            {# select country #}
-            <select id="js-list" class="form-select-lg mb-3 col-8 fs-1" aria-label="Default select example">
-                <option selected value="0">Votre recherche concerne quel pays</option>
-                {% for country in countries %}
-                    <option value={{country.code}}>
-                        {{country.name | country_name}}
-                    </option>
-                {% endfor %}
-            </select>
-        </section>
         {# section share-bottom-page #}
         <section id="share-bottom-page" class="container-fluid display-5 my-3 text-center">
-            <p class="d-block">Les Informations reportées ci-dessous ont été obtenues grâce à des campagnes de collecte d'information que nous avons menées via des questionnaires et des interviews.</p>
+            <p class="d-block">Les informations reportées sur cette page ont été obtenues grâce à des campagnes de collecte d'information que nous avons menées via des questionnaires et des interviews.</p>
             <p class="fw-bold">Nous avons besoin de vos commentaires et informations pour enrichir cette rubrique!</p>
         </section>
+        {# bouton flotant #}
     </section>
 {% endblock %}

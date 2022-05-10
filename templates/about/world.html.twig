@@ -29,6 +29,7 @@
                     <div class="col">
                         <img src={{asset('images/aging_couple.jpg')}} alt="Femme noire âgée" class="img-fluid">
                     </div>
+                    <div class="mb-5"></div>
                     {% include "components/atoms/paragraph.html.twig" with {
                   content: "Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,<span class='text-warning-300'>
                             estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.</span>"
@@ -48,6 +49,7 @@
                     <div class="text-center">
                         <img src={{asset('images/world_aging.png')}} class="border border-secondary img-fluid" alt="Répartition vieillissement dans le monde">
                     </div>
+                    <div class="mb-5"></div>
                     {% include "components/atoms/paragraph.html.twig" with {
                         content: "L’Europe et l’Amérique du nord sont les continents qui présentent les proportions les plus importantes de personnes âgées de 60 ans & plus, que ce soit en 2020 ou sur la base des projections à 2050."
                     } %}
@@ -57,9 +59,11 @@
                     {% include "components/atoms/paragraph.html.twig" with {
                         content: "Une lecture basée sur les proportions suggère au contraire que même en 2050, l’Afrique devrait rester un continent jeune. En effet, la proportion de personnes âgées de 60 ans & plus devrait rester à moins de 10% en 2050. Cependant, lorsqu’on revient aux données brutes, on note que le nombre des membres de cette tranche d’âge devrait passer de 74 millions d’individus en 2020 à 235 millions en 2050 soit plus qu’un triplement du nombre de séniors !"
                     } %}
-                    {% include "components/atoms/paragraph.html.twig" with {
+                    <div class="fw-bold">
+                        {% include "components/atoms/paragraph.html.twig" with {
                         content: "Il y a donc un réel enjeu de préparation de l’environnement, des infrastructures, des solutions et politiques de prise en charge de ces futurs nombreux séniors africains."
-                    } %}
+                    } %}</div>
+<a href="{{path("app_about_africa")}}" class="mb-4">Pour en savoir plus sur le vieillissement en Afrique cliquez ici</a>
                 {% endblock %}
             {% endembed %}
         {% endblock %}

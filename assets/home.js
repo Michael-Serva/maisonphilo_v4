@@ -1,9 +1,9 @@
-import './scripts/typed'
-import './styles/home.scss'
+import "./scripts/typed";
+import "./styles/home.scss";
 
-import './navbar'
+import "./navbar";
 
-import './scripts/homeNavbar'
+import "./scripts/homeNavbar";
 
 /* $(document).ready(function () {
   $(".hover10").mouseover(function () {

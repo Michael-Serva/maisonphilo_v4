@@ -45,6 +45,17 @@ class PartnerRepository extends ServiceEntityRepository
         }
     }
 
+    public function partnerShow($country)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.isValid = :val')
+            ->setParameter('val', '1')
+            ->orderBy('c.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+
     // /**
     //  * @return Partner[] Returns an array of Partner objects
     //  */

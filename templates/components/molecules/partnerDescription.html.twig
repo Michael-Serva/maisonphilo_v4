@@ -1,7 +1,10 @@
-<div class="col-12 col-lg-6 hospitalShow d-none">
-    <h4 class="display-4 fw-bold text-success-800 text-center my-3">{{title}}</h4>
+<div class="col-12 col-lg-6 partnerShow d-none"> 
+    <h4 class="display-4 fw-bold text-success-800 text-center my-3">{{name}}</h4>
     <div class="fs-1 text-center">
-        <span class="d-block">{{subTitle}}</span>
+        <span class="d-block">{{activity}}</span>
+        {% for type in type %}
+            <span class="d-block">{{type}}</span>
+        {% endfor %}
         <span class="d-block">{{description | raw}}</span>
         <p class="text-muted fst-italic d-block">
             <span class="d-block">
@@ -11,6 +14,8 @@
             <span class="d-block">
                 <i class="fa-solid fa-at"></i>
                 {{email | default('Aucun mail connu')}}
+            </span>
+            <span class="d-block">{{contact}}
             </span>
         </p>
     </div>

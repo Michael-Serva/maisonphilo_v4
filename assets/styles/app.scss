@@ -3,6 +3,10 @@
 
 @import "./_variables.scss";
 
+section#top {
+  background-color: $success-800;
+  min-height: 10vh;
+}
 .return-up {
   z-index: 999;
   bottom: 5vh;

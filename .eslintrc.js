@@ -4,12 +4,17 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'standard'
+    'eslint:recommended'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
+  ignorePatterns: ["bootstrap.js", "**/vendor/*.js"],
+
   rules: {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "indent": ["error", 2],
   }
 }

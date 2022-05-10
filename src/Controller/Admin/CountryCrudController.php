@@ -14,7 +14,7 @@ class CountryCrudController extends AbstractCrudController
         return Country::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -22,5 +22,4 @@ class CountryCrudController extends AbstractCrudController
            TextField::new('code')
         ];
     }
-   
 }

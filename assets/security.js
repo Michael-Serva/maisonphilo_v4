@@ -1,1 +1,1 @@
-import './styles/security.scss'
+import "./styles/security.scss";

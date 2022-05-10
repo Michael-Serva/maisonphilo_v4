@@ -6,6 +6,7 @@ use App\Entity\Country;
 use App\Form\CountryType;
 use App\Repository\CountryRepository;
 use App\Repository\HospitalRepository;
+use App\Repository\PartnerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,12 +20,15 @@ class CountryController extends AbstractController
     /**
      * @Route("/{code}", name="app_country_index", methods={"GET"})
      */
-    public function index(CountryRepository $countryRepository, Country $country, HospitalRepository $hospitalRepository
-    ): Response
-    {
+    public function index(
+        Country $country,
+        HospitalRepository $hospitalRepository,
+        PartnerRepository $partnerRepository
+    ): Response {
         return $this->render('country/show.html.twig', [
             'country' => $country,
-            'hospitals' => $hospitalRepository->hospitalShow($country)
+            'hospitals' => $hospitalRepository->hospitalShow($country),
+            'partners' => $partnerRepository->partnerShow($country)
         ]);
     }
 
@@ -51,11 +55,15 @@ class CountryController extends AbstractController
     /**
      * @Route("/{code}", name="app_country_show", methods={"GET"})
      */
-    public function show(Country $country, HospitalRepository $hospitalRepository): Response
-    {
+    public function show(
+        Country $country,
+        HospitalRepository $hospitalRepository,
+        PartnerRepository $partnerRepository
+    ): Response {
         return $this->render('country/show.html.twig', [
             'country' => $country,
-            'hospitals' => $hospitalRepository->hospitalShow($country)
+            'hospitals' => $hospitalRepository->hospitalShow($country),
+            'partners' => $partnerRepository->partnerShow($country)
         ]);
     }
 

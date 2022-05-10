@@ -64,6 +64,11 @@ class Partner
      */
     private $country;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isValid;
+
     public function __construct()
     {
         $this->country = new ArrayCollection();
@@ -190,6 +195,18 @@ class Partner
     public function removeCountry(Country $country): self
     {
         $this->country->removeElement($country);
+
+        return $this;
+    }
+
+    public function getIsValid(): ?bool
+    {
+        return $this->isValid;
+    }
+
+    public function setIsValid(?bool $isValid): self
+    {
+        $this->isValid = $isValid;
 
         return $this;
     }

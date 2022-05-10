@@ -1,2 +1,4 @@
-import AOS from 'aos/dist/aos'
-AOS.init()
+import AOS from "aos/dist/aos";
+import "aos/dist/aos";
+import "aos/dist/aos.css";
+AOS.init();

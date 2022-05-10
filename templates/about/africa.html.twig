@@ -28,6 +28,7 @@
                     <div class="col">
                         <img src={{asset('images/old_black_woman.jpeg')}} alt="Femme noire âgée" class="img-fluid">
                     </div>
+                    <div class="mb-5"></div>
                     {% embed "components/atoms/paragraph.html.twig" with {
                         content: "Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en "
                     } %}
@@ -49,17 +50,12 @@
                     <div class="text-center">
                         <img src={{asset('images/afrique.png')}} class="border border-secondary img-fluid" alt="Répartition vieillissement en Afrique">
                     </div>
+                    <div class="mb-5"></div>
                     {% include "components/atoms/paragraph.html.twig" with {
                         content: "Si le quasi triplement du nombre de personnes de 60 ans & plus est prévu pour presque toutes les zones d’Afrique d’ici à 2050, des disparités sont néanmoins à noter lorsqu’on analyse les proportions. En effet, en 2020 toutes les zones présentent une proportion de personnes âgées inférieure à 9%. L’Afrique du nord ainsi que le sud de l’Afrique verront cette proportion progresser à 15% et plus tandis que les autres régions devraient voir le taux également progresser mais rester en dessous des 9%."
                     } %}
-                    {% embed "components/atoms/paragraph.html.twig" with {
-                        content: "Pour en savoir plus, "
-                    } %}
-                        {% block content %}
-                            <a href=''>cliquez ici</a>
-                        {% endblock %}
-                    {% endembed %}
-
+              
+                    <a href="{{path("app_about_world")}}" class="mb-4">Pour en savoir plus sur le vieillissement dans le monde cliquez ici</a>
                 {% endblock %}
                 {# end section #}
             {% endembed %}
