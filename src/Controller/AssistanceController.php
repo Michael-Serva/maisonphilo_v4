@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AssistanceController extends AbstractController
 {
     public function __construct(
-        CountryRepository $countryRepository,
+        CountryRepository $countryRepository
     ) {
         $this->countryRepository = $countryRepository;
         $this->country = $this->countryRepository->findAll();
