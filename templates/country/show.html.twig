@@ -15,13 +15,13 @@
         <section id="theme">
             <h1 class="display-1 text-success-800 d-block text-center mt-5 fw-bold">Informations par thématique</h1>
             <div class="text-center d-flex flex-column align-items-center">
-                {% include "components/atoms/btnOutlineShare.html.twig" with {
+                {% embed "components/atoms/btnOutlineShare.html.twig" with {
                 content : "Hôpitaux & Centres médicaux",
                 id: "hospital"
                 } %}
-                {% for hospital in hospitals %}
-
-                    {% include "components/molecules/hospitalDescription.html.twig" with {
+                    {% block content %}
+                        {% for hospital in hospitals %}
+                            {% include "components/molecules/hospitalDescription.html.twig" with {
                     title: hospital.name,
                     subTitle: hospital.subTitle,
                     description: hospital.content,
@@ -29,7 +29,15 @@
                     email: hospital.email
                 } %}
 
-                {% endfor %}
+                        {% endfor %}
+                    {% endblock %}
+
+                {% endembed %}
+
+                {% include "components/atoms/btnOutlineShare.html.twig" with {
+                content : "Annuaire spécialistes locaux",
+                id: "hospital"
+                } %}
                 {% for partner in partners %}
                     {% include "components/molecules/hospitalDescription.html.twig" with {
                     title: partner.name,
@@ -38,12 +46,6 @@
                     phoneNumber: partner.phoneNumber,
                     email: partner.email,
                 } %}
-
-                {% include "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Annuaire spécialistes locaux",
-                id: "partner"
-                } %}
-
                 {% endfor %}
 
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
