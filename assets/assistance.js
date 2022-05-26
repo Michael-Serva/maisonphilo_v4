@@ -9,7 +9,7 @@ import $ from "jquery";
 $(function () {
   $(".hospital").on("click", function (e) { 
     e.preventDefault();
-    $(this).next().slideToggle();
+    $(this).next().slideToggle("slow");
   });
 
   $(".showDescription").slideUp(0);
