@@ -34,10 +34,15 @@
                   content: "Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,<span class='text-warning-300'>
                             estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.</span>"
                     } %}
-                    {% include "components/atoms/paragraph.html.twig" with {
-                        content: "Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en 
-                        <a href={{ asset('images/doc/africa_aging.pdf') }}>cliquant ici.</a>"
+                    {% embed "components/atoms/paragraph.html.twig" with {
+                        content: "Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en"
                     } %}
+                    {% block content %}
+                            <a href={{ asset('doc/aging.pdf') }} target="_blank">
+                                <span>{% trans %}cliquant ici{% endtrans %}</span>
+                            </a>
+                        {% endblock %}
+                    {% endembed %}
                 {% endblock %}
 
             {% endembed  %}
