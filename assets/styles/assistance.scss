@@ -1,20 +1,24 @@
 @import "./variables";
-@import "./assistance/social.scss";
+@import "./assistance/social";
+
 .return-up {
   bottom: 5vh;
   position: fixed;
   right: 1vh;
   padding: 5px;
 }
+
 .back {
   top: 5vh;
   position: fixed;
   left: 1vh;
   padding: 5px;
 }
+
 .hide {
   display: none;
 }
+
 /*
 * share page
 * section theme
@@ -24,6 +28,7 @@ section#theme {
     font-size: 3em;
   }
 }
+
 /* section country */
 section#country {
   background-image: url("../../public/images/country.jpg");
@@ -31,8 +36,9 @@ section#country {
   background-size: cover;
   height: 13vh;
 }
+
 li::marker {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   content: "\f4be";
   color: $success-800;
@@ -44,13 +50,16 @@ li::marker {
 
 @media only screen and (min-width: 1000px) {
   /* country page */
+
   /* section country */
   .hide {
     display: block;
   }
+
   section#country {
     height: 25vh;
   }
+
   /*
 * share page
 * section theme

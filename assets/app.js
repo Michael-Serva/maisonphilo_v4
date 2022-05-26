@@ -12,7 +12,6 @@ import "bootstrap/dist/js/bootstrap";
 import "./bootstrap";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
-import "./scripts/izmir";
 import "./scripts/aos";
 import "./scripts/parallax";
 import "./styles/app.scss";

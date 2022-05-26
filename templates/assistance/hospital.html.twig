@@ -10,21 +10,25 @@
             {% embed "components/molecules/section.html.twig" %}
                 {% block content %}
                     {% for country in countries %}
-                        {% include "components/atoms/btnOutlineShare.html.twig" with {
+                        {% embed "components/atoms/btnOutlineShare.html.twig" with {
                             content: country.name | country_name,
                             id: "hospital"
                         } %}
-                            {% for hospital in hospitals %}
-                                {% if country.name == hospital.country %}
-                                    {% include "components/molecules/hospitalDescription.html.twig" with {
+                            {% block content %}
+                                {% for hospital in hospitals %}
+                                    {% if country.name == hospital.country %}
+                                        {% include "components/molecules/hospitalDescription.html.twig" with {
                                         title: hospital.name,
                                         subTitle: hospital.subTitle,
                                         description: hospital.content,
                                         phoneNumber: hospital.phoneNumber,
                                         email: hospital.email
                                     } %}
-                                {% endif %}
-                            {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endblock %}
+
+                        {% endembed %}
                     {% endfor %}
                 {% endblock %}
             {% endembed %}

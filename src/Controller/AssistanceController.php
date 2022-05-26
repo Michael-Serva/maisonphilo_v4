@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AssistanceController extends AbstractController
 {
     public function __construct(
-        CountryRepository $countryRepository
+        CountryRepository $countryRepository,
     ) {
         $this->countryRepository = $countryRepository;
         $this->country = $this->countryRepository->findAll();
@@ -45,7 +45,7 @@ class AssistanceController extends AbstractController
     /**
      * @Route("/hospital")
      */
-    public function hospital(HospitalRepository $hospitalRepository,): array
+    public function hospital(HospitalRepository $hospitalRepository): array
     {
         return [
             'countries' => $this->country,

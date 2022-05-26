@@ -10,6 +10,6 @@ $(document).ready(function () {
   $(".hospital").on("click", function (e) { 
     e.preventDefault();
     $(this).toggleClass("bg-secondary text-light");
-    $(this).$(".showDescription").toggleClass("d-none");
+    $(".showDescription").toggleClass("d-none");
   });
 });

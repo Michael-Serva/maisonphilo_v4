@@ -1,12 +1,12 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
-
-@import "./_variables.scss";
+@import "./variables";
 
 section#top {
   background-color: $success-800;
   min-height: 10vh;
 }
+
 .return-up {
   z-index: 999;
   bottom: 5vh;
@@ -14,6 +14,7 @@ section#top {
   right: 1vh;
   padding: 5px;
 }
+
 .back {
   z-index: 999;
   top: 5vh;
@@ -21,9 +22,11 @@ section#top {
   left: 1vh;
   padding: 5px;
 }
+
 #top-page {
   min-height: 90vh;
 }
+
 #footer {
   min-height: 10vh;
 }
@@ -36,25 +39,32 @@ section#history,
 li {
   padding-left: 0.2em;
 }
+
 @media only screen and (min-width: 1000px) {
   .display-1 {
     font-size: 3em;
   }
+
   .display-2 {
     font-size: 2.7em;
   }
+
   .display-3 {
     font-size: 2.3em;
   }
+
   .display-4 {
     font-size: 1.8em;
   }
+
   .display-5 {
     font-size: 1.5em;
   }
+
   .fs-1 {
     font-size: 1.2em !important;
   }
+
   #top-page {
     min-height: 90vh;
   }
@@ -62,9 +72,9 @@ li {
 
 figure.hover10 img {
   opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+
 figure.hover10:hover img {
   opacity: 0.5;
 }

@@ -1,0 +1,14 @@
+{
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "extends": ["stylelint-config-standard", "stylelint-config-prettier", "stylelint-config-recommended-scss"],
+    "overrides":[
+      {
+        "files": ["**/*.{scss}"],
+        "customSyntax":[ "postcss-lit", "postcss-markdown", "postcss-less", "postcss'sass", "sugarss","postcss-scss"]
+        }
+      ],
+    "rules": {  
+    }
+  }

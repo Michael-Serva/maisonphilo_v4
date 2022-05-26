@@ -1,11 +1,13 @@
 @import "./variables";
+
 section#top {
   background-color: $success-800;
   min-height: 10vh;
 }
+
 div#who {
   min-height: 70vh;
-  background-color: rgb(207, 223, 187);
+  background-color: rgb(207 223 187);
 }
 
 .c4-izmir {
@@ -15,5 +17,3 @@ div#who {
   --border-width: 6px;
   --overlay-opacity: 0.5;
 }
-
-

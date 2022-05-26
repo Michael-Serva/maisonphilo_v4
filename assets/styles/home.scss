@@ -1,30 +1,35 @@
 @import "./variables";
+
 a {
   text-decoration: none;
 }
+
 .dropdown-item.active,
 .dropdown-item:active {
   color: #fff;
   text-decoration: none;
   background-color: $success-800;
 }
+
 .active {
   color: $warning;
 }
+
 .float-button {
   z-index: 999;
   top: 30vh;
   position: fixed;
-  top: 30vh;
-  right: 0vh;
-  opacity: 75%;
+  right: 0;
+  opacity: 0.75;
 }
+
 .return-up {
   bottom: 5vh;
   position: fixed;
   right: 1vh;
   padding: 5px;
 }
+
 /* Top page */
 section#top-page {
   background-image: url("../../public/images/test.jpg");
@@ -32,22 +37,26 @@ section#top-page {
   background-position: center center;
   height: 100vh;
   background-repeat: no-repeat;
+
   .title {
     text-shadow: 8px 8px 6px #043106 !important;
   }
+
   .sub-title {
     text-shadow: 8px 8px 6px $gray-300 !important;
   }
+
   .text-title {
     color: #2a5454;
     background-color: wheat;
-    opacity: 65%;
+    opacity: 0.65;
   }
 }
 
 /* Section services */
 section#services {
   padding: 5rem;
+
   .circle {
     height: 100px;
     width: 100px;
@@ -56,15 +65,18 @@ section#services {
     border-radius: 50%;
   }
 }
+
 /* Section vision */
 section#vision {
   height: 100vh;
   padding: 5rem 0;
 }
+
 /* Section about */
 section#about {
   padding-top: 5rem;
   height: auto;
+
   .btn-circle {
     width: 250px;
     height: 250px;
@@ -72,42 +84,56 @@ section#about {
     border: 5px solid $gray-300;
     background-color: #f9cd47;
   }
-  .title{
+
+  .title {
     margin-bottom: 5rem;
   }
 }
+
 /* Section commitment */
 section#commit {
   height: auto;
   background-color: $gray-300;
 }
+
 /* media queries laptop */
 @media only screen and (min-width: 1000px) {
-  nav{
-    img{
+  nav {
+    img {
       width: 70px;
     }
   }
-  section#services, section#vision, section#about, section#commit, section#top-page{
+
+  section#services,
+  section#vision,
+  section#about,
+  section#commit,
+  section#top-page {
     padding-top: 10vh;
   }
+
   .float-button a {
     display: none;
   }
+
   .text-title {
-    color: rgb(77, 77, 77);
+    color: rgb(77 77 77);
   }
+
   section#top-page {
     background-image: url("../../public/images/test.jpg");
     background-size: cover;
     background-position: center center;
   }
+
   section#services {
     height: auto;
   }
+
   section#vision {
     height: auto;
-    h1{
+
+    h1 {
       height: 20vh;
     }
   }
@@ -115,7 +141,8 @@ section#commit {
   section#about {
     height: auto;
   }
-  section#commit{
+
+  section#commit {
     height: auto;
   }
 }
