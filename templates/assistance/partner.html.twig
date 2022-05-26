@@ -10,11 +10,12 @@
             {% embed "components/molecules/section.html.twig" %}
                 {% block content %}
                     {% for country in countries %}
-                        {% include "components/atoms/btnOutlineShare.html.twig" with {
+                        {% embed "components/atoms/btnOutlineShare.html.twig" with {
                             content: country.name | country_name,
                             id: "hospital"
                         } %}
-                            {% for partner in partners %}
+                            {% block content %}
+                                {% for partner in partners %}
                                     {% include "components/molecules/hospitalDescription.html.twig" with {
                                         title: partner.name,
                                         subTitle: partner.activity,
@@ -22,9 +23,10 @@
                                         phoneNumber: partner.phoneNumber,
                                         email: partner.email
                                     } %}
+                                {% endfor %}
+                            {% endblock %}
 
-                            {% endfor %}
-
+                        {% endembed %}
                     {% endfor %}
                 {% endblock %}
             {% endembed %}
