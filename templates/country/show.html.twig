@@ -30,20 +30,18 @@
                 } %}
 
                 {% endfor %}
+                {% for partner in partners %}
+                    {% include "components/molecules/hospitalDescription.html.twig" with {
+                    title: partner.name,
+                    subTitle: partner.activity,
+                    description: partner.description,
+                    phoneNumber: partner.phoneNumber,
+                    email: partner.email,
+                } %}
 
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                 content : "Annuaire spécialistes locaux",
                 id: "partner"
-                } %}
-                {% for partner in partners %}
-                    {% include "components/molecules/partnerDescription.html.twig" with {
-                    name: partner.name,
-                    activity: partner.activity,
-                    type: partner.type,
-                    description: partner.description,
-                    phoneNumber: partner.phoneNumber,
-                    email: partner.email,
-                    contact: partner.contact,
                 } %}
 
                 {% endfor %}

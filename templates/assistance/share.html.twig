@@ -30,16 +30,16 @@
             </select>
             {# dropdown menu #}
             {#   <div class="btn-group"> <button id="js-list" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                    {% trans %}Veuillez selectionner un pays{% endtrans %}
-                                                                </button>
-                                                                <ul class="dropdown-menu">
-                                                                    {% for country in countries %}
-                                                                        <li value={{country.code}}>
-                                                                            {{country.name | country_name}}
-                                                                        </li>
-                                                                    {% endfor %}
-                                                                </ul>
-                                                            </div> #}
+                                                                                {% trans %}Veuillez selectionner un pays{% endtrans %}
+                                                                            </button>
+                                                                            <ul class="dropdown-menu">
+                                                                                {% for country in countries %}
+                                                                                    <li value={{country.code}}>
+                                                                                        {{country.name | country_name}}
+                                                                                    </li>
+                                                                                {% endfor %}
+                                                                            </ul>
+                                                                        </div> #}
 
         </section>
         {# Connection #}
@@ -60,15 +60,15 @@
                     path: "app_assistance_hospital"
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
+                    content : "Annuaire associations",
+                    path: 'app_assistance_partner'
+
+                } %}
+                {% include "components/atoms/btnOutlineShare.html.twig" with {
                     content : "Commerces dédiés"
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                     content : "Annuaire spécialistes locaux"
-                } %}
-                {% include "components/atoms/btnOutlineShare.html.twig" with {
-                    content : "Annuaire associations",
-                    path: 'app_assistance_partner'
-
                 } %}
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                     content : "Offres de services dédiés"

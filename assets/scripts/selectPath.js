@@ -4,6 +4,7 @@ const country = document.querySelector("#js-list");
 if (country) {
   country.addEventListener("change", function () {
     if (this.value != 0) {
+      console.log('yo');
       window.location.pathname = "/country/" + this.value;
     }
   });
