@@ -6,10 +6,12 @@ import "./scripts/selectPath";
 
 import $ from "jquery";
 
-$(document).ready(function () {
+$(function () {
   $(".hospital").on("click", function (e) { 
     e.preventDefault();
-    $(this).toggleClass("bg-secondary text-light");
-    $(".showDescription").toggleClass("d-none");
+    $(this).next().slideToggle();
   });
+
+  $(".showDescription").slideUp(0);
+
 });

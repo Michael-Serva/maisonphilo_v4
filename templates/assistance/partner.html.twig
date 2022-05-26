@@ -16,12 +16,14 @@
                         } %}
                             {% block content %}
                                 {% for partner in partners %}
-                                    {% include "components/molecules/hospitalDescription.html.twig" with {
-                                        title: partner.name,
-                                        subTitle: partner.activity,
+                                    {% include "components/molecules/partnerDescription.html.twig" with {
+                                        name: partner.name,
+                                        activity: partner.activity,
+                                        type: partner.type,
                                         description: partner.description,
                                         phoneNumber: partner.phoneNumber,
-                                        email: partner.email
+                                        email: partner.email,
+                                        contact: partner.contact
                                     } %}
                                 {% endfor %}
                             {% endblock %}

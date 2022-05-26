@@ -14,8 +14,9 @@
                             content: country.name | country_name,
                             id: "hospital"
                         } %}
+                        <div class="showDescription">
                             {% for partner in hospitals %}
-                                    {% include "components/molecules/hospitalDescription.html.twig" with {
+                                {% include "components/molecules/hospitalDescription.html.twig" with {
                                         title: partner.name,
                                         subTitle: partner.subtitle,
                                         description: partner.content,
@@ -24,8 +25,11 @@
                                     } %}
 
                             {% endfor %}
+                        </div>
+
 
                     {% endfor %}
+
                 {% endblock %}
             {% endembed %}
         {% endblock %}
