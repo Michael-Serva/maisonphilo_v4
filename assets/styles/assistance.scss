@@ -34,7 +34,7 @@ section#country {
   background-image: url("../../public/images/country.jpg");
   background-position: center center;
   background-size: cover;
-  height: 13vh;
+  padding: 4em 0;
 }
 
 li::marker {
@@ -54,10 +54,6 @@ li::marker {
   /* section country */
   .hide {
     display: block;
-  }
-
-  section#country {
-    height: 25vh;
   }
 
   /*
