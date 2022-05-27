@@ -16,8 +16,7 @@
             <h1 class="display-1 text-success-800 d-block text-center mt-5 fw-bold">Informations par thématique</h1>
             <div class="text-center d-flex flex-column align-items-center">
                 {% embed "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Hôpitaux & Centres médicaux",
-                id: "hospital"
+                content : "Hôpitaux & Centres médicaux"
                 } %}
                     {% block content %}
                         {% for hospital in hospitals %}
@@ -35,8 +34,7 @@
                 {% endembed %}
 
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
-                content : "Annuaire spécialistes locaux",
-                id: "hospital"
+                content : "Annuaire spécialistes locaux"
                 } %}
                 {% for partner in partners %}
                     {% include "components/molecules/hospitalDescription.html.twig" with {
