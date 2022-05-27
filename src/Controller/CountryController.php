@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CountryController extends AbstractController
 {
     /**
-     * @Route("/index/{code}", name="app_country_index", methods={"POST"}, requirements={"id":"\d+"})
+     * @Route("/{code}", name="app_country_index", methods={"POST"}, requirements={"id":"\d+"})
      */
     public function index(
         Country $country,
