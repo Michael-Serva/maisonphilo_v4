@@ -59,20 +59,19 @@ class Partner
      */
     private $email;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Country::class, inversedBy="partners")
-     */
-    private $country;
+ 
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isValid;
 
-    public function __construct()
-    {
-        $this->country = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="partners")
+     */
+    private $country;
+
+
 
     public function getId(): ?int
     {
@@ -175,29 +174,7 @@ class Partner
         return $this;
     }
 
-    /**
-     * @return Collection<int, Country>
-     */
-    public function getCountry(): Collection
-    {
-        return $this->country;
-    }
 
-    public function addCountry(Country $country): self
-    {
-        if (!$this->country->contains($country)) {
-            $this->country[] = $country;
-        }
-
-        return $this;
-    }
-
-    public function removeCountry(Country $country): self
-    {
-        $this->country->removeElement($country);
-
-        return $this;
-    }
 
     public function getIsValid(): ?bool
     {
@@ -207,6 +184,18 @@ class Partner
     public function setIsValid(?bool $isValid): self
     {
         $this->isValid = $isValid;
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?Country $country): self
+    {
+        $this->country = $country;
 
         return $this;
     }

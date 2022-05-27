@@ -51,7 +51,6 @@ class HospitalRepository extends ServiceEntityRepository
             ->andWhere('c.isValid = :val', 'c.country =:country')
             ->setParameter('val', '1')
             ->setParameter('country', $country)
-            ->orderBy('c.id', 'ASC')
             ->getQuery()
             ->getResult();
     }

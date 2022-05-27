@@ -19,28 +19,44 @@
         <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly mt-5">
             <h1 class="display-1 text-light  d-block text-center fw-bold">Informations par pays</h1>
             {# select country #}
-            <select id="js-list" class="form-select-lg mb-3 col-5 fs-1" aria-label="Default select example">
+           {#  <select id="js-list" class="form-select-lg mb-3 col-5 fs-1" aria-label="Default select example">
                 <label for="">Veuillez sélectionner un pays</label>
                 <option selected value="0">Veuillez sélectionner un pays</option>
                 {% for country in countries %}
-                    <option value={{country.code}}>
-                        {{country.name | country_name}}
-                    </option>
+                    <div class="js-country">
+                        <option value={{country.code}}>
+                            {{country.name | country_name}}
+                        </option>
+                    </div>
                 {% endfor %}
-            </select>
-            {# dropdown menu #}
-            {#   <div class="btn-group"> <button id="js-list" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                                {% trans %}Veuillez selectionner un pays{% endtrans %}
-                                                                            </button>
-                                                                            <ul class="dropdown-menu">
-                                                                                {% for country in countries %}
-                                                                                    <li value={{country.code}}>
-                                                                                        {{country.name | country_name}}
-                                                                                    </li>
-                                                                                {% endfor %}
-                                                                            </ul>
-                                                                        </div> #}
+            </select> #}
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Veuillez sélectionner un pays <i class="fa-solid fa-sort-down"></i></button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Veuillez sélectionner un pays</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         {% for country in countries %}
+                    <div class="js-country row justify-content-center">
+                    <a href= {{ path('app_country_show', {code: country.code}) }} class="btn btn-light col-lg-7 gy-2">{{country.name | country_name}}</a>
+                            
+                    </div>
+                {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
         </section>
         {# Connection #}
         <section id="connection" class=" my-5 container-fluid d-none">

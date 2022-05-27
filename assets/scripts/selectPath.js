@@ -1,15 +1,32 @@
 import $ from "jquery";
-const country = document.querySelector("#js-list");
+$(document).ready(function () {
+  const country = document.querySelector("#js-list");
 
-if (country) {
+
+
+  /* reintialisation de la valeur de l input select */
+  $("select").click(function () {
+    console.log("test");
+    $("select").prop("selectedIndex", 0);
+  });
+  $("js-country").click(function (e) { 
+    e.preventDefault();
+    if (this.value != 0) {
+      console.log('yo');
+      window.location.pathname = "/country/" + this.value;
+    }
+  });
+
+});
+
+/* if (country) {
   country.addEventListener("change", function () {
     if (this.value != 0) {
       console.log('yo');
       window.location.pathname = "/country/" + this.value;
     }
   });
-}
-
+} */
 
 /* if (country) {
   country.click(function (e) {
@@ -26,8 +43,3 @@ if (country) {
   });
 }
  */
-/* reintialisation de la valeur de l input select */
-$("select").click(function () {
-  console.log("test");
-  $("select").prop("selectedIndex", 0);
-});

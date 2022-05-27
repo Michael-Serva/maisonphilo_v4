@@ -9,13 +9,15 @@
         {% block content %}
             {% embed "components/molecules/section.html.twig" %}
                 {% block content %}
+
                     {% for country in countries %}
-                        {% embed "components/atoms/btnOutlineShare.html.twig" with {
-                            content: country.name | country_name,
-                            id: "hospital"
+                        {% include "components/atoms/btnOutlineShare.html.twig" with {
+                            content: country.name | country_name
                         } %}
-                            {% block content %}
-                                {% for partner in partners %}
+                        <div class="showDescription">
+                            {% for partner in partners %}
+                                {% if partner.country == country %}
+                                
                                     {% include "components/molecules/partnerDescription.html.twig" with {
                                         name: partner.name,
                                         activity: partner.activity,
@@ -25,10 +27,9 @@
                                         email: partner.email,
                                         contact: partner.contact
                                     } %}
-                                {% endfor %}
-                            {% endblock %}
-
-                        {% endembed %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     {% endfor %}
                 {% endblock %}
             {% endembed %}

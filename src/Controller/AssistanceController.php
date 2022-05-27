@@ -49,7 +49,7 @@ class AssistanceController extends AbstractController
     {
         return [
             'countries' => $this->country,
-            'hospitals' => $hospitalRepository->findAll()
+            'hospitals' => $hospitalRepository->findBy(['country' => $this->country])
         ];
     }
 

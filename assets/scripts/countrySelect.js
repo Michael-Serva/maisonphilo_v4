@@ -1,10 +1,6 @@
-document
-  .querySelector("#floatingSelect")
-  .addEventListener("change", function () {
-    if (this.value === 1) {
-      console.log("Yes selected");
-      window.location.pathname = "/country";
-    } else {
-      console.log("No selected");
-    }
+$(function () {
+  $("btn-light").on("mouseover",function () { 
+    $(this).toggleClass("bg-success");
+    alert('ok')
   });
+});

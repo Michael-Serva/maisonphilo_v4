@@ -7,7 +7,7 @@ import "./scripts/selectPath";
 import $ from "jquery";
 
 $(function () {
-  $(".hospital").on("click", function (e) { 
+  $(".js-assistance").on("click", function (e) { 
     e.preventDefault();
     $(this).next().slideToggle("slow");
   });

@@ -29,15 +29,17 @@ class Country
      */
     private $hospitals;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Partner::class, mappedBy="country")
-     */
-    private $partners;
+
 
     /**
      * @ORM\Column(type="string", length=3, nullable=true)
      */
     private $code;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Partner::class, mappedBy="country")
+     */
+    private $partners;
 
     public function __construct()
     {
@@ -100,6 +102,20 @@ class Country
         return $this->getName();
     }
 
+
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(?string $code): self
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Partner>
      */
@@ -112,7 +128,7 @@ class Country
     {
         if (!$this->partners->contains($partner)) {
             $this->partners[] = $partner;
-            $partner->addCountry($this);
+            $partner->setCountry($this);
         }
 
         return $this;
@@ -121,20 +137,11 @@ class Country
     public function removePartner(Partner $partner): self
     {
         if ($this->partners->removeElement($partner)) {
-            $partner->removeCountry($this);
+            // set the owning side to null (unless already changed)
+            if ($partner->getCountry() === $this) {
+                $partner->setCountry(null);
+            }
         }
-
-        return $this;
-    }
-
-    public function getCode(): ?string
-    {
-        return $this->code;
-    }
-
-    public function setCode(?string $code): self
-    {
-        $this->code = $code;
 
         return $this;
     }
