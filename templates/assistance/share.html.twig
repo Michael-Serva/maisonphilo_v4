@@ -46,8 +46,7 @@ Veuillez sélectionner un pays <i class="fa-solid fa-sort-down"></i></button>
       <div class="modal-body">
          {% for country in countries %}
                     <div class="js-country row justify-content-center">
-                    <a href= {{ path('app_country_index', {"code": country.code }) }} class="btn btn-light col-lg-7 gy-2">{{country.name | country_name}}</a>
-                            
+                    <a href= {{ path('app_country_index', {"code": country.id }) }} class="btn btn-light col-lg-7 gy-2">{{country.name | country_name}}</a>         
                     </div>
                 {% endfor %}
       </div>
