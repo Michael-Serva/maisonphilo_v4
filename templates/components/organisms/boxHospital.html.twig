@@ -1,0 +1,16 @@
+{% include "components/atoms/btnOutlineShare.html.twig" with {
+    content : "Hôpitaux & Centres médicaux"
+} %}
+<div class="showDescription">
+    {% for hospital in hospitals %}
+        {% if hospital.country == country %}
+            {% include "components/molecules/hospitalDescription.html.twig" with {
+                title: hospital.name,
+                subTitle: hospital.subtitle,
+                description: hospital.content,
+                phoneNumber: hospital.phoneNumber,
+                email: hospital.email
+        }    %}
+        {% endif %}
+    {% endfor %}
+</div>

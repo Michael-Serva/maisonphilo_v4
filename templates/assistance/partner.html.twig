@@ -14,22 +14,7 @@
                         {% include "components/atoms/btnOutlineShare.html.twig" with {
                             content: country.name | country_name
                         } %}
-                        <div class="showDescription">
-                            {% for partner in partners %}
-                                {% if partner.country == country %}
-                                
-                                    {% include "components/molecules/partnerDescription.html.twig" with {
-                                        name: partner.name,
-                                        activity: partner.activity,
-                                        type: partner.type,
-                                        description: partner.description,
-                                        phoneNumber: partner.phoneNumber,
-                                        email: partner.email,
-                                        contact: partner.contact
-                                    } %}
-                                {% endif %}
-                            {% endfor %}
-                        </div>
+                       {% include "components/organisms/bosPartner.thml.twig" %}
                     {% endfor %}
                 {% endblock %}
             {% endembed %}

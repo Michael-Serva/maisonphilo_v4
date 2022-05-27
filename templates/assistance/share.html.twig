@@ -20,16 +20,16 @@
             <h1 class="display-1 text-light  d-block text-center fw-bold">Informations par pays</h1>
             {# select country #}
             {#  <select id="js-list" class="form-select-lg mb-3 col-5 fs-1" aria-label="Default select example">
-                                        <label for="">Veuillez sélectionner un pays</label>
-                                        <option selected value="0">Veuillez sélectionner un pays</option>
-                                        {% for country in countries %}
-                                            <div class="js-country">
-                                                <option value={{country.code}}>
-                                                    {{country.name | country_name}}
-                                                </option>
-                                            </div>
-                                        {% endfor %}
-                                    </select> #}
+                                                    <label for="">Veuillez sélectionner un pays</label>
+                                                    <option selected value="0">Veuillez sélectionner un pays</option>
+                                                    {% for country in countries %}
+                                                        <div class="js-country">
+                                                            <option value={{country.code}}>
+                                                                {{country.name | country_name}}
+                                                            </option>
+                                                        </div>
+                                                    {% endfor %}
+                                                </select> #}
 
             <!-- Button trigger modal -->
                 <button type="button" class="btn btn-light display-5" data-bs-toggle="modal" data-bs-target="#exampleModal"> <h1>Veuillez sélectionner un pays
@@ -42,9 +42,9 @@
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title mx-auto text-success-800" id="exampleModalLabel">Veuillez sélectionner un pays</h1>
+
+                            <button type="button" class="ms-auto me-2 mt-2 btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                                                    <button type="button" class="ms-auto me-2 mt-2 btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                         <div class="modal-body">
                             {% for country in countries %}
