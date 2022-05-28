@@ -17,10 +17,24 @@
         {% endblock %}
     </head>
     <body class="d-flex flex-column justify-content-between align-content-center" style="min-height:100vh">
-        {% block header %}{% endblock %}
-        {% block body %}{% endblock %}
-        {% block footer %}{% include "components/organisms/footer.html.twig" %}{% endblock %}
-    </body>
-</html>
+
+        {% block share %}
+            <div  class="border border-warning js-share position-fixed rounded top-50 end-0 me-5 fs-1 text-center bg-secondary text-light p-2 shadow d-none d-lg-block">
+                <span class="d-block">{% trans %}Cliquez sur l'icône pour
+                    <br>
+                    partager vos
+                    <br>
+                    informations{% endtrans %}</span>
+                <a href={{ path('app_contact_index') }} class="btn btn-success shadow">
+                    <i class="fa-brands fa-slideshare shadow"></i>
+                </a>
+            </div>
 
 
+            <a href={{ path('app_contact_index') }} class="position-fixed top-50 end-0 me-5 fs-1 btn btn-success rounded rounded-circle d-lg-none d-md-block">
+                <i class="fa-brands fa-slideshare"></i>
+            </a>
+        </body>
+    </html>
+</div>{% endblock %}{% block header %}{% endblock %}{% block body %}{% endblock %}{% block footer %}
+{% include "components/organisms/footer.html.twig" %}{% endblock %}</body></html>

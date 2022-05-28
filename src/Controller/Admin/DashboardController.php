@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contact;
 use App\Entity\Country;
 use App\Entity\Hospital;
 use App\Entity\Partner;
@@ -36,5 +37,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Country', 'fa fa-globe', Country::class);
         yield MenuItem::linkToCrud('Hospital', 'fa fa-hospital', Hospital::class);
         yield MenuItem::linkToCrud('Partner', 'fa fa-globe', Partner::class);
+        yield MenuItem::linkToCrud('Contact', 'fa fa-globe', Contact::class);
+
     }
 }

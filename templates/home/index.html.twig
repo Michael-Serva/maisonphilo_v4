@@ -1,6 +1,6 @@
 {% extends 'home/layout.html.twig' %}
 {% set pageName = "Page d'accueil" %}
-
+{% block share %}{% endblock %}
 {% block body %}
 
 {% include "components/organisms/homeNavbar.html.twig" %}
@@ -133,27 +133,18 @@
 
         {% endembed %}
 
-        <div class="mt-5"></div>
+        <div id="contact" class="mt-5"></div>
         {% embed "components/molecules/aboutDescription.html.twig" with {
-            title : "Téléchargez notre E-Book",
+            title : "Contactez-nous",
             content : "",
+            href : "app_contact_index",
         } %}
             {% block content %}
                 {% embed "components/atoms/fontCircle.html.twig" with {
                     img : "logo_maison_philo2.png",
                 } %}
                     {% block title %}{% endblock %}
-                    {% block src %}
-                        {{asset('doc/aging.pdf')}}
-                    {% endblock %}
-                    {% block target %}target="_blank"
-                    {% endblock %}
                 {% endembed %}
-            {% endblock %}
-            {% block src %}
-                {{asset('doc/aging.pdf')}}
-            {% endblock %}
-            {% block target %}target="_blank"
             {% endblock %}
         {% endembed %}
 

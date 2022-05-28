@@ -2,6 +2,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables";
 
+li::marker {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+  content: "\f4be";
+  color: $success-800;
+}
 section#top {
   background-color: $success-800;
   min-height: 10vh;
@@ -70,11 +76,11 @@ li {
   }
 }
 
-figure.hover10 img {
+.hover10 img {
   opacity: 1;
   transition: 0.3s ease-in-out;
 }
 
-figure.hover10:hover img {
+.hover10:hover img {
   opacity: 0.5;
 }

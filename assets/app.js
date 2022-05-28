@@ -21,12 +21,17 @@ import "./styles/app.scss";
 import $ from "jquery"; // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
 
-for (let i = 1; i <= 3; i++) {
-  $(document).ready(function () {
+$(function () {
+  for (let i = 1; i <= 3; i++) {
     $(`.show${i}`).click(function (e) {
       e.preventDefault();
       $(`#show${i}`).toggleClass("d-none");
       $(`.hide${i}`).toggleClass("d-none");
     });
+  }
+  $(".js-share").on("mouseenter", function () {
+    $(".js-share").toggleClass("bg-secondary", "bg-light");
+    $(".js-share").toggleClass("text-light", "text-success");
+
   });
-}
+});

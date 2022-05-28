@@ -1,0 +1,54 @@
+{% extends 'contact/layout.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block share %}{% endblock %}
+{% block body %}
+{% embed "components/organisms/fullPage.html.twig" with {
+    pageName: "Nous Contacter"
+} %}
+    {% block content %}
+
+        {% embed "components/molecules/section.html.twig" %}
+            {% block content %}
+
+                <div class="w-75 fs-1">
+                    <div>
+                        <div class="row justify-content-center">
+                            <span class="fs-1 col-lg-7 text-justify p-2">
+                                <div class="mb-3 fw-bold text-success-800">Ensemble nous sommes plus forts !</div>
+                                Nous avons besoin de vous pour enrichir ce site d’informations utiles. Aussi, n’hésitez pas à partager les informations à votre connaissance qui ne serait pas encore présentées sur ce site en remplissant soit le questionnaire ou le champ libre ci-dessous.
+                                <div class="mt-3">Pour nous contacter, vous pouvez renseigner votre requête dans le champ libre (option 2); Merci par avance.</div>
+                                <span class="d-block my-5"></span>
+                            </span>
+                            <div class="col-lg-5 d-flex align-items-start">
+                                <img src={{asset('images/partage.jpg')}} alt="" class="shadow img-fluid">
+                            </div>
+
+
+                        </div>
+                        <div class="row justify-content-center">
+                            <ul class="col-lg-10 fs-1">
+                                <li>Option 1: Remplissez notre questionnaire
+                                    <a href="">Cliquez ici</a>
+                                </li>
+                                <li class="mt-3 mb-5">Option 2: Champ libre</li>
+                            </ul>
+
+                            <div class="border p-5 rounded shadow m-2 col-lg-10 bg-light" data-aos="zoom-in" data-aos-duration="3000">
+                                <h1>Partagez vos informations</h1>
+                                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                                {{ form_widget(form) }}
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                {% endblock %}
+            {% endembed  %}
+
+        {% endblock %}
+
+    {% endembed  %}
+{% endblock %}
