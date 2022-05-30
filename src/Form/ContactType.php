@@ -9,13 +9,37 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('email', EmailType::class, [
+                'required' => false,
+                'label' => 'Votre adresse mail',
+                'row_attr' => [
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre adresse mail'
+                ],
+                'constraints' => [
+                    new Email([
+                        "message" => "'{{ value }}' n'est pas une adresse mail valide."
+                    ]),
+                    new NotBlank([
+                        "message" => "Ce champ ne peut être vide"
+                    ])
+                ]
+            ])
             ->add('lastName', TextType::class, [
                 'required' => false,
                 'label' => 'Votre nom de famille',
@@ -26,7 +50,18 @@ class ContactType extends AbstractType
                     'class' => 'form-control',
                     'placeholder' => 'Votre nom de famille'
                 ],
-                'constraints' => []
+                'constraints' => [
+                    new Regex([
+                        'pattern' => "/^[A-Z][-'a-zA-Z]+$/i",
+                        "message" => "{{ value }} ne semble pas être un nom de famille"
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'max' => 50,
+                        'minMessage' => 'Votre nom de famille doit comporter au moins {{ limit }} caractères',
+                        'maxMessage' => 'Votre nom de famille doit comporter au maximum {{ limit }} caractères',
+                    ]),
+                ]
             ])
             ->add('firstName', TextType::class, [
                 'required' => false,
@@ -38,7 +73,18 @@ class ContactType extends AbstractType
                     'class' => 'form-control',
                     'placeholder' => 'Votre prénom'
                 ],
-                'constraints' => []
+                'constraints' => [
+                    new Regex([
+                        'pattern' => "/^[A-Z][-'a-zA-Z]+$/i",
+                        "message" => "{{ value }} ne semble pas être un prénom"
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'max' => 50,
+                        'minMessage' => 'Votre prénom doit comporter au moins {{ limit }} caractères',
+                        'maxMessage' => 'Votre prénom doit comporter au maximum {{ limit }} caractères',
+                    ]),
+                ]
             ])
             ->add('country', CountryType::class, [
                 'required' => false,
@@ -63,15 +109,20 @@ class ContactType extends AbstractType
                     'class' => 'form-control',
                     'placeholder' => 'Vos informations ou votre demande',
                 ],
-                'constraints' => []
+                'constraints' => [
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Votre texte doit comporter au moins {{ limit }} caractères'
+                    ]),
+                    new NotBlank([
+                        "message" => "Ce champ ne peut être vide"
+                    ])
+                ]
             ])
             ->add('save', SubmitType::class, [
                 'label' => "envoyer",
-                'row_attr' => [
-                    'd-flex justify-content-end'
-                ],
                 'attr' => [
-                    "class" => "btn-success btn mt-3 ms-auto"
+                    "class" => "btn-success btn btn-lg mt-3 ms-auto d-block"
                 ]
             ]);
     }

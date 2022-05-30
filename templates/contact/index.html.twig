@@ -11,7 +11,7 @@
         {% embed "components/molecules/section.html.twig" %}
             {% block content %}
 
-                <div class="w-75">
+                <div class="w-75" data-aos="fade-up" data-aos-duration="3000">
                     <div>
                         <div class="row justify-content-center">
                             <span class="fs-1 col-lg-7 text-justify p-2">
@@ -34,8 +34,17 @@
                                 <li class="mt-3 mb-5">Option 2: Champ libre</li>
                             </ul>
 
-                            <div class="border p-5 rounded shadow m-2 col-lg bg-light" data-aos="zoom-in" data-aos-duration="3000">
-                                <h1>Partagez vos informations</h1>
+                            <div id="contact" class="border p-5 rounded shadow m-2 col-lg bg-light" data-aos="zoom-in" data-aos-duration="3000">
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Félicitations!</strong>
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+                                <h1>
+                                    <i class="fa-brands fa-slideshare"></i>
+                                    Partagez vos informations</h1>
                                 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                                 {{ form_widget(form) }}
                                 {{ form_end(form) }}

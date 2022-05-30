@@ -36,8 +36,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('User', 'fa fa-user', User::class);
         yield MenuItem::linkToCrud('Country', 'fa fa-globe', Country::class);
         yield MenuItem::linkToCrud('Hospital', 'fa fa-hospital', Hospital::class);
-        yield MenuItem::linkToCrud('Partner', 'fa fa-globe', Partner::class);
-        yield MenuItem::linkToCrud('Contact', 'fa fa-globe', Contact::class);
-
+        yield MenuItem::linkToCrud('Partner', 'fa fa-hand-holding-heart', Partner::class);
+        yield MenuItem::linkToCrud('Contact', 'fa fa-comment-dots', Contact::class);
     }
 }

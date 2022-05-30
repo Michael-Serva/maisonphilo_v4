@@ -18,18 +18,6 @@
         {# section country #}
         <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly mt-5">
             <h1 class="display-1 text-light  d-block text-center fw-bold">Informations par pays</h1>
-            {# select country #}
-            {#  <select id="js-list" class="form-select-lg mb-3 col-5 fs-1" aria-label="Default select example">
-                                                    <label for="">Veuillez sélectionner un pays</label>
-                                                    <option selected value="0">Veuillez sélectionner un pays</option>
-                                                    {% for country in countries %}
-                                                        <div class="js-country">
-                                                            <option value={{country.code}}>
-                                                                {{country.name | country_name}}
-                                                            </option>
-                                                        </div>
-                                                    {% endfor %}
-                                                </select> #}
 
             <!-- Button trigger modal -->
                 <button type="button" class="btn btn-light display-5" data-bs-toggle="modal" data-bs-target="#exampleModal"> <h1>Veuillez sélectionner un pays
