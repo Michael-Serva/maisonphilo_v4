@@ -30,9 +30,8 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
         $products = $productRepository->findSearch($data);
         dump($products);
-        
-        if ($form->isSubmitted() && $form->isValid()) { 
-            
+
+        if ($form->isSubmitted() && $form->isValid()) {
         }
         return $this->render('product/index.html.twig', [
             'products' => $products,
