@@ -10,6 +10,13 @@ use App\Entity\Category;
 class SearchData
 {
     /**
+     * Numéro de la page
+     *
+     * @var integer
+     */
+    public $page = 1;
+
+    /**
      * Undocumented variable
      *
      * @var string

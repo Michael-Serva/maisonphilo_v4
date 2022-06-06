@@ -29,6 +29,7 @@ class ProductController extends AbstractController
     ): Response {
 
         $data = new SearchData();
+        $data->page = $request->get('page', 1);
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $products = $productRepository->findSearch($data);

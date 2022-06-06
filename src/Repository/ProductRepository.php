@@ -48,11 +48,9 @@ class ProductRepository extends ServiceEntityRepository
     /**
      * Récuperation de produits en lien avec une recherche
      *
-     * @return Product[]
+     * @return PaginationInterface
      */
-    public function findSearch(
-        SearchData $search
-    ): PaginationInterface {
+    public function findSearch(SearchData $search): PaginationInterface {
         $query =  $this
             ->createQueryBuilder('p')
             ->select('c', 'p')
@@ -80,11 +78,11 @@ class ProductRepository extends ServiceEntityRepository
                 ->setParameter('max', $search->max);
         }
 
-        $query = $query->getQuery()->getResult();
+        $query = $query->getQuery();
 
         return $this->paginator->paginate(
             $query,
-            1,
+            $search->page,
             2
         );
     }

@@ -12,10 +12,13 @@
                 {% block content %}
 
                     <div class="row">
-                        <div class="col-md-3">{% include "components/atoms/productFilter.html.twig" with {
-                            form: form
-                        } only %}</div>
+                        <div class="col-md-3">
+                            {% include "components/atoms/productFilter.html.twig" with {
+                                form: form
+                            } only %}
+                        </div>
                         <div class="col-md-9">
+                        {{knp_pagination_render(products)}}
                             <div class="row g-1 justify-content-evenly">
                                 {% for product in products %}
                                     <div class="col d-flex justify-content-center">
