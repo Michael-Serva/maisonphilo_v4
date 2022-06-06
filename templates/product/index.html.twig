@@ -1,0 +1,34 @@
+{% extends 'product/layout.html.twig' %}
+
+{% block title %}Product index
+{% endblock %}
+
+{% block body %}
+    {% embed "components/organisms/fullPage.html.twig" with {
+        pageName: "Petites annonces"
+    } %}
+        {% block content %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+
+                    <div class="row">
+                        <div class="col-md-3">{% include "components/atoms/productFilter.html.twig" with {
+                            form: form
+                        } only %}</div>
+                        <div class="col-md-9">
+                            <div class="row g-1 justify-content-evenly">
+                                {% for product in products %}
+                                    <div class="col d-flex justify-content-center">
+                                        {% include "components/atoms/productCard.html.twig" %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

@@ -41,7 +41,7 @@ class ContactController extends AbstractController
             $entityManager->flush();
             $this->addFlash(
                 'success',
-                $contact->getEmail().'Votre message a bien été envoyé!'
+                $contact->getEmail() . 'Votre message a bien été envoyé!'
             );
             return $this->redirectToRoute('app_contact_index', ['_fragment' => 'contact']);
         }

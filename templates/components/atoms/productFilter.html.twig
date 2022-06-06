@@ -1,0 +1,11 @@
+{{ form_start(form, {attr: {class: 'sticky-md-top'}}) }}
+{{ form_row(form.q) }}
+<h2 class="fs-3">
+    {% trans %}Catégorie{% endtrans %}
+</h2>
+{{ form_row(form.categories) }}
+<h2 class="fs-3">
+    {% trans %}Prix{% endtrans %}
+</h2>
+<div class="row gx-2 my-2">{{ form_row(form.min, {row_attr: {class:"col-md-6"}}) }}{{ form_row(form.max, {row_attr: {class:"col-md-6"}}) }}</div>
+{{ form_end(form) }}

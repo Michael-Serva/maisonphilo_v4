@@ -41,10 +41,16 @@ class Country
      */
     private $partners;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="country")
+     */
+    private $products;
+
     public function __construct()
     {
         $this->hospitals = new ArrayCollection();
         $this->partners = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -99,7 +105,7 @@ class Country
      */
     public function __toString()
     {
-        return $this->getName();
+        return $this->getCode();
     }
 
 
@@ -140,6 +146,36 @@ class Country
             // set the owning side to null (unless already changed)
             if ($partner->getCountry() === $this) {
                 $partner->setCountry(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->setCountry($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->products->removeElement($product)) {
+            // set the owning side to null (unless already changed)
+            if ($product->getCountry() === $this) {
+                $product->setCountry(null);
             }
         }
 

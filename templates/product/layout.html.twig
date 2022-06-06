@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block share %}{% endblock %}
+
+{% block header %}
+    {% include "components/atoms/floatButton.html.twig" %}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{encore_entry_link_tags('product')}}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product') }}
+{% endblock %}

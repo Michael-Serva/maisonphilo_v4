@@ -26,6 +26,7 @@ Encore
     .addEntry('security', './assets/security.js')
     .addEntry('about', './assets/about.js')
     .addEntry('contact', './assets/contact.js')
+    .addEntry('product', './assets/product.js')
 
 
 
