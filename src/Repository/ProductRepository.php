@@ -51,7 +51,7 @@ class ProductRepository extends ServiceEntityRepository
      * @return Product[]
      */
     public function findSearch(
-        SearchData $search,
+        SearchData $search
     ): PaginationInterface {
         $query =  $this
             ->createQueryBuilder('p')
