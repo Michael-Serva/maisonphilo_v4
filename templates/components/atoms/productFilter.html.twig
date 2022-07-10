@@ -7,5 +7,6 @@
 <h2 class="fs-3">
     {% trans %}Prix{% endtrans %}
 </h2>
+<div id="slider" data-min={{min}} data-max={{max}}></div>
 <div class="row gx-2 my-2">{{ form_row(form.min, {row_attr: {class:"col-md-6"}}) }}{{ form_row(form.max, {row_attr: {class:"col-md-6"}}) }}</div>
 {{ form_end(form) }}

@@ -50,7 +50,8 @@ class ProductRepository extends ServiceEntityRepository
      *
      * @return PaginationInterface
      */
-    public function findSearch(SearchData $search): PaginationInterface {
+    public function findSearch(SearchData $search): PaginationInterface
+    {
         $query =  $this
             ->createQueryBuilder('p')
             ->select('c', 'p')
@@ -85,6 +86,16 @@ class ProductRepository extends ServiceEntityRepository
             $search->page,
             2
         );
+    }
+    /**
+     * Calcul des prix min et max en fonction de la catégorie
+     *
+     * @param SearchData $search
+     * @return Integer[]
+     */
+    public function findMinMax(SearchData $search): array
+    {
+        return [0, 1000000];
     }
 
     //    /**

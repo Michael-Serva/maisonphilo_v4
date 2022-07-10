@@ -37,16 +37,13 @@ section#country {
   padding: 4em 0;
 }
 
-li::marker {
+.mark li::marker {
   font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   content: "\f4be";
   color: $success-800;
 }
 
-/* ul {
-  list-style-image: url("../../public/images/list.png");
-} */
 
 @media only screen and (min-width: 1000px) {
   /* country page */

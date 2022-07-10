@@ -2,12 +2,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables";
 
-li::marker {
-  font-family: "Font Awesome 5 Free", sans-serif;
-  font-weight: 900;
-  content: "\f4be";
-  color: $success-800;
-}
 
 section#top {
   background-color: $success-800;

@@ -27,7 +27,8 @@ class ContactController extends AbstractController
      */
     public function index(
         Request $request,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        MailerService $mailer
     ): Response {
         $contact = new Contact();
 
@@ -43,8 +44,12 @@ class ContactController extends AbstractController
                 'success',
                 $contact->getEmail() . 'Votre message a bien été envoyé!'
             );
+            $mailer->sendEmail();
+            
             return $this->redirectToRoute('app_contact_index', ['_fragment' => 'contact']);
         }
+
+
 
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView(),
