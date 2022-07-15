@@ -24,4 +24,5 @@ Symfony 5.4.7
 ### eslint scss
 
 `npx stylelint "assets/**/*.scss"`
-add --fix for fixes errors 
+
+add --fix for fixes errors

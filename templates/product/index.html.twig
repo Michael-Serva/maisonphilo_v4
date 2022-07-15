@@ -10,25 +10,23 @@
         {% block content %}
             {% embed "components/molecules/section.html.twig" %}
                 {% block content %}
-                    <div class="row container-fluid">
+                    <div class="row container-fluid js-filter">
                         <div class="col-md-3">
                             {% include "components/atoms/productFilter.html.twig" %}
                         </div>
                         <div
                             class="col-md-9">
                             {# {{knp_pagination_render(products)}} #}
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center js-filterfpagination">
                                 {{ knp_pagination_render(products, 'components/knp/knp_pagination.html.twig') }}
                             </div>
-                            <div class="d-flex justify-content-center">{{ knp_pagination_sortable(products, 'price', 'p.price') }}</div>
-                            
+                            {% include "product/_sorting.html.twig" %}
 
-                            <div class="row g-1 justify-content-evenly">
-                                {% for product in products %}
-                                    <div class="col d-flex justify-content-center">
-                                        {% include "components/atoms/productCard.html.twig" %}
-                                    </div>
-                                {% endfor %}
+                            <div class="row g-1 justify-content-evenly js-filter-content">
+                                {% include "product/_products.html.twig" %}
+                            </div>
+                            <div class="d-flex justify-content-center js-pagination">
+                                {{ knp_pagination_render(products, 'components/knp/knp_pagination.html.twig') }}
                             </div>
                         </div>
                     </div>

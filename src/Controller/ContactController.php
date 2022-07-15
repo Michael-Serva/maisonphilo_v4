@@ -45,7 +45,7 @@ class ContactController extends AbstractController
                 $contact->getEmail() . 'Votre message a bien été envoyé!'
             );
             $mailer->sendEmail();
-            
+
             return $this->redirectToRoute('app_contact_index', ['_fragment' => 'contact']);
         }
 

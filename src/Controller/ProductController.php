@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/product")
@@ -34,7 +35,15 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
         [$min, $max] = $productRepository->findMinMax($data);
         $products = $productRepository->findSearch($data);
-        dump($products);
+        /* dump($products); */
+        /* Si un requete httprequest est demandée */
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'content' => $this->renderView('product/_products.html.twig', ['products' => $products]),
+                'sorting' => $this->renderView('product/_sorting.html.twig', ['products' => $products])
+
+            ]);
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
         }
@@ -71,7 +80,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-   
+
     /**
      * Undocumented function
      *
@@ -115,5 +124,4 @@ class ProductController extends AbstractController
 
         return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
     }
-   
 }

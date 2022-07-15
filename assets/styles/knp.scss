@@ -7,7 +7,6 @@
   
     &:hover {
       z-index: 2;
-     
       background-color: #043106;
       border-color:#043106;
     }
@@ -18,18 +17,12 @@
 
     }
   }
+
   .page-item{
     &.active .page-link{
         background-color: #043106;
         border-color: lavender;
     }
   }
-
-  
-  
-  
-  //
-  // Sizing
-  //
 
   

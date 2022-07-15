@@ -12,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SearchType extends AbstractType
@@ -60,7 +61,8 @@ class SearchType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('Valider', SubmitType::class, [
+            ->add('Valider', ResetType::class, [
+                'label' => 'Réinitialisation',
                 'row_attr' => [
                     'class' => 'd-grid gap-2'
                 ],

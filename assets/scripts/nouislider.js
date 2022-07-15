@@ -26,6 +26,8 @@ if (slider) {
       max.value = Math.round(values[1]);
     }
   });
+  
+  //action suivant la fin du deplacement du curseur 
   range.on("end", function (values, handle) {
     if (handle === 0) {
       min.dispatchEvent(new Event("change"));
@@ -33,4 +35,5 @@ if (slider) {
       max.dispatchEvent(new Event("change"));
     }
   });
+
 }

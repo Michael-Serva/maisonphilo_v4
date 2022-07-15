@@ -1,4 +1,5 @@
 <?php
+
 // src/Controller/MailerController.php
 namespace App\Controller;
 
@@ -34,12 +35,11 @@ class MailerService extends AbstractController
             ->subject('Time for Symfony Mailer!')
             ->text('Sending emails is fun again!')
             ->html('<p>See Twig integration for better HTML integration!</p>');
-
         $this->mailer->send($email);
-        //dd($email);
+//dd($email);
 
-        return $this->render('home/index.html.twig',[
-            
+        return $this->render('home/index.html.twig', [
+
         ]);
     }
 }
