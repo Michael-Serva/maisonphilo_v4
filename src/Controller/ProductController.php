@@ -37,7 +37,7 @@ class ProductController extends AbstractController
         $products = $productRepository->findSearch($data);
         /* dump($products); */
         /* Si un requete httprequest est demandée */
-        if ($request->isXmlHttpRequest()) {
+        if ($request->get('ajax')) {
             return new JsonResponse([
                 'content' => $this->renderView('product/_products.html.twig', ['products' => $products]),
                 'sorting' => $this->renderView('product/_sorting.html.twig', ['products' => $products])

@@ -67,7 +67,7 @@ class SearchType extends AbstractType
                     'class' => 'd-grid gap-2'
                 ],
                 'attr' => [
-                    'class' => 'btn btn-success btn-lg'
+                    'class' => 'btn btn-success btn-lg js-filter-reset'
                 ]
             ])
             ;

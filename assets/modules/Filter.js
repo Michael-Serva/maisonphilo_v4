@@ -15,25 +15,38 @@ export default class Filter {
     this.content = element.querySelector(".js-filter-content");
     this.form = element.querySelector(".js-filter-form");
     this.sorting = element.querySelector(".js-filter-sorting");
+    this.reset = element.querySelector(".js-filter-reset");
 
     this.bindEvents();
 
     console.log("constructeur Filter");
   }
+
+  
   /**
    * Ajoute les comportements aux differents élements
    */
   bindEvents() {
-    this.sorting.addEventListener("click", (e) => {
+
+    const aClickListener = e=> {
       if (e.target.tagName === "A") {
         e.preventDefault();
         this.loadUrl(e.target.getAttribute("href"));
       }
-    });
+    }
 
+    this.sorting.addEventListener("click", aClickListener);
+    //this.pagination.addEventListener("click", aClickListener);
+    
     this.form.querySelectorAll("input").forEach((input) => {
       input.addEventListener("change", this.loadForm.bind(this));
     });
+
+    this.reset.addEventListener("click", (e)=> {
+      this.loadUrl(window.location.host + "/product");
+      this.loadForm();
+      //debugger
+    })
   }
 
   async loadForm() {
@@ -67,6 +80,8 @@ export default class Filter {
       //remplacement du contenu de la page
       this.content.innerHTML = data.content;
       this.sorting.innerHTML = data.sorting;
+      //this.pagination.innerHTML = data.content;
+      this.reset.innerHTML = this.form.reset();
       history.replaceState({}, "", url);
     } else {
       console.error(response);
