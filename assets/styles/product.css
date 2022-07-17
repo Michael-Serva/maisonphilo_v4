@@ -8,4 +8,21 @@
   opacity: 0.5;
   border: 0.3rem #043106;
 }
+
+.is-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: aliceblue;
+  opacity: 0.5;
+}
+
+.is-loading .spinner-border {
+  position: absolute;
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+}
 /*# sourceMappingURL=product.css.map */

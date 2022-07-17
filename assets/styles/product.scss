@@ -1,9 +1,26 @@
 .card {
   opacity: 0.1;
   transition: 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+    border: 0.3rem #043106;
+  }
 }
 
-.card:hover {
-  opacity: 0.5;
-  border: 0.3rem #043106;
+.is-loading {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: aliceblue;
+    opacity: 0.5;
+  }
+  .spinner-border {
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+  }
 }

@@ -61,7 +61,7 @@ class SearchType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('Valider', ResetType::class, [
+            /*      ->add('Valider', ResetType::class, [
                 'label' => 'Réinitialisation',
                 'row_attr' => [
                     'class' => 'd-grid gap-2'
@@ -69,8 +69,7 @@ class SearchType extends AbstractType
                 'attr' => [
                     'class' => 'btn btn-success btn-lg js-filter-reset'
                 ]
-            ])
-            ;
+            ]) */;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

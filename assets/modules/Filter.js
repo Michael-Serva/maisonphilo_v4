@@ -2,7 +2,6 @@ export default class Filter {
   /**
    *
    * @param {HTMLElement | null} element
-   * @property {HTMLElement} pagination
    * @property {HTMLElement} sorting
    * @property {HTMLElement} content
    * @property {HTMLFormElement} form
@@ -11,7 +10,6 @@ export default class Filter {
     if (element === null) {
       return;
     }
-    this.pagination = element.querySelector(".js-filter-pagination");
     this.content = element.querySelector(".js-filter-content");
     this.form = element.querySelector(".js-filter-form");
     this.sorting = element.querySelector(".js-filter-sorting");
@@ -22,31 +20,29 @@ export default class Filter {
     console.log("constructeur Filter");
   }
 
-  
   /**
    * Ajoute les comportements aux differents élements
    */
   bindEvents() {
-
-    const aClickListener = e=> {
+    const aClickListener = (e) => {
       if (e.target.tagName === "A") {
         e.preventDefault();
         this.loadUrl(e.target.getAttribute("href"));
       }
-    }
+    };
 
     this.sorting.addEventListener("click", aClickListener);
-    //this.pagination.addEventListener("click", aClickListener);
-    
+    this.reset.addEventListener("click", aClickListener);
+
     this.form.querySelectorAll("input").forEach((input) => {
       input.addEventListener("change", this.loadForm.bind(this));
     });
 
-    this.reset.addEventListener("click", (e)=> {
+    this.reset.addEventListener("click", (e) => {
       this.loadUrl(window.location.host + "/product");
       this.loadForm();
       //debugger
-    })
+    });
   }
 
   async loadForm() {
@@ -64,12 +60,14 @@ export default class Filter {
       params.append(key, value);
     });
     //debugger;
-    return this.loadUrl(url.pathname + "?" + params.toString())
+    return this.loadUrl(url.pathname + "?" + params.toString());
   }
 
-  async loadUrl(url) {
-    const ajaxUrl = url + '&ajax=1'
-    const response = await fetch(ajaxUrl, {
+  async loadUrl(url, append = false) {
+    this.showLoader();
+    const params = new URLSearchParams(url.split("?")[1] || "");
+    params.set("ajax", 1);
+    const response = await fetch(url.split("?")[0] + "?" + params.toString(), {
       headers: {
         "X-Requested-With": "XMLHttpRequest",
       },
@@ -80,11 +78,29 @@ export default class Filter {
       //remplacement du contenu de la page
       this.content.innerHTML = data.content;
       this.sorting.innerHTML = data.sorting;
-      //this.pagination.innerHTML = data.content;
-      this.reset.innerHTML = this.form.reset();
-      history.replaceState({}, "", url);
+      //this.pagination.innerHTML = data.pagination;
+      params.delete("ajax");
+      history.replaceState({}, "", url.split("?")[0] + "?" + params.toString());
     } else {
       console.error(response);
     }
+    this.hideLoader();
+  }
+
+  showLoader() {
+    const loader = this.form.querySelector(".js-loading");
+    if (loader === null) {
+      return;
+    }
+    this.form.classList.add("is-loading");
+    loader.style.display = null;
+  }
+  hideLoader() {
+    const loader = this.form.querySelector(".js-loading");
+    if (loader === null) {
+      return;
+    }
+    this.form.classList.remove("is-loading");
+    loader.style.display = "none";
   }
 }

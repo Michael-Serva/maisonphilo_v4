@@ -1,4 +1,9 @@
 {{ form_start(form, {attr: {class: 'sticky-md-top js-filter-form'}}) }}
+
+<div class="spinner-border text-success js-loading" role="status" aria-hidden="true" style="display: none">
+  <span class="visually-hidden sr-only">Loading...</span> 
+</div>
+
 {{ form_row(form.q) }}
 <h2 class="fs-3">
     {% trans %}Catégorie{% endtrans %}
@@ -9,4 +14,8 @@
 </h2>
 <div id="slider" data-min={{min}} data-max={{max}}></div>
 <div class="row gx-2 my-2">{{ form_row(form.min, {row_attr: {class:"col-md-6"}}) }}{{ form_row(form.max, {row_attr: {class:"col-md-6"}}) }}</div>
+
+<div class="d-grid gap-2 d-block js-filter-reset">
+    <a href={{ path('app_product_index') }} class="btn btn-success">Réinitialisaton</a>
+</div>
 {{ form_end(form) }}
