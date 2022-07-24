@@ -1,16 +1,18 @@
 <div class="card shadow" style="width: 18rem;" data-aos="fade-up" data-aos-duration="3000">
-    <picture>
-        <img class="img-fluid" src={{ asset("images/products/" ~ product.image) | imagine_filter('product') }} alt="Card image cap">
-    </picture>
-    <div class="card-body d-flex flex-column justify-content-end">
-        <h2 class="card-text fs-2">{{product.name}}</h2>
-        <p class="card-text">{{product.subtitle}}</p>
-        <p class="card-text text-center text-light bg-success-800 rounded-pill ">{{product.price }} CFA</p>
-        <span class="fs-5">
-            {% for item in product.category %}
-                {{item}}
-            {% endfor %}
-        </span>
-
+    <a href={{ path('app_product_show', {'id': product.id}) }} class="text-decoration-none text-dark">
+        <picture>
+            <img class="img-fluid" src={{ asset("images/products/" ~ product.image) | imagine_filter('product') }} alt="Card image cap">
+        </picture>
+        <div class="card-body d-flex flex-column justify-content-end">
+            <h2 class="card-text fs-2">{{product.name}}</h2>
+            <p class="card-text">{{product.subtitle}}</p>
+            <p class="card-text text-center text-light bg-success-800 rounded-pill ">{{product.price }}
+                CFA</p>
+            <span class="fs-5">
+                {% for item in product.category %}
+                    {{item}}
+                {% endfor %}
+            </span>
+        </a>
     </div>
 </div>

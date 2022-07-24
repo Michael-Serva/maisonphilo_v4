@@ -1,12 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product{% endblock %}
+{% block title %}Product
+{% endblock %}
 
 {% block body %}
-    <h1>Product</h1>
-
+    <h1>{{product.name}}</h1>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
     <table class="table">
         <tbody>
+            <tr>
+                <th></th>
+                <td><img src={{ asset("images/products/" ~ product.image) | imagine_filter('product') }} alt=""> </td>
+            </tr>
             <tr>
                 <th>Id</th>
                 <td>{{ product.id }}</td>
@@ -21,7 +33,7 @@
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ product.description }}</td>
+                <td>{{ product.description|raw }}</td>
             </tr>
             <tr>
                 <th>SubTitle</th>

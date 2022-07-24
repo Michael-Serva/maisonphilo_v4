@@ -32,7 +32,7 @@ class Country
 
 
     /**
-     * @ORM\Column(type="string", length=3, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $code;
 

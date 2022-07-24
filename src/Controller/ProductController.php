@@ -54,6 +54,18 @@ class ProductController extends AbstractController
             'max' => $max
         ]);
     }
+
+    /**
+     * @Route("/{id}show", name="app_product_show", methods={"GET", "POST"})
+     * @Template
+     */
+    public function show(Product $product)
+    { 
+        return [
+            'product' => $product
+        ];
+    } 
+
      /**
      * Undocumented function
      *

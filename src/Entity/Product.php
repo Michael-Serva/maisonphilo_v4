@@ -72,6 +72,8 @@ class Product
     private $updatedAt;
 
 
+
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
@@ -212,4 +214,5 @@ class Product
 
         return $this;
     }
+
 }
