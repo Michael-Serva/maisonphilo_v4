@@ -36,13 +36,28 @@
                     img : "data_share.jpg",
                 } %}
 
-                {% include "components/atoms/fontCircle.html.twig" with {
-                    title : "Petites annonces",
-                    content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
-                    font : "fa-solid fa-laptop",
-                    href : "app_product_index",
-                    img : "annoncer.jpg",
-                } %}
+                {#          {% include "components/atoms/fontCircle.html.twig" with {
+                                                                                title : "Petites annonces",
+                                                                                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
+                                                                                font : "fa-solid fa-laptop",
+                                                                                href : "app_product_index",
+                                                                                img : "annoncer.jpg",
+                                                                                } %} #}
+
+                <div type="button" id="liveToastBtn">
+                    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
+                        <a class="hover10">
+                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt="annonces" class="shadow rounded-circle bg-success border border-5 border-light">
+                            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
+                        </a>
+                    </figure>
+                    {% block title %}
+                        <h4 class="my-3 display-5 fw-bold">Petites annonces</h4>
+                        <p class="text-muted mx-auto display-5">Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !
+                        </p>
+                    {% endblock %}
+                </div>
+
 
                 {% include "components/atoms/fontCircle.html.twig" with {
                     title : "Actions sociales",
@@ -125,8 +140,8 @@
         } %}
             {% block content %}
                 {% embed "components/atoms/fontCircle.html.twig" with {
-                img : "afrique.png",
-            } %}
+                    img : "afrique.png",
+                } %}
                     {% block title %}{% endblock %}
                 {% endembed %}
             {% endblock %}
@@ -147,16 +162,16 @@
                 {% endembed %}
             {% endblock %}
         {% endembed %}
+    </section>
+    <section id="commit" class="row" data-aos="fade-up" data-aos-duration="3000">
+        <div class="col-12 text-center mb-5 container-fluid">
+            {% include "components/atoms/homeTitle.html.twig" with {
+                content : "Nos engagements"
+            } %}
+            <p class="text-muted fs-1">Pour le développement durable</p>
+        </div>
 
-        <section id="commit" class="row" data-aos="fade-up" data-aos-duration="3000">
-            <div class="col-12 text-center mb-5 container-fluid">
-                {% include "components/atoms/homeTitle.html.twig" with {
-                        content : "Nos engagements"
-                } %}
-                <p class="text-muted fs-1">Pour le développement durable</p>
-            </div>
-
-            {% include "components/atoms/btnSquare.html.twig" with {
+        {% include "components/atoms/btnSquare.html.twig" with {
                 png: "sante.png",
                 alt: "Santé et bien être",
                 content: "L'objectif fixé par les Nations Unies dans le cadre de cet engagement est de permettre à tous de vivre en bonne santé et promouvoir le bien-être de tous à tout âge.",
@@ -164,7 +179,7 @@
                 index: 1
             } %}
 
-            {% include "components/atoms/btnSquare.html.twig" with {
+        {% include "components/atoms/btnSquare.html.twig" with {
                 png: "travail.png",
                 alt: "Travail et croissance économique",
                 content: "Promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous. ",
@@ -180,11 +195,12 @@
                 index: 3
             } %}
 
-            
-        
 
-        </section>
-        {# Section contact #}
-        <section id="contact" class="row container-fluid"></section>
-        </div>
+</section>
+{# Section contact #}
+<section id="contact" class="row container-fluid"></section>
+
+{# toast section #}
+{% include "components/atoms/toast.html.twig" %}
+
 {% endblock %}

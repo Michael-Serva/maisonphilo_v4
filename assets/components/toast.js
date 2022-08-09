@@ -1,10 +1,11 @@
-import { Toast } from "bootstrap/dist/js/bootstrap";
-import $ from "jquery";
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
 
-    const toast = $(".toast");
-    
-      $(".btn-primary").on("click", function (e) {
-      e.preventDefault();
-    
-      new Toast(toast).show();
-    });
+var toastTrigger = document.getElementById("liveToastBtn");
+var toastLiveExample = document.getElementById("liveToast");
+if (toastTrigger) {
+  toastTrigger.addEventListener("click", function () {
+    var toast = new bootstrap.Toast(toastLiveExample);
+
+    toast.show();
+  });
+}

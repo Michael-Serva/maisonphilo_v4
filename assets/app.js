@@ -8,6 +8,7 @@
 // any CSS you import will output into a single css file (app.css in this case)
 
 // start the Stimulus application
+import $ from "jquery"; // this "modifies" the jquery module: adding behavior to it
 import "bootstrap/dist/js/bootstrap";
 import "./bootstrap";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -15,13 +16,11 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import "./scripts/aos";
 import "./scripts/parallax";
 import "./styles/app.scss";
-import "./components/toast.js";
 
 
 
 // app.js
 
-import $ from "jquery"; // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
 
 $(function () {
@@ -33,3 +32,5 @@ $(function () {
     });
   }
 });
+
+
