@@ -15,6 +15,9 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import "./scripts/aos";
 import "./scripts/parallax";
 import "./styles/app.scss";
+import "./components/toast.js";
+
+
 
 // app.js
 
@@ -23,15 +26,10 @@ import $ from "jquery"; // this "modifies" the jquery module: adding behavior to
 
 $(function () {
   for (let i = 1; i <= 3; i++) {
-    $(`.show${i}`).click(function (e) {
+    $(`.show${i}`).on("click", function (e) {
       e.preventDefault();
       $(`#show${i}`).toggleClass("d-none");
       $(`.hide${i}`).toggleClass("d-none");
     });
   }
-  $(".js-share").on("mouseenter", function () {
-    $(".js-share").toggleClass("bg-secondary", "bg-light");
-    $(".js-share").toggleClass("text-light", "text-success");
-
-  });
 });

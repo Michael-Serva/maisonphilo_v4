@@ -60,11 +60,11 @@ class ProductController extends AbstractController
      * @Template
      */
     public function show(Product $product)
-    { 
+    {
         return [
             'product' => $product
         ];
-    } 
+    }
 
      /**
      * Undocumented function

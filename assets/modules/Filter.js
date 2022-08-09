@@ -38,7 +38,7 @@ export default class Filter {
       input.addEventListener("change", this.loadForm.bind(this));
     });
 
-    this.reset.addEventListener("click", (e) => {
+    this.reset.addEventListener("click", () => {
       this.loadUrl(window.location.host + "/product");
       this.loadForm();
       //debugger
@@ -63,7 +63,7 @@ export default class Filter {
     return this.loadUrl(url.pathname + "?" + params.toString());
   }
 
-  async loadUrl(url, append = false) {
+  async loadUrl(url) {
     this.showLoader();
     const params = new URLSearchParams(url.split("?")[1] || "");
     params.set("ajax", 1);

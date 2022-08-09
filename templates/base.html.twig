@@ -19,21 +19,34 @@
     <body class="d-flex flex-column justify-content-between align-content-center" style="min-height:100vh">
 
         {% block share %}
-            <div class="border border-warning js-share position-fixed rounded top-50 end-0 me-5 fs-1 text-center bg-secondary text-light p-2 shadow d-none d-lg-block">
-                <span class="d-block">{% trans %}Cliquez sur l'icône pour
-                    <br>
-                    partager vos
-                    <br>
-                    informations{% endtrans %}</span>
-                <a href={{ path('app_contact_index') }} class="btn btn-success shadow">
-                    <i class="fa-brands fa-slideshare shadow"></i>
-                </a>
+            {#       <div class="js-share">
+            <div class="border border-warning position-fixed rounded top-50 end-0 me-5 fs-1 text-center bg-secondary text-light p-2 shadow d-none d-lg-block js-box">
+            <span class="d-block">{% trans %}Cliquez sur l'icône pour
+            <br>
+            partager vos
+            <br>
+            informations{% endtrans %}</span>
+            <a href={{ path('app_contact_index') }} class="btn btn-success shadow">
+            <i class="fa-brands fa-slideshare shadow"></i>
+            </a>
             </div>
-
-
-            <a href={{ path('app_contact_index') }} class="position-fixed top-50 end-0 me-5 fs-1 btn btn-success rounded rounded-circle d-lg-none d-md-block">
+            <a href={{ path('app_contact_index') }} class="position-fixed top-50 end-0 me-5 fs-1 btn btn-success rounded rounded-circle d-lg-none d-md-block js-share">
+            <i class="fa-brands fa-slideshare"></i>
+            </a>
+            </div> #}
+            {# float button laptop #}
+                <a href={{ path('app_contact_index') }} id="container" class="position-fixed top-50 end-0 d-lg-block d-none"> <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Partagez vos informations</span>
+                </button>
+            </a>
+            {# float button mobile #}
+            <a href={{ path('app_contact_index') }} class="position-fixed top-50 end-0 me-5 fs-1 btn btn-success rounded rounded-circle d-lg-none d-md-block js-share">
                 <i class="fa-brands fa-slideshare"></i>
             </a>
+
 
         {% endblock %}
         {% block header %}{% endblock %}

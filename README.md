@@ -26,3 +26,9 @@ Symfony 5.4.7
 `npx stylelint "assets/**/*.scss"`
 
 add --fix for fixes errors
+
+## Codepen
+
+### Float button
+
+<https://codepen.io/alvarotrigo/pen/OJmrqVB>
