@@ -1,4 +1,5 @@
-window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+
+import bootstrap from "bootstrap/dist/js/bootstrap.bundle.js";
 
 var toastTrigger = document.getElementById("liveToastBtn");
 var toastLiveExample = document.getElementById("liveToast");
