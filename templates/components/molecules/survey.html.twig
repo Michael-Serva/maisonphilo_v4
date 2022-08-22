@@ -1,0 +1,8 @@
+<div class="vh-100 align-items-center justify-content-center d-flex flex-column" id="next{{n}}">
+    <div class="border border-success w-75 p-3 shadow rounded-3 bg-light" data-aos="fade-up" data-aos-duration="3000">
+        <div>
+            {% block  content %}{% endblock %}
+        </div>
+        <a href="#next{{n + 1}}" class="btn btn-success ms-auto d-block">Suivant</a>
+    </div>
+</div>

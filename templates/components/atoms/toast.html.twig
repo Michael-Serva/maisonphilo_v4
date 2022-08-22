@@ -3,11 +3,11 @@
     <div class="toast-header">
       <img src={{ asset('images/logo_1.png') }} alt="maison philo">
       <strong class="me-auto"></strong>
-      <small>Revenez plus tard</small>
+      <small>{{small| default('Revenez plus tard')}}</small>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body bg-success text-light">
-      Cette page est en cours de construction
+      {{message|default('Cette page est en cours de construction')}}
     </div>
   </div>
 </div>
