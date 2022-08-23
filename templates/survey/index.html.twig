@@ -45,8 +45,17 @@
                         {{ form_row(form.hospitals.vars.prototype) }}
                     {% endblock %}
                 {% endembed %}
+
+                     {% embed "components/molecules/survey.html.twig" with {
+                    n : 4
+                } %}
+                    {% block content %}
+                        {{ form_row(form.aids.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
                 <div class="d-grid gap-2 w-75 mx-auto">
-                    <button id="next4" type="submit" class="btn btn-danger">Validation</button>
+                    <button id="next5" type="submit" class="btn btn-danger">Validation</button>
                 </div>
 
                 {{ form_end(form) }}

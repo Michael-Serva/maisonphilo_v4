@@ -30,6 +30,7 @@ class Survey
     /**
      * @ORM\Column(type="string", length=255)
      */
+    
     private $email;
 
     /**
@@ -70,7 +71,7 @@ class Survey
     /**
      * @ORM\Column(type="array", nullable=true)
      */
-    private $digit = [];
+    private $digits = [];
 
     /**
      * @ORM\Column(type="array", nullable=true)
@@ -202,14 +203,14 @@ class Survey
         return $this;
     }
 
-    public function getDigit(): ?array
+    public function getDigits(): ?array
     {
-        return $this->digit;
+        return $this->digits;
     }
 
-    public function setDigit(?array $digit): self
+    public function setDigits(?array $digits): self
     {
-        $this->digit = $digit;
+        $this->digits = $digits;
 
         return $this;
     }

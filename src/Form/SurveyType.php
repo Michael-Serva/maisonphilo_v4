@@ -31,8 +31,7 @@ class SurveyType extends AbstractType
                 "attr" => ["class" => "form-control", "placeholder" => "Votre nom"]
             ])
             ->add('email', EmailType::class, [
-                "constraints" =>new NotNull(["message" => "num"]),
-                "label" => "Votre email *",
+                "label" => "Votre email",
                 "row_attr" => ["class" => "form-floating mb-3"],
                 "attr" => ["class" => "form-control", "placeholder" => "Votre email"]
             ])
@@ -42,7 +41,7 @@ class SurveyType extends AbstractType
                 "row_attr" => ["class" => "form-floating mb-3"],
                 "attr" => ["class" => "form-control", "placeholder" => "Votre pays"]
             ])
-       /*      ->add('market', TextType::class, [
+            /*      ->add('market', TextType::class, [
                 "label" => "Connaissez-vous des commerces dédiés aux personnes agées?",
                 "attr" => ["class" => "form-control", "placeholder" => "Votre nom"]
             ]) */
@@ -83,8 +82,19 @@ class SurveyType extends AbstractType
                 "by_reference" => false,
                 "allow_add" => true,
             ])
-            
-            ;
+
+            ->add('aids', CollectionType::class, [
+                "label" => false,
+                'entry_type' => AidsType::class,
+                'attr' => ['class' => 'fw-bold'],
+                'entry_options' => [
+                    'label' => "Aides auxquelles ont droit les personnes âgées",
+                    'row_attr' => ['class' => 'fw-bold text-success'],
+                    'attr' => ['class' => 'fw-normal text-dark']
+                ],
+                "by_reference" => false,
+                "allow_add" => true,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
