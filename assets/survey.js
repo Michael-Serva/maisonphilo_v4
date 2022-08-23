@@ -32,8 +32,9 @@ function showInput(id, input, value) {
   });
 }
 
+console.log(aidsId.length);
+
 showInput(specialistsId, specialists, specialistsValue);
-for (let index = 0; index <= 2; index++) {
+for (let index = 0; index < aidsId.length; index++) {
   showInput(aidsId[index], $(".aids" + index), aidsValue[index]);
-  console.log(".aids" + index);
 }
