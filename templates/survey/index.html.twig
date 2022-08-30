@@ -7,7 +7,7 @@
        pageName: "Partage d'informations"
     } %}
         {% block content %}
-            <section class="form  mx-auto">
+            <section class="form mx-auto">
                 {{ form_start(form) }}
 
                 {% embed "components/molecules/survey.html.twig" with {
@@ -34,7 +34,7 @@
                     n : 2
                 } %}
                     {% block content %}
-                        {{ form_row(form.specialists.vars.prototype) }}
+                        {{ form_row(form.hospitals.vars.prototype) }}
                     {% endblock %}
                 {% endembed %}
 
@@ -42,11 +42,11 @@
                     n : 3
                 } %}
                     {% block content %}
-                        {{ form_row(form.hospitals.vars.prototype) }}
+                        {{ form_row(form.specialists.vars.prototype) }}
                     {% endblock %}
                 {% endembed %}
 
-                     {% embed "components/molecules/survey.html.twig" with {
+                {% embed "components/molecules/survey.html.twig" with {
                     n : 4
                 } %}
                     {% block content %}
@@ -54,8 +54,24 @@
                     {% endblock %}
                 {% endembed %}
 
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 5
+                } %}
+                    {% block content %}
+                        {{ form_row(form.digits.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 5
+                } %}
+                    {% block content %}
+                        {{ form_row(form.politics.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
                 <div class="d-grid gap-2 w-75 mx-auto">
-                    <button id="next5" type="submit" class="btn btn-danger">Validation</button>
+                    <button id="next6" type="submit" class="btn btn-danger">Validation</button>
                 </div>
 
                 {{ form_end(form) }}

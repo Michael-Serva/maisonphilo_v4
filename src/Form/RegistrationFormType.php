@@ -33,7 +33,6 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez entrer votre adresse mail',
                     ])
                 ]
-
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'required' => false,

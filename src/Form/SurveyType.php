@@ -46,6 +46,7 @@ class SurveyType extends AbstractType
                 "attr" => ["class" => "form-control", "placeholder" => "Votre nom"]
             ]) */
             ->add('clothes', CollectionType::class, [
+                "required" => false,
                 "label" => false,
                 'entry_type' => ClothesType::class,
                 'attr' => ['class' => 'fw-bold'],
@@ -58,6 +59,7 @@ class SurveyType extends AbstractType
                 "allow_add" => true,
             ])
             ->add('specialists', CollectionType::class, [
+                "required" => false,
                 "label" => false,
                 'entry_type' => SpecialistsType::class,
                 'attr' => ['class' => 'fw-bold'],
@@ -71,6 +73,7 @@ class SurveyType extends AbstractType
             ])
 
             ->add('hospitals', CollectionType::class, [
+                "required" => false,
                 "label" => false,
                 'entry_type' => HospitalsType::class,
                 'attr' => ['class' => 'fw-bold'],
@@ -84,6 +87,7 @@ class SurveyType extends AbstractType
             ])
 
             ->add('aids', CollectionType::class, [
+                "required" => false,
                 "label" => false,
                 'entry_type' => AidsType::class,
                 'attr' => ['class' => 'fw-bold'],
@@ -94,7 +98,37 @@ class SurveyType extends AbstractType
                 ],
                 "by_reference" => false,
                 "allow_add" => true,
-            ]);
+            ])
+
+            ->add('digits', CollectionType::class, [
+                "required" => false,
+                "label" => false,
+                'entry_type' => DigitsType::class,
+                'attr' => ['class' => 'fw-bold'],
+                'entry_options' => [
+                    'label' => "Chiffres récents concernant les personnes âgées",
+                    'row_attr' => ['class' => 'fw-bold text-success'],
+                    'attr' => ['class' => 'fw-normal text-dark']
+                ],
+                "by_reference" => false,
+                "allow_add" => true,
+            ])
+
+            ->add('politics', CollectionType::class, [
+                "required" => false,
+                "label" => false,
+                'entry_type' => DigitsType::class,
+                'attr' => ['class' => 'fw-bold'],
+                'entry_options' => [
+                    'label' => "Chiffres récents concernant les personnes âgées",
+                    'row_attr' => ['class' => 'fw-bold text-success'],
+                    'attr' => ['class' => 'fw-normal text-dark']
+                ],
+                "by_reference" => false,
+                "allow_add" => true,
+            ])
+            
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

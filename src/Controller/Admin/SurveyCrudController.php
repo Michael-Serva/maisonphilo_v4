@@ -26,7 +26,9 @@ class SurveyCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            ArrayField::new('clothes'),
+            ArrayField::new('aids'),
+            ArrayField::new('hospitals'),
             DateField::new('createdAt'),
             TextField::new('name'),
             TextField::new('lastName'),

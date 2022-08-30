@@ -14,13 +14,14 @@ class SpecialistsType extends AbstractType
     {
         $builder
             ->add('professionals', ChoiceType::class, [
+                "mapped" => false,
                 "label" => "Connaissez-vous des professionnels intervenant dans ce domaine ?",
                 "placeholder" => null,
                 'choices'  => [
                     'Oui' => true,
                     'Non' => false,
                     'Je ne sais pas' => null,
-                ],
+                ]
                 
             ])
             ->add('name', TextType::class, [

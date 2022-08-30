@@ -1,1 +1,12 @@
-/* No CSS *//*# sourceMappingURL=survey.css.map */
+label.required:after {
+  content: "*";
+  color: red;
+  margin-left: 10px;
+}
+
+.survey {
+  background-image: url("../../public/images/bg_survey.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=survey.css.map */

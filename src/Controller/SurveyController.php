@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Survey;
+use App\Form\ClothesType;
 use App\Form\SurveyType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,6 +25,21 @@ class SurveyController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $survey->setClothes(
+                $form["clothes"]["__name__"]->getData()
+            );
+
+            /*  dd($form["aids"]->getData()); */
+
+            $survey->setAids(
+                $form["aids"]["__name__"]->getData()
+            );
+
+            $survey->setHospitals(
+                $form["hospitals"]["__name__"]->getData()
+            );
+
+            /* dd($survey->getClothes()); */
             $entityManager->persist($survey);
             $entityManager->flush();
 
