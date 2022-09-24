@@ -5,13 +5,9 @@
 {% endblock %}
 
 {% block body %}
-    <section id="top-page">
-        <section id="who-top-page" class="d-flex align-items-center justify-content-center">
-            {% include "components/atoms/aboutTitle.html.twig" with {
-            pageName : pageName
-        } %}
-        </section>
-        <section id="history" class="container">
+
+    {% embed "components/organisms/fullPage.html.twig" %}
+        {% block content %}
             <p class="text-font-script display-3 fw-bold text-center mb-5">
                 <span>Elle s'appelait
                 </span>
@@ -19,7 +15,7 @@
                 <span class="d-block">... C'était ma Mémé.</span>
             </p>
 
-            <div class="fs-1 lh-5">
+            <div class="fs-1 lh-5 text-center">
                 <p>Ses dernières années sur cette terre m’ont fait prendre conscience du besoin de développer les solutions facilitant la prise en charge de nos parents âgés en Afrique.
                 </p>
                 <p>En effet chaque étape de la perte d’autonomie de Mémé a été compliquée : Où acheter les protections adultes, le fauteuil roulant ? Où trouver un hôpital avec un centre spécialisé en gériatrie ?
@@ -40,6 +36,6 @@
                 <p class="text-success-800 fw-bold text-center mt-5">A l’ère d’internet, l’accès à l’information aurait dû être plus facile.
                 </p>
             </div>
-        </section>
-    </section>
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

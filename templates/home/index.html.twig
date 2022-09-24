@@ -37,27 +37,12 @@
                 } %}
 
                 {#          {% include "components/atoms/fontCircle.html.twig" with {
-                                                                                title : "Petites annonces",
-                                                                                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
-                                                                                font : "fa-solid fa-laptop",
-                                                                                href : "app_product_index",
-                                                                                img : "annoncer.jpg",
-                                                                                } %} #}
-
-                <div type="button" id="liveToastBtn">
-                    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
-                        <a class="hover10">
-                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt="annonces" class="shadow rounded-circle bg-success border border-5 border-light">
-                            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
-                        </a>
-                    </figure>
-                    {% block title %}
-                        <h4 class="my-3 display-5 fw-bold">Petites annonces</h4>
-                        <p class="text-muted mx-auto display-5">Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !
-                        </p>
-                    {% endblock %}
-                </div>
-
+                title : "Petites annonces",
+                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
+                font : "fa-solid fa-laptop",
+                href : "app_product_index",
+                img : "annoncer.jpg",
+                } %} #}
 
                 {% include "components/atoms/fontCircle.html.twig" with {
                     title : "Actions sociales",
@@ -66,6 +51,20 @@
                     href : "app_assistance_social",
                     img : "action_sociale.jpg",
                 } %}
+
+                <div type="button" id="liveToastBtn">
+                    {% block title %}
+                        <h4 class="my-3 display-5 fw-bold">Petites annonces</h4>
+                        <p class="text-muted mx-auto display-5">Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !
+                        </p>
+                    {% endblock %}
+                    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
+                        <a class="hover10">
+                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt="annonces" class="shadow rounded-circle bg-success border border-5 border-light">
+                            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
+                        </a>
+                    </figure>
+                </div>
 
             </div>
         {% endblock %}
