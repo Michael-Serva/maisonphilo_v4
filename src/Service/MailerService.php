@@ -26,23 +26,18 @@ class MailerService extends AbstractController
      * @return Response
      * @Route("/email")
      */
-    public function sendEmail(): Response
+    public function sendEmail(): Void
     {
         $email = (new Email())
-            ->from('hello@example.com')
-            ->to('servam95@gmail.com')
+            ->from('noreply-maisonphilo@servgrouptn.com')
+            ->to('maisonphilo.contact@gmail.com')
             //->cc('cc@example.com')
             //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
+            ->replyTo('maisonphilo.contact@gmail.com')
+            ->priority(Email::PRIORITY_HIGH)
             ->subject('Time for Symfony Mailer!')
             ->text('Sending emails is fun again!')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            ->html('<p>test mailer!</p>');
         $this->mailer->send($email);
-//dd($email);
-
-        return $this->render('home/index.html.twig', [
-
-        ]);
     }
 }
