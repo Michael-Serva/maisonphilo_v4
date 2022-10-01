@@ -141,4 +141,9 @@ class Hospital
 
         return $this;
     }
+
+    public function isIsValid(): ?bool
+    {
+        return $this->isValid;
+    }
 }

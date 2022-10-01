@@ -62,7 +62,7 @@ class Category
     public function addProduct(Product $product): self
     {
         if (!$this->products->contains($product)) {
-            $this->products[] = $product;
+            $this->products->add($product);
             $product->addCategory($this);
         }
 

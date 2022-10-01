@@ -45,12 +45,19 @@ class ContactController extends AbstractController
                 'success',
                 $contact->getEmail() . 'Votre message a bien été envoyé!'
             );
-            $mailer->sendEmail();
+            dump($contact);
+            dump(get_class_methods($contact));
+            $mailer->sendContactEmail(
+                $contact->getEmail(),
+                $contact->getSubject(),
+                $contact->getLastName(),
+                $contact->getFirstName(),
+                $contact->getCountry(),
+                $contact->getContent()
+            );
 
             return $this->redirectToRoute('app_contact_index', ['_fragment' => 'contact']);
         }
-
-
 
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView(),
