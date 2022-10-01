@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PartnerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -71,8 +72,6 @@ class Partner
      */
     private $country;
 
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -114,7 +113,7 @@ class Partner
         return $this;
     }
 
-    public function getType(): ?array
+    public function getType(): array
     {
         return $this->type;
     }
@@ -198,5 +197,10 @@ class Partner
         $this->country = $country;
 
         return $this;
+    }
+
+    public function isIsValid(): ?bool
+    {
+        return $this->isValid;
     }
 }
