@@ -6,14 +6,40 @@
 {% include "components/organisms/homeNavbar.html.twig" %}
 <div>
     <section
-        id="top-page" class="js-parallax d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
+        id="top-page" class="js-parallax d-flex justify-content-between align-items-center flex-column">
+
+       
+       
+
         {# top-page #}
         <p class="display-1 fw-bold text-light text-center">
             <span class="js-title"></span>
         </p>
         <div class="display-5 mt-3 fw-bold text-title container text-center">
-            Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
+            Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone
+        </div>
         <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
+
+         <div class="d-flex d-lg-none"> 
+            <div class="text-center trans">
+                <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
+            </div>
+            <div class="text-center trans1">
+                <a href={{ path('app_contact_index') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fa-solid fa-envelope-open-text rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class="fs-1 text-title">{% trans %}Contactez-nous{% endtrans %}</p>
+            </div>
+            <div class="text-center trans2">
+                <a href={{ path('app_about_africa') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fas fa-info-circle rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class="fs-1 text-title">{% trans %}le vieillissement en Afrique{% endtrans %}</p>
+            </div>
+        </div>
     </section>
     {# services #}
     {% embed "components/molecules/sectionHome.html.twig" with {
