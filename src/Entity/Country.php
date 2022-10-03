@@ -81,7 +81,7 @@ class Country
     public function addHospital(Hospital $hospital): self
     {
         if (!$this->hospitals->contains($hospital)) {
-            $this->hospitals[] = $hospital;
+            $this->hospitals->add($hospital);
             $hospital->setCountry($this);
         }
 
@@ -108,8 +108,6 @@ class Country
         return $this->getCode();
     }
 
-
-
     public function getCode(): ?string
     {
         return $this->code;
@@ -133,7 +131,7 @@ class Country
     public function addPartner(Partner $partner): self
     {
         if (!$this->partners->contains($partner)) {
-            $this->partners[] = $partner;
+            $this->partners->add($partner);
             $partner->setCountry($this);
         }
 
@@ -163,7 +161,7 @@ class Country
     public function addProduct(Product $product): self
     {
         if (!$this->products->contains($product)) {
-            $this->products[] = $product;
+            $this->products->add($product);
             $product->setCountry($this);
         }
 

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\Collection;
@@ -155,7 +156,7 @@ class Product
     public function addCategory(Category $category): self
     {
         if (!$this->category->contains($category)) {
-            $this->category[] = $category;
+            $this->category->add($category);
         }
 
         return $this;
@@ -198,9 +199,11 @@ class Product
         return $this->image;
     }
 
-    public function setImage(?string $image): void
+    public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
     }
 
     public function getUpdatedAt(): ?\DateTimeImmutable

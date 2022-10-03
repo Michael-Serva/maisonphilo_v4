@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SurveyRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -155,7 +156,7 @@ class Survey
         return $this;
     }
 
-    public function getClothes(): ?array
+    public function getClothes(): array
     {
         return $this->clothes;
     }
@@ -167,7 +168,7 @@ class Survey
         return $this;
     }
 
-    public function getSpecialists(): ?array
+    public function getSpecialists(): array
     {
         return $this->specialists;
     }
@@ -179,7 +180,7 @@ class Survey
         return $this;
     }
 
-    public function getHospitals(): ?array
+    public function getHospitals(): array
     {
         return $this->hospitals;
     }
@@ -191,7 +192,7 @@ class Survey
         return $this;
     }
 
-    public function getAids(): ?array
+    public function getAids(): array
     {
         return $this->aids;
     }
@@ -203,7 +204,7 @@ class Survey
         return $this;
     }
 
-    public function getDigits(): ?array
+    public function getDigits(): array
     {
         return $this->digits;
     }
@@ -215,7 +216,7 @@ class Survey
         return $this;
     }
 
-    public function getPolitics(): ?array
+    public function getPolitics(): array
     {
         return $this->politics;
     }

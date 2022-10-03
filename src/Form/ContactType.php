@@ -40,6 +40,28 @@ class ContactType extends AbstractType
                     ])
                 ]
             ])
+            ->add('subject', TextType::class, [
+                'required' => false,
+                'label' => 'Objet de votre demande',
+                'row_attr' => [
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Objet de votre demande'
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        "message" => "Veuillez indiquer l'objet de votre demande"
+                    ]),
+                    new Length([
+                        'min' => 3,
+                        'max' => 45,
+                        'minMessage' => 'L\'Objet de votre message doit avoir au minimum {{ limit }} caractères',
+                        'maxMessage' => 'L\'objet de votre message ne doit pas dépasser {{ limit }} caractères'
+                    ])
+                ]
+            ])
             ->add('lastName', TextType::class, [
                 'required' => false,
                 'label' => 'Votre nom de famille',
