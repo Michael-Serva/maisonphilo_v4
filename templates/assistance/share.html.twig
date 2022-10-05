@@ -17,11 +17,11 @@
         </div>
         {# section country #}
         <section id="country" class=" d-flex flex-column align-items-center justify-content-evenly mt-5">
-            <h1 class="display-1 text-light  d-block text-center fw-bold">Informations par pays</h1>
+            <h1 class="display-1 text-light  d-block text-center fw-bold">{% trans %}Informations par pays{% endtrans %}</h1>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-light display-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <h1>Veuillez sélectionner un pays
+                <h1>{% trans %}Veuillez sélectionner un pays{% endtrans %}
                     <i class="fa-solid fa-sort-down"></i>
                 </h1>
             </button>
@@ -54,12 +54,12 @@
                 <i class="fa-solid fa-share-nodes"></i>
             </a>
             <div class="col-7 text-end">
-                <a href="#" class="btn btn-success fs-1 shadow rounded-pill">Connectez-vous</a>
+                <a href="#" class="btn btn-success fs-1 shadow rounded-pill">{% trans %}Connectez-vous{% endtrans %}</a>
             </div>
         </section>
         {# theme #}
         <section id="theme">
-            <h1 class="display-1 text-success-800 d-block text-center mt-5 fw-bold">Informations par thématique</h1>
+            <h1 class="display-1 text-success-800 d-block text-center mt-5 fw-bold">{% trans %}Informations par thématique{% endtrans %}</h1>
             <div class="text-center">
                 {% include "components/atoms/btnOutlineShare.html.twig" with {
                     content : "Hôpitaux & Centres médicaux",
@@ -99,8 +99,8 @@
         </section>
         {# section share-bottom-page #}
         <section id="share-bottom-page" class="container-fluid display-5 my-3 text-center">
-            <p class="d-block">Les informations reportées sur cette page ont été obtenues grâce à des campagnes de collecte d'information que nous avons menées via des questionnaires et des interviews.</p>
-            <p class="fw-bold">Nous avons besoin de vos commentaires et informations pour enrichir cette rubrique!</p>
+            <p class="d-block">{% trans %}Les informations reportées sur cette page ont été obtenues grâce à des campagnes de collecte d'information que nous avons menées via des questionnaires et des interviews.{% endtrans %}</p>
+            <p class="fw-bold">{% trans %}Nous avons besoin de vos commentaires et informations pour enrichir cette rubrique!{% endtrans %}</p>
         </section>
         {# bouton flotant #}
     </section>

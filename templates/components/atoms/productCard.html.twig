@@ -4,13 +4,13 @@
             <img class="img-fluid" src={{ asset("images/products/" ~ product.image) | imagine_filter('product') }} alt="Card image cap">
         </picture>
         <div class="card-body d-flex flex-column justify-content-end">
-            <h2 class="card-text fs-2">{{product.name}}</h2>
-            <p class="card-text">{{product.subtitle}}</p>
+            <h2 class="card-text fs-2">{{product.name | trans}}</h2>
+            <p class="card-text">{{product.subtitle | trans}}</p>
             <p class="card-text text-center text-light bg-success-800 rounded-pill ">{{product.price }}
                 CFA</p>
             <span class="fs-5">
                 {% for item in product.category %}
-                    {{item}}
+                    {{item | trans}}
                 {% endfor %}
             </span>
         </a>

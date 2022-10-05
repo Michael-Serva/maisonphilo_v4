@@ -14,7 +14,7 @@
                     n : 0
                 } %}
                     {% block content %}
-                        <h2 class="text-success">Tout d'abord présentez vous!</h2>
+                        <h2 class="text-success">{% trans %}Tout d'abord présentez vous!{% endtrans %}</h2>
                         {{ form_row(form.name) }}
                         {{ form_row(form.lastName) }}
                         {{ form_row(form.email) }}
@@ -69,11 +69,9 @@
                         {{ form_row(form.politics.vars.prototype) }}
                     {% endblock %}
                 {% endembed %}
-
                 <div class="d-grid gap-2 w-75 mx-auto">
-                    <button id="next6" type="submit" class="btn btn-danger">Validation</button>
+                    <button id="next6" type="submit" class="btn btn-danger">{% trans %}Validation{% endtrans %}</button>
                 </div>
-
                 {{ form_end(form) }}
             </section>
         {% endblock %}

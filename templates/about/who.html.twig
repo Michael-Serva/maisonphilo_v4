@@ -11,25 +11,22 @@
                 {% block content %}
                     <a href={{ path('app_about_history') }} class="col-10 col-lg-4 text-center my-5">
                         <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
-                            <img src={{asset('images/philo.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid p-1 rounded">
+                            <img src={{asset('images/philo.jpg') | imagine_filter('big')}} alt={% trans %}"maison philo"{% endtrans %} class="img-fluid p-1 rounded">
                             <figcaption>
-                                <h3 class="text-light display-5 fw-bold">Notre histoire</h3>
+                                <h3 class="text-light display-5 fw-bold">{% trans %}Notre histoire{% endtrans %}</h3>
                             </figcaption>
                         </figure>
                     </a>
                     <a href={{ path('app_about_objective') }} class="col-10 col-lg-4 text-center my-5">
                         <figure class="c4-izmir c4-border-center" data-aos="fade-down" data-aos-duration="3000">
-                            <img src={{asset('images/birds.jpg') | imagine_filter('big')}} alt="maison philo" class="img-fluid p-1 rounded">
+                            <img src={{asset('images/birds.jpg') | imagine_filter('big')}} alt={% trans %}"maison philo"{% endtrans %} class="img-fluid p-1 rounded">
                             <figcaption>
-                                <h3 class="text-light display-5 fw-bold">Objectif & vision</h3>
+                                <h3 class="text-light display-5 fw-bold">{% trans %}Objectif & vision{% endtrans %}</h3>
                             </figcaption>
                         </figure>
                     </a>
                 {% endblock %}
             {% endembed %}
-
-
         {% endblock %}
-
     {% endembed %}
 {% endblock %}

@@ -1,7 +1,7 @@
-<a href={{ path(href | default("#")) }} class="text-center d-none z-index p-2 {{class | default("")}}">
-  <i class="fa-solid fa-{{font}} display-1 rounded-circle p-3 rounded-circle text-black bg-light shadow">
+<a href={{ path(href | default("#")) }} class="text-center z-index p-2 text-decoration-none text-black {{class | default("")}}">
+  <i class="fa-solid fa-{{font}} display-1 rounded-circle p-3 rounded-circle bg-light shadow">
   </i>
-  <p class="fs-2 text-black fw-bold">
-    {{content | default("")}}
+  <p class="fs-2 fw-bold bg-light opacity-50">
+    {{content | trans | default("")}}
   </p>
 </a>

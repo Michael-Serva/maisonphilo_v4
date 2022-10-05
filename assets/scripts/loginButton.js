@@ -11,6 +11,7 @@ console.log(menuButton);
     $(indexButton).on("click", function (e) { 
         e.preventDefault();
         console.log("remove");
-        $(".js-login-button").toggleClass("d-none");
+        //$(".js-login-button").toggleClass("d-none");
+        $(".js-login-button").fadeToggle();
     });
 });

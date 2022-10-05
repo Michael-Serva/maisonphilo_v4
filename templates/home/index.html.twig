@@ -16,28 +16,28 @@
             <span class="js-title"></span>
         </p>
         <div class="display-5 mt-3 fw-bold text-title container text-center">
-            Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone
+            {% trans %}Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone{% endtrans %}
         </div>
-        <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
+        <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">{% trans %}En savoir plus{% endtrans %}</a>
 
          <div class="d-flex d-lg-none"> 
             <div class="text-center trans">
-                <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
-                    <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
-                </a>
-                <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
-            </div>
-            <div class="text-center trans1">
                 <a href={{ path('app_contact_index') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
                     <i class="fa-solid fa-envelope-open-text rounded rounded-circle bg-light display-1"></i>
                 </a>
                 <p class="fs-1 text-title">{% trans %}Contactez-nous{% endtrans %}</p>
             </div>
-            <div class="text-center trans2">
-                <a href={{ path('app_about_africa') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
-                    <i class="fas fa-info-circle rounded rounded-circle bg-light display-1"></i>
+            <div class="text-center trans1">
+                <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
                 </a>
-                <p class="fs-1 text-title">{% trans %}le vieillissement en Afrique{% endtrans %}</p>
+                <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
+            </div>
+            <div class="text-center trans2">
+                <a href={{ path('app_assistance_social') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fas fa-hand-holding-heart rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class="fs-1 text-title">{% trans %}Actions sociales{% endtrans %}</p>
             </div>
         </div>
     </section>
@@ -80,13 +80,13 @@
 
                 <div type="button" id="liveToastBtn">
                     {% block title %}
-                        <h4 class="my-3 display-5 fw-bold">Petites annonces</h4>
-                        <p class="text-muted mx-auto display-5">Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !
+                        <h4 class="my-3 display-5 fw-bold">{% trans %}Petites annonces{% endtrans %}</h4>
+                        <p class="text-muted mx-auto display-5">{% trans %}Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !{% endtrans %}
                         </p>
                     {% endblock %}
                     <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
                         <a class="hover10">
-                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt="annonces" class="shadow rounded-circle bg-success border border-5 border-light">
+                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt={% trans %}"annonces"{% endtrans %} class="shadow rounded-circle bg-success border border-5 border-light">
                             <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
                         </a>
                     </figure>
@@ -107,12 +107,12 @@
                 <div class="col-10 col-lg-6 mb-5">
                     <h1 class="text-dark display-1 text-center js-vision fw-bold mb-5 text-font-1"></h1>
                     <div class="display-4 p-2  text-center my-5">
-                        <span class="text-success fw-bold d-block">Maison Philo</span>
-                        <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
+                        <h1 class="text-success fw-bold d-block">{% trans %}Maison Philo{% endtrans %}</h1>
+                        <span class="text-black">{% trans %}est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone{% endtrans %}</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-xlg-3 col-8 text-center">
-                    <img src={{asset("images/objective.png")}} class="img-fluid" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
+                    <img src={{asset("images/objective.png")}} class="img-fluid" alt={% trans %}"objectif"{% endtrans %} data-aos="fade-up" data-aos-duration="3000">
                 </div>
             </div>
         {% endblock %}
@@ -124,7 +124,16 @@
             {% include "components/atoms/homeTitle.html.twig" with {
                 content : "A Propos"
             } %}
-            <span class="fs-1 text-muted container">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
+            <span class="fs-1 text-muted container">
+                <figure>
+                    <blockquote class="blockquote">
+                        <p>{% trans %}« Rêvez grand, commencez petit, agissez maintenant. »{% endtrans %}</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Auteur <cite title="Source Title">{% trans %}Robin Sharma{% endtrans %}</cite>
+                    </figcaption>
+                </figure>
+            </span>
         </div>
 
         {% embed "components/molecules/aboutDescription.html.twig" with {
@@ -193,7 +202,7 @@
             {% include "components/atoms/homeTitle.html.twig" with {
                 content : "Nos engagements"
             } %}
-            <p class="text-muted fs-1">Pour le développement durable</p>
+            <p class="text-muted fs-1">{% trans %}Pour le développement durable{% endtrans %}</p>
         </div>
 
         {% include "components/atoms/btnSquare.html.twig" with {
