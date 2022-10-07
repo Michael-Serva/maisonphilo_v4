@@ -6,8 +6,9 @@
 {% block body %}
     <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
         {% include "components/organisms/homeNavbar.html.twig" %}
-        <section id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
-        {# top-page #}
+        <section
+            id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
+            {# top-page #}
             <p class="display-1 fw-bold text-light text-center">
                 <span class="js-title"></span>
             </p>
@@ -84,25 +85,31 @@
 
             {% include "components/molecules/aboutDescription.html.twig" with {
                 title : "Vieillissement dans le monde",
-                content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
+                content : " Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé. ",
                 images : "monde.jpg",
                 alt : "Vieillissement dans le monde",
                 href : "app_about_world"                       
                 } %}
             {% include "components/molecules/aboutDescription.html.twig" with {
                 title : "Vieillisement en Afrique",
-                content : "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
+                content : " Souvent présenté comme un continent jeune, l’Afrique n’échappe cependant pas à l’augmentation du nombre de personnes âgées suivant ainsi une tendance mondiale.",
                 images : "afrique.png",
                 alt : "Vieillisement en Afrique",
                 href : "app_about_africa"
             } %}
-            {% include "components/molecules/aboutDescription.html.twig" with {
+            {% embed "components/molecules/aboutDescription.html.twig" with {
                 title : "Téléchargez notre E-Book",
                 content : "",
                 images : "logo_maison_philo2.png",
-                alt : "MaisonPhilo",
-                href : "app_home_index"
-            } %}
+                alt : "MaisonPhilo"
+             } %}
+                {% block src %}
+                    {{asset('doc/aging.pdf')}}
+                {% endblock %}
+                {% block target %}target="_blank"
+                {% endblock %}
+            {% endembed %}
+
         </section>
         {# Section commitment #}
         <section id="commit" class="row gx-0">
