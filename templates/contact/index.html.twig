@@ -22,49 +22,45 @@
                     <div>
                         <div class="row justify-content-center">
                             <span class="fs-1 col-lg-7 text-justify p-2">
-                                <div class="mb-3 fw-bold text-success-800">Ensemble nous sommes plus forts !</div>
-                                Nous avons besoin de vous pour enrichir ce site d’informations utiles. Aussi, n’hésitez pas à partager les informations à votre connaissance qui ne serait pas encore présentées sur ce site en remplissant soit le questionnaire ou le champ libre ci-dessous.
-                                <div class="mt-3">Pour nous contacter, vous pouvez renseigner votre requête dans le champ libre (option 2); Merci par avance.</div>
+                                <div class="mb-3 fw-bold text-success-800">{% trans %}Ensemble nous sommes plus forts !{% endtrans %}</div>
+                                {% trans %}Nous avons besoin de vous pour enrichir ce site d’informations utiles. Aussi, n’hésitez pas à partager les informations à votre connaissance qui ne serait pas encore présentées sur ce site en remplissant soit le questionnaire ou le champ libre ci-dessous.{% endtrans %}
+                                <div class="mt-3">{% trans %}Pour nous contacter, vous pouvez renseigner votre requête dans le champ libre (option 2); Merci par avance.{% endtrans %}
+                                </div>
                                 <span class="d-block my-5"></span>
                             </span>
                             <div class="col-lg-5 d-flex align-items-start">
-                                <img src={{asset('images/partage.jpg')}} alt="" class="shadow img-fluid">
+                                <img src={{asset('images/partage.jpg')}} alt={% trans %}"partage"{% endtrans %} class="shadow img-fluid">
                             </div>
 
 
                         </div>
                         <div class="row justify-content-center">
                             <ul class="col-lg-10 fs-1">
-                                <li>Option 1: Remplissez notre questionnaire
-                                    <a href={{ path('app_survey') }}>Cliquez ici</a>
+                                <li>{% trans %}Option 1: Remplissez notre questionnaire{% endtrans %}
+                                    <a href={{ path('app_survey') }}>{% trans %}Cliquez ici{% endtrans %}</a>
                                 </li>
-                                <li class="mt-3 mb-5">Option 2: Champ libre</li>
+                                <li class="mt-3 mb-5">{% trans %}Option 2: Champ libre{% endtrans %}</li>
                             </ul>
 
                             <div id="contact" class="border p-5 rounded shadow m-2 col-lg bg-light" data-aos="zoom-in" data-aos-duration="3000">
                                 {% for message in app.flashes('success') %}
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <strong>Félicitations!</strong>
+                                        <strong>{% trans %}Félicitations!{% endtrans %}</strong>
                                         {{ message }}
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 {% endfor %}
                                 <h1>
                                     <i class="fa-brands fa-slideshare"></i>
-                                    Partagez vos informations</h1>
+                                    {% trans %}Partagez vos informations{% endtrans %}</h1>
                                 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                                 {{ form_widget(form) }}
                                 {{ form_end(form) }}
                             </div>
                         </div>
-
                     </div>
-
-
                 {% endblock %}
             {% endembed  %}
-
         {% endblock %}
-
     {% endembed  %}
 {% endblock %}

@@ -14,21 +14,21 @@
                     } %}
                     <div class="mb-3"></div>
                     <div class="col">
-                        <img src={{asset('images/africa_aging_green.jpg')}} alt="Homme africain agé sur fond orange" class="img-fluid">
+                        <img src={{asset('images/africa_aging_green.jpg')}} alt={% trans %}"Homme africain agé sur fond orange"{% endtrans %} class="img-fluid">
                     </div>
                     <div class="col">
                         <div class="">
-                            <img src={{asset('images/asians.jpg')}} alt="Homme africain agé avec un chapeau" class="img-fluid">
+                            <img src={{asset('images/asians.jpg')}} alt={% trans %}"Homme africain agé avec un chapeau"{% endtrans %} class="img-fluid">
                         </div>
                         <div class="">
-                            <img src={{asset('images/india.jpg')}} alt="Homme africain âgé pris en charge par une infirmière" class="img-fluid">
+                            <img src={{asset('images/india.jpg')}} alt={% trans %}"Homme africain âgé pris en charge par une infirmière"{% endtrans %} class="img-fluid">
                         </div>
                         <div class="">
-                            <img src={{asset('images/euro_aging_kids.jpg')}} alt="Personnes noires âgées dans un village" class="img-fluid">
+                            <img src={{asset('images/euro_aging_kids.jpg')}} alt={% trans %}"Homme africain âgé pris en charge par une infirmière"{% endtrans %} class="img-fluid">
                         </div>
                     </div>
                     <div class="col">
-                        <img src={{asset('images/aging_couple.jpg')}} alt="Femme noire âgée" class="img-fluid">
+                        <img src={{asset('images/aging_couple.jpg')}} alt={% trans %}"Femme noire âgée"{% endtrans %} class="img-fluid">
                     </div>
                     <div class="mb-5"></div>
                     {% include "components/atoms/paragraph.html.twig" with {
@@ -53,7 +53,7 @@
                             content: "Répartition de la population totale et des personnes âgées de 60 ans & plus par zone géographique en 2020 et selon les projections 2050"
                     } %}
                     <div class="text-center">
-                        <img src={{asset('images/world_aging.png')}} class="border border-secondary img-fluid" alt="Répartition vieillissement dans le monde">
+                        <img src={{asset('images/world_aging.png')}} class="border border-secondary img-fluid" alt={% trans %}"Répartition vieillissement dans le monde"{% endtrans %}>
                     </div>
                     <div class="mb-5"></div>
                     {% include "components/atoms/paragraph.html.twig" with {
@@ -68,8 +68,9 @@
                     <div class="fw-bold">
                         {% include "components/atoms/paragraph.html.twig" with {
                         content: "Il y a donc un réel enjeu de préparation de l’environnement, des infrastructures, des solutions et politiques de prise en charge de ces futurs nombreux séniors africains."
-                    } %}</div>
-<a href="{{path("app_about_africa")}}" class="mb-4">Pour en savoir plus sur le vieillissement en Afrique cliquez ici</a>
+                    } %}
+                    </div>
+                    <a href="{{path("app_about_africa")}}" class="mb-4">{% trans %}Pour en savoir plus sur le vieillissement en Afrique cliquez ici{% endtrans %}</a>
                 {% endblock %}
             {% endembed %}
         {% endblock %}

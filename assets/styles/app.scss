@@ -8,6 +8,22 @@ section#top {
   min-height: 10vh;
 }
 
+.trans {
+  transform: translate(0, -100px);
+}
+.trans1 {
+  transform: translate(0, -50px);
+}
+.trans2 {
+  transform: translate(0, -100px);
+}
+.trans3 {
+  transform: translate(0, -100px);
+}
+.trans4{
+  transform: translate(0, -100px);
+}
+
 .return-up {
   z-index: 999;
   bottom: 5vh;
@@ -24,6 +40,20 @@ section#top {
   padding: 5px;
 }
 
+.z-index {
+  z-index: 999;
+}
+
+.login-button {
+  z-index: 999;
+  top: 5vh;
+  position: fixed;
+  padding: 5px;
+  right: 1vh;
+}
+.js-login-button{
+  display: none;
+}
 #top-page {
   min-height: 90vh;
 }

@@ -1,11 +1,11 @@
 <div class="bg-light text-dark w-75 mx-auto"> 
     <h4 class="display-4 fw-bold text-success-800 text-center my-3">{{name}}</h4>
     <div class="fs-1 text-center">
-        <span class="d-block">{{activity}}</span>
+        <span class="d-block">{{activity | trans}}</span>
         {% for type in type %}
-            <span class="d-block">{{type}}</span>
+            <span class="d-block">{{type | trans}}</span>
         {% endfor %}
-        <span class="d-block">{{description | raw}}</span>
+        <span class="d-block">{{description | raw | trans}}</span>
         <p class="text-muted fst-italic d-block">
             <span class="d-block">
                 <i class="fa-solid fa-phone"></i>
@@ -15,7 +15,7 @@
                 <i class="fa-solid fa-at"></i>
                 {{email | default('Aucun mail connu')}}
             </span>
-            <span class="d-block">{{contact}}
+            <span class="d-block">{{contact | trans}}
             </span>
         </p>
     </div>

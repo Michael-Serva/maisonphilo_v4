@@ -13,21 +13,21 @@
                     } %}
                     <div class="mb-3"></div>
                     <div class="col">
-                        <img src={{asset('images/aging_bg_orange.jpeg')}} alt="Homme africain agé sur fond orange" class="img-fluid">
+                        <img src={{asset('images/aging_bg_orange.jpeg')}} alt={% trans %}"Homme africain agé sur fond orange"{% endtrans %} class="img-fluid">
                     </div>
                     <div class="col">
                         <div class="">
-                            <img src={{asset('images/aging_hat.jpeg')}} alt="Homme africain agé avec un chapeau" class="img-fluid">
+                            <img src={{asset('images/aging_hat.jpeg')}} alt={% trans %}"Homme africain agé avec un chapeau"{% endtrans %} class="img-fluid">
                         </div>
                         <div class="">
-                            <img src={{asset('images/aging_care.jpeg')}} alt="Homme africain âgé pris en charge par une infirmière" class="img-fluid">
+                            <img src={{asset('images/aging_care.jpeg')}} alt={% trans %}"Homme africain âgé pris en charge par une infirmière"{% endtrans %} class="img-fluid">
                         </div>
                         <div class="">
-                            <img src={{asset('images/village.jpeg')}} alt="Personnes noires âgées dans un village" class="img-fluid">
+                            <img src={{asset('images/village.jpeg')}} alt={% trans %}"Homme africain âgé pris en charge par une infirmière"{% endtrans %} class="img-fluid">
                         </div>
                     </div>
                     <div class="col">
-                        <img src={{asset('images/old_black_woman.jpeg')}} alt="Femme noire âgée" class="img-fluid">
+                        <img src={{asset('images/old_black_woman.jpeg')}} alt={% trans %}"Homme africain âgé pris en charge par une infirmière"{% endtrans %} class="img-fluid">
                     </div>
                     <div class="mb-5"></div>
                     {% embed "components/atoms/paragraph.html.twig" with {
@@ -56,7 +56,7 @@
                         content: "Si le quasi triplement du nombre de personnes de 60 ans & plus est prévu pour presque toutes les zones d’Afrique d’ici à 2050, des disparités sont néanmoins à noter lorsqu’on analyse les proportions. En effet, en 2020 toutes les zones présentent une proportion de personnes âgées inférieure à 9%. L’Afrique du nord ainsi que le sud de l’Afrique verront cette proportion progresser à 15% et plus tandis que les autres régions devraient voir le taux également progresser mais rester en dessous des 9%."
                     } %}
               
-                    <a href="{{path("app_about_world")}}" class="mb-4">Pour en savoir plus sur le vieillissement dans le monde cliquez ici</a>
+                    <a href="{{path("app_about_world")}}" class="mb-4">{% trans %}Pour en savoir plus sur le vieillissement dans le monde cliquez ici{% endtrans %}</a>
                 {% endblock %}
                 {# end section #}
             {% endembed %}

@@ -9,31 +9,31 @@
     {% embed "components/organisms/fullPage.html.twig" %}
         {% block content %}
             <p class="text-font-script display-3 fw-bold text-center mb-5">
-                <span>Elle s'appelait
+                <span>{% trans %}Elle s'appelait{% endtrans %}
                 </span>
-                <span class="text-success-800">Philo</span>
-                <span class="d-block">... C'était ma Mémé.</span>
+                <span class="text-success-800">{% trans %}Philo{% endtrans %}</span>
+                <span class="d-block">{% trans %}... C'était ma Mémé.{% endtrans %}</span>
             </p>
 
             <div class="fs-1 lh-5 text-center">
-                <p>Ses dernières années sur cette terre m’ont fait prendre conscience du besoin de développer les solutions facilitant la prise en charge de nos parents âgés en Afrique.
+                <p>{% trans %}Ses dernières années sur cette terre m’ont fait prendre conscience du besoin de développer les solutions facilitant la prise en charge de nos parents âgés en Afrique.{% endtrans %}
                 </p>
-                <p>En effet chaque étape de la perte d’autonomie de Mémé a été compliquée : Où acheter les protections adultes, le fauteuil roulant ? Où trouver un hôpital avec un centre spécialisé en gériatrie ?
+                <p>{% trans %}En effet chaque étape de la perte d’autonomie de Mémé a été compliquée : Où acheter les protections adultes, le fauteuil roulant ? Où trouver un hôpital avec un centre spécialisé en gériatrie ?{% endtrans %}
                 </p>
-                <p>…. A chaque fois l’information a été difficile et longue à trouver.
+                <p>{% trans %}…. A chaque fois l’information a été difficile et longue à trouver.{% endtrans %}
                 </p>
-                <p>Cette expérience m’a permis de faire les constats suivants :
+                <p>{% trans %}Cette expérience m’a permis de faire les constats suivants :{% endtrans %}
                 </p>
                 <div class="text-center">
-                    <img src={{asset('images/philo.jpg') |imagine_filter('thumb')}} alt="maison philo" class="rounded-circle">
+                    <img src={{asset('images/philo.jpg') |imagine_filter('thumb')}} alt={% trans %}"maison philo"{% endtrans %} class="rounded-circle">
                 </div>
                 <ol>
-                    <li class="mt-5">Il reste beaucoup à faire en ce qui concerne une prise en charge professionnelle des personnes âgées en Afrique subsaharienne. Cependant, il existe des services et alternatives développés localement.
+                    <li class="mt-5">{% trans %}Il reste beaucoup à faire en ce qui concerne une prise en charge professionnelle des personnes âgées en Afrique subsaharienne. Cependant, il existe des services et alternatives développés localement.{% endtrans %}
                     </li>
-                    <li class="mt-5">Les solutions déjà existantes sont peu connues et l’information sur ce sujet est difficilement accessible.
+                    <li class="mt-5">{% trans %}Les solutions déjà existantes sont peu connues et l’information sur ce sujet est difficilement accessible.{% endtrans %}
                     </li>
                 </ol>
-                <p class="text-success-800 fw-bold text-center mt-5">A l’ère d’internet, l’accès à l’information aurait dû être plus facile.
+                <p class="text-success-800 fw-bold text-center mt-5">{% trans %}A l’ère d’internet, l’accès à l’information aurait dû être plus facile.{% endtrans %}
                 </p>
             </div>
         {% endblock %}
