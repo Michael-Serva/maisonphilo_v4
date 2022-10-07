@@ -1,14 +1,22 @@
+@import "./variables";
+@import "./assistance/social";
+
 .return-up {
   bottom: 5vh;
   position: fixed;
   right: 1vh;
   padding: 5px;
 }
+
 .back {
   top: 5vh;
   position: fixed;
   left: 1vh;
   padding: 5px;
+}
+
+.hide {
+  display: none;
 }
 
 /*
@@ -20,19 +28,31 @@ section#theme {
     font-size: 3em;
   }
 }
+
 /* section country */
 section#country {
   background-image: url("../../public/images/country.jpg");
   background-position: center center;
   background-size: cover;
-  height: 13vh;
+  padding: 4em 0;
 }
+
+.mark li::marker {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+  content: "\f4be";
+  color: $success-800;
+}
+
+
 @media only screen and (min-width: 1000px) {
   /* country page */
+
   /* section country */
-  section#country {
-    height: 25vh;
+  .hide {
+    display: block;
   }
+
   /*
 * share page
 * section theme
@@ -40,7 +60,7 @@ section#country {
   section#theme {
     .btn-lg {
       font-size: 1.5em;
-      width: 50vw!important;
+      width: 50vw !important;
     }
   }
 }

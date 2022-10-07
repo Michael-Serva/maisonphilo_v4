@@ -1,1 +1,1 @@
-import { Izmir } from '@ciar4n/izmir/izmir.css';
+import "@ciar4n/izmir/docs/css/izmir.min.css";

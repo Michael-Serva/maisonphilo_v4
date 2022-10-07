@@ -1,0 +1,76 @@
+{% extends 'assistance/layout.html.twig' %}
+{% set page = "Actions sociales" %}
+{% block title %}
+    {{page}}
+{% endblock %}
+
+{% block body %}
+    <section
+        id="top-page">
+        {# Top-page #}
+        <div id="social-top-page" class="bg-success-800 text-center py-5">
+            {% include "components/atoms/aboutTitle.html.twig" with {
+                pageName : page
+            } %}
+        </div>
+        <section class="py-5 container-fluid d-flex justify-content-center">
+            <div class="row col-lg-10 col-12 justify-content-center">
+                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">{% trans %}Vous êtes une association, une ONG ou toute autre structure à vocation sociale:{% endtrans %}
+                </p>
+                <div class="pb-3 col-7 d-flex flex-column align-items-center">
+                    <p class="display-5 text-success-800 fw-bold mb-4 hide">{% trans %}
+                        Vous êtes une association, une ONG ou toute autre structure à vocation sociale:{% endtrans %}</p>
+                    <ul class="fs-1 text-muted">
+                        <li class="mb-2">{% trans %}
+                            Vous menez des actions caricatives à destination des personnes âgées en Afrique subsaharienne francophone{% endtrans %}</li>
+                        <li>{% trans %}Vous voulez gagner en visibilité, faire connaitre ses actions et ses besoins, alors ...{% endtrans %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-center container-fluid">
+                    <img src={{asset('images/heart.jpg')}} alt="homme africain" class=" img-responsive w-100">
+                </div>
+                <div class="py-3 my-3 mb-5">
+                    <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1">{% trans %}Contactez-nous!{% endtrans %}</a>
+                </div>
+                <p class="display-5 text-success-800 fw-bold mb-4 d-lg-none">{% trans %}Nous vous proposons un espace sur lequel vous pourrez:{% endtrans %}</p>
+                <div class="pb-3 col-7 d-flex flex-column">
+                    <p class="display-5 text-success-800 fw-bold mb-4 hide">{% trans %}Nous vous proposons un espace sur lequel vous pourrez:{% endtrans %}</p>
+                    <ul class="fs-1 text-muted">
+                        <li class="mb-2">{% trans %}Présenter votre structure{% endtrans %}</li>
+                        <li class="mb-2"></li>{% trans %}Présenter une action spécifique{% endtrans %}
+                        <li></li>{% trans %}Exprimer vos attentes et besoins{% endtrans %}
+                    </ul>
+                </div>
+                <div class="col-5 col-lg-3 d-flex flex-column justify-content-end container-fluid">
+                    <img src={{asset('images/aging.jpg')}} alt="homme africain" class=" img-responsive w-100">
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="container-fluid d-flex flex-column container-fluid"></section>
+        <section id="middle-social" class="d-flex align-items-center justify-content-center container-fluid">
+            <p class="fs-1 fw-bold text-center m-2 text-light">{% trans %}Le monde associatif est un acteur majeur de la prise en charge de nos Anciens en Afrique. Aussi, mettre en lumière vos actions est l’expression de la dimension sociale qui est essentielle dans l’ADN de{% endtrans %}
+                <em class="fs-1"></em>.{% trans %}Maison Philo{% endtrans %}
+            </p>
+        </section>
+        <section id="bottom-social" class="container-fluid d-flex flex-column col-lg-10">
+            <p class="display-3 fw-bold text-capitalize text-center mt-5 text-success-800">{% trans %}association à l'honneur{% endtrans %}</p>
+            <p class="display-4 fw-bold text-warning-300">{% trans %}L'âge d'or{% endtrans %}</p>
+            <div class="text-muted fs-1">
+                <p class="">{% trans %}ONG à ADRESSE, Côte d'Ivoire{% endtrans %}</p>
+                <p class="">{% trans %}Fondée en 2015, cette ONG à pour objectif la sensibilisation des populations sur l’existence des personnes âgées afin de les valoriser et leur permettre de connaître l’épanouissement.{% endtrans %}
+                </p>
+                <p class="">{% trans %}Actions menées :Actions sociales{% endtrans %}</p>
+                <p class="">{% trans %}Contact: Mme Apata{% endtrans %}</p>
+                <span>{% trans %}+225 45544546 46646{% endtrans %}</span>
+            </div>
+            <div class="py-3 my-3 mb-5">
+                <a href="" class="btn-lg btn-success bg-success-800 rounded p-3 text-decoration-none fs-1">{% trans %}En savoir plus{% endtrans %}</a>
+            </div>
+            <p class="fs-1 fw-bold">
+            {% trans %}Pour retrouver les associations précédemment à l'honneur{% endtrans %}
+                <a href="">{% trans %}<span>cliquez ici</span> {% endtrans %}</a>
+            </p>
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "assistance/layout.html.twig" %}
+{% set pageName = "Hôpitaux & Centres médicaux" %}
+{% block title %}
+    {{pageName}}
+{% endblock %}
+
+{% block body %}
+    {% embed "components/organisms/fullPage.html.twig" %}
+        {% block content %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+
+                    {% for country in countries %}
+                        {% include "components/atoms/btnOutlineShare.html.twig" with {
+                            content: country.name | country_name
+                        } %}
+                        <div class="showDescription">
+                            {% for hospital in hospitals %}
+                                {% if hospital.country == country %}
+                              
+                                    {% include "components/molecules/hospitalDescription.html.twig" with {
+                                        title: hospital.name,
+                                        subTitle: hospital.subtitle,
+                                        description: hospital.content,
+                                        phoneNumber: hospital.phoneNumber,
+                                        email: hospital.email
+                                    } %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

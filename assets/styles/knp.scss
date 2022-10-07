@@ -1,0 +1,28 @@
+    .page-link {
+    position: relative;
+    display: block;
+    color: #043106;
+    background-color: lavender;
+  
+  
+    &:hover {
+      z-index: 2;
+      background-color: #043106;
+      border-color:#043106;
+    }
+  
+    &:focus {
+      z-index: 3;
+      color: lavender!important;
+
+    }
+  }
+
+  .page-item{
+    &.active .page-link{
+        background-color: #043106;
+        border-color: lavender;
+    }
+  }
+
+  

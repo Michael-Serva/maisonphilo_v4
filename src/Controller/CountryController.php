@@ -5,23 +5,32 @@ namespace App\Controller;
 use App\Entity\Country;
 use App\Form\CountryType;
 use App\Repository\CountryRepository;
+use App\Repository\PartnerRepository;
 use App\Repository\HospitalRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/country")
+ * @Template
  */
 class CountryController extends AbstractController
 {
     /**
-     * @Route("/", name="app_country_index", methods={"GET"})
+     * @Route("/{id}", name="app_country_index", methods={"GET", "POST"}, requirements={"code":"\d+"})
      */
-    public function index(CountryRepository $countryRepository): Response
-    {
-        return $this->render('country/index.html.twig', [
+    public function index(
+        Country $country,
+        HospitalRepository $hospitalRepository,
+        PartnerRepository $partnerRepository
+    ): Response {
+        return $this->render('country/show.html.twig', [
+            'country' => $country,
+            'hospitals' => $hospitalRepository->hospitalShow($country),
+            'partners' => $partnerRepository->partnerShow($country)
         ]);
     }
 
@@ -46,13 +55,17 @@ class CountryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_country_show", methods={"GET"})
+     * @Route("/show/{code}", name="app_country_show", methods={"GET", "POST"}, requirements={"code":"\d+"})
      */
-    public function show(Country $country, HospitalRepository $hospitalRepository): Response
-    {
+    public function show(
+        Country $country,
+        HospitalRepository $hospitalRepository,
+        PartnerRepository $partnerRepository
+    ): Response {
         return $this->render('country/show.html.twig', [
             'country' => $country,
-            'hospitals' => $hospitalRepository->hospitalShow($country)
+            'hospitals' => $hospitalRepository->hospitalShow($country),
+            'partners' => $partnerRepository->partnerShow($country)
         ]);
     }
 
@@ -80,7 +93,7 @@ class CountryController extends AbstractController
      */
     public function delete(Request $request, Country $country, CountryRepository $countryRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$country->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $country->getId(), $request->request->get('_token'))) {
             $countryRepository->remove($country);
         }
 

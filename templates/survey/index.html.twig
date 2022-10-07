@@ -1,0 +1,79 @@
+{% extends 'survey/layout.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block share %}{% endblock %}
+{% block body %}
+    {% embed "components/organisms/fullPage.html.twig" with {
+       pageName: "Partage d'informations"
+    } %}
+        {% block content %}
+            <section class="form mx-auto">
+                {{ form_start(form) }}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 0
+                } %}
+                    {% block content %}
+                        <h2 class="text-success">{% trans %}Tout d'abord présentez vous!{% endtrans %}</h2>
+                        {{ form_row(form.name) }}
+                        {{ form_row(form.lastName) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.country) }}
+                    {% endblock %}
+                {% endembed  %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 1
+                } %}
+                    {% block content %}
+                        {{ form_row(form.clothes.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 2
+                } %}
+                    {% block content %}
+                        {{ form_row(form.hospitals.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 3
+                } %}
+                    {% block content %}
+                        {{ form_row(form.specialists.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 4
+                } %}
+                    {% block content %}
+                        {{ form_row(form.aids.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 5
+                } %}
+                    {% block content %}
+                        {{ form_row(form.digits.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "components/molecules/survey.html.twig" with {
+                    n : 5
+                } %}
+                    {% block content %}
+                        {{ form_row(form.politics.vars.prototype) }}
+                    {% endblock %}
+                {% endembed %}
+                <div class="d-grid gap-2 w-75 mx-auto">
+                    <button id="next6" type="submit" class="btn btn-danger">{% trans %}Validation{% endtrans %}</button>
+                </div>
+                {{ form_end(form) }}
+            </section>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

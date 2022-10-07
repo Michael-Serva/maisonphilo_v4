@@ -1,18 +1,14 @@
-{# <div class="col-xlg-4 col-lg-10 mt-5">
-    <a href={{ path("app_assistance_share") }}>
-        <i class="{{font}} text-light p-5 circle"></i>
-    </a>
-    <h4 class="my-3 display-5 fw-bold">{{title}}</h4>
-    <p class="text-muted mx-auto display-5">{{content}}</p>
-</div>
- #}
-<a href={{ path(path_link) }} class="col-xlg-4 col-lg-10 mt-5 rounded-circle text-black">
-    <figure class="c4-izmir c4-image-rotate-right p-3" data-aos="fade-down" data-aos-duration="3000">
-        <img src={{asset('images/' ~ img) | imagine_filter('circle')}} alt={{title}} class=" rounded-circle">
-        <figcaption>
-            <h3>Cliquer ici</h3>
-        </figcaption>
+<div class="mt-5">
+    {% block title %}
+        <h4 class="my-3 display-5 fw-bold">{{title | trans}}</h4>
+        <p class="text-muted mx-auto display-5">{{content | trans}}</p>
+    {% endblock %}
+    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
+        <a href={% block src %} {{ path(href) }} {% endblock %} {% block target %} {% endblock %} class="hover10">
+            <img src={{asset('images/' ~ img) | imagine_filter('circle')}} alt={{title | trans}} class="shadow rounded-circle bg-success border border-5 border-light">
+            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
+        </a>
     </figure>
-    <h4 class="my-3 display-5 fw-bold">{{title}}</h4>
-    <p class="text-muted mx-auto display-5">{{content}}</p>
-</a>
+    <a href={{ path(href) }} class="btn btn-success">{% trans %}Cliquez ici{% endtrans %}</a>
+
+</div>

@@ -51,10 +51,21 @@ class HospitalRepository extends ServiceEntityRepository
             ->andWhere('c.isValid = :val', 'c.country =:country')
             ->setParameter('val', '1')
             ->setParameter('country', $country)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function hospitalShowByCountry($country)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.isValid = :val', 'c.country =:country')
+            ->setParameter('val', '1')
+            ->setParameter('country', $country)
             ->orderBy('c.id', 'ASC')
             ->getQuery()
             ->getResult();
     }
+
 
     // /**
     //  * @return Hospital[] Returns an array of Hospital objects

@@ -1,7 +1,28 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
+@import "./floatButtonShare";
 
-@import "./_variables";
+section#top {
+  background-color: $success-800;
+  min-height: 10vh;
+}
+
+.trans {
+  transform: translate(0, -100px);
+}
+.trans1 {
+  transform: translate(0, -50px);
+}
+.trans2 {
+  transform: translate(0, -100px);
+}
+.trans3 {
+  transform: translate(0, -100px);
+}
+.trans4{
+  transform: translate(0, -100px);
+}
 
 .return-up {
   z-index: 999;
@@ -10,6 +31,7 @@
   right: 1vh;
   padding: 5px;
 }
+
 .back {
   z-index: 999;
   top: 5vh;
@@ -17,34 +39,73 @@
   left: 1vh;
   padding: 5px;
 }
-#top-page {
-  min-height: 80vh;
+
+.z-index {
+  z-index: 999;
 }
+
+.login-button {
+  z-index: 999;
+  top: 5vh;
+  position: fixed;
+  padding: 5px;
+  right: 1vh;
+}
+.js-login-button{
+  display: none;
+}
+#top-page {
+  min-height: 90vh;
+}
+
 #footer {
-  min-height: 20vh;
+  min-height: 10vh;
 }
 
 section#history,
 .text-justify {
   text-align: justify;
 }
+
+li {
+  padding-left: 0.2em;
+}
+
 @media only screen and (min-width: 1000px) {
-  .display-1{
+  .display-1 {
     font-size: 3em;
   }
-  .display-2{
+
+  .display-2 {
     font-size: 2.7em;
   }
-  .display-3{
+
+  .display-3 {
     font-size: 2.3em;
   }
-  .display-4{
+
+  .display-4 {
     font-size: 1.8em;
   }
-  .display-5{
+
+  .display-5 {
     font-size: 1.5em;
   }
-  .fs-1{
-    font-size: 1.2em!important;
+
+  .fs-1 {
+    font-size: 1.2em !important;
   }
+
+  #top-page {
+    min-height: 90vh;
+  }
+}
+
+.hover10 img {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.hover10:hover img {
+  opacity: 0.5;
 }

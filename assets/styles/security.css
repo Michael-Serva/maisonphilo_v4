@@ -5,4 +5,8 @@ section#register {
   height: 100vh;
   background-repeat: no-repeat;
 }
+
+section#register .invalid-feedback {
+  font-weight: 500;
+}
 /*# sourceMappingURL=security.css.map */

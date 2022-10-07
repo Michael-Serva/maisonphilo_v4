@@ -4,4 +4,8 @@ section#register {
   background-position: center center;
   height: 100vh;
   background-repeat: no-repeat;
+
+  .invalid-feedback {
+    font-weight: 500;
+  }
 }

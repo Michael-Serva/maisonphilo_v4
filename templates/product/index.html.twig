@@ -1,0 +1,40 @@
+{% extends 'product/layout.html.twig' %}
+
+{% block title %}Product index
+{% endblock %}
+
+{% block body %}
+    {% embed "components/organisms/fullPage.html.twig" with {
+        pageName: "Petites annonces"
+    } %}
+        {% block content %}
+            {% embed "components/molecules/section.html.twig" %}
+                {% block content %}
+                    <div class="row container-fluid js-filter">
+                        <div class="col-md-3">
+                            {% include "components/atoms/productFilter.html.twig" %}
+                        </div>
+                        <div
+                            class="col-md-9">
+                            {# {{knp_pagination_render(products)}} #}
+                           <div class="d-flex justify-content-center js-filter-pagination">
+                                {{ knp_pagination_render(products, 'components/knp/knp_pagination.html.twig') }}
+                            </div>
+                            {% include "product/_sorting.html.twig" %}
+
+                            <div class="row g-1 justify-content-evenly js-filter-content">
+                                {% include "product/_products.html.twig" %}
+                            </div>
+                            <div class="d-flex justify-content-center js-filter-pagination">
+                                {{ knp_pagination_render(products, 'components/knp/knp_pagination.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+                {# end section #}
+            {% endembed %}
+        {% endblock %}
+        {# End fullpage #}
+    {% endembed %}
+
+{% endblock %}

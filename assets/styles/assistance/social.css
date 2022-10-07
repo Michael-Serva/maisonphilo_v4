@@ -1,0 +1,11 @@
+.flag {
+  height: 10vh;
+}
+
+#middle-social {
+  background-image: url("../../../public/images/africa.jpg");
+  background-size: cover;
+  height: 20vh;
+  background-position: center center;
+}
+/*# sourceMappingURL=social.css.map */

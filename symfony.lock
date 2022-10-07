@@ -95,6 +95,15 @@
     "imagine/imagine": {
         "version": "1.2.4"
     },
+    "jms/metadata": {
+        "version": "2.6.1"
+    },
+    "knplabs/knp-components": {
+        "version": "v3.5.0"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.8.0"
+    },
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
@@ -255,7 +264,7 @@
         "version": "1.0",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
+            "branch": "main",
             "version": "1.0",
             "ref": "9d254a22efca7264203eea98b866f16f944b2f09"
         },
@@ -375,6 +384,15 @@
             "./src/Kernel.php"
         ]
     },
+    "symfony/google-mailer": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.4",
+            "ref": "f8fd4ddb9b477510f8f4bce2b9c054ab428c0120"
+        }
+    },
     "symfony/http-client": {
         "version": "v5.4.5"
     },
@@ -390,6 +408,18 @@
     "symfony/intl": {
         "version": "v5.4.5"
     },
+    "symfony/lock": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "a1c8800e40ae735206bb14586fdd6c4630a51b8d"
+        },
+        "files": [
+            "./config/packages/lock.yaml"
+        ]
+    },
     "symfony/mailer": {
         "version": "5.4",
         "recipe": {
@@ -401,6 +431,15 @@
         "files": [
             "./config/packages/mailer.yaml"
         ]
+    },
+    "symfony/mailgun-mailer": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.4",
+            "ref": "addcb559b32d9dbb4843826b063565e1b15a2a57"
+        }
     },
     "symfony/maker-bundle": {
         "version": "1.38",
@@ -513,6 +552,9 @@
     "symfony/proxy-manager-bridge": {
         "version": "v5.4.6"
     },
+    "symfony/rate-limiter": {
+        "version": "v5.4.7"
+    },
     "symfony/redis-messenger": {
         "version": "v5.4.6"
     },
@@ -555,6 +597,15 @@
     },
     "symfony/security-http": {
         "version": "v5.4.5"
+    },
+    "symfony/sendgrid-mailer": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.4",
+            "ref": "b46e4f8f1adb2864f0aa9c0ff57aea3324a07199"
+        }
     },
     "symfony/serializer": {
         "version": "v5.4.6"
@@ -689,11 +740,29 @@
     "twig/inky-extra": {
         "version": "v3.3.5"
     },
+    "twig/intl-extra": {
+        "version": "v3.3.5"
+    },
     "twig/markdown-extra": {
         "version": "v3.3.8"
     },
+    "twig/string-extra": {
+        "version": "v3.3.5"
+    },
     "twig/twig": {
         "version": "v3.3.8"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.19",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.7",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        },
+        "files": [
+            "./config/packages/vich_uploader.yaml"
+        ]
     },
     "webmozart/assert": {
         "version": "1.10.0"

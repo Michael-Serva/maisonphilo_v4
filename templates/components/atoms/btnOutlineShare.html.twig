@@ -1,1 +1,4 @@
-<a href="" class="btn btn-outline-secondary btn-lg my-3 w-75 shadow">{{content}}</a>
+<a href={{ path(path | default("app_assistance_share")) }} class="btn btn-outline-secondary btn-lg my-3 w-75 shadow {{ class | default("js-assistance")}}"><span>{{content | trans}}</span> 
+<div class="bg-light d-flex flex-column align-items-center justify-content-center ">{% block content %}{% endblock %}
+</div>
+</a>

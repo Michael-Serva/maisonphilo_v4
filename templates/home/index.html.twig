@@ -1,23 +1,51 @@
 {% extends 'home/layout.html.twig' %}
-
-{% block title %}Page d'accueil
-{% endblock %}
-
+{% set pageName = "Page d'accueil" %}
+{% block share %}{% endblock %}
 {% block body %}
-    <div data-spy="scroll" data-target="#mainNav" data-offset="0" class="text-monospace">
-        {% include "components/organisms/homeNavbar.html.twig" %}
-        <section
-            id="top-page" class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-up" data-aos-duration="3000">
-            {# top-page #}
-            <p class="display-1 fw-bold text-light text-center">
-                <span class="js-title"></span>
-            </p>
-            <div class="display-5 mt-3 fw-bold text-title container text-center">
-                Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone</div>
-            <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">En savoir plus</a>
-        </section>
-        {# services #}
-        <section id="services" class="d-flex align-items-center text-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
+
+{% include "components/organisms/homeNavbar.html.twig" %}
+<div>
+    <section
+        id="top-page" class="js-parallax d-flex justify-content-between align-items-center flex-column">
+
+       
+       
+
+        {# top-page #}
+        <p class="display-1 fw-bold text-light text-center">
+            <span class="js-title"></span>
+        </p>
+        <div class="display-5 mt-3 fw-bold text-title container text-center">
+            {% trans %}Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone{% endtrans %}
+        </div>
+        <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">{% trans %}En savoir plus{% endtrans %}</a>
+
+         <div class="d-flex d-lg-none"> 
+            <div class="text-center trans">
+                <a href={{ path('app_contact_index') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fa-solid fa-envelope-open-text rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class="fs-1 text-title">{% trans %}Contactez-nous{% endtrans %}</p>
+            </div>
+            <div class="text-center trans1">
+                <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
+            </div>
+            <div class="text-center trans2">
+                <a href={{ path('app_assistance_social') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                    <i class="fas fa-hand-holding-heart rounded rounded-circle bg-light display-1"></i>
+                </a>
+                <p class="fs-1 text-title">{% trans %}Actions sociales{% endtrans %}</p>
+            </div>
+        </div>
+    </section>
+    {# services #}
+    {% embed "components/molecules/sectionHome.html.twig" with {
+        id: "services"
+    } %}
+        {% block content %}
             <div class="row justify-content-center">
                 {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
@@ -30,110 +58,183 @@
                     Bienvenue sur cet espace collaboratif !
                     ",
                     font :  "fa-solid fa-share-nodes",      
-                    path_link : "app_assistance_share",
+                    href : "app_assistance_share",
                     img : "data_share.jpg",
-
                 } %}
 
-                {% include "components/atoms/fontCircle.html.twig" with {
-                       title : "Petites annonces",
-                       content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
-                       font : "fa-solid fa-laptop",
-                       path_link : "app_assistance_share",
-                       img : "annoncer.jpg",
-                   } %}
+                {#          {% include "components/atoms/fontCircle.html.twig" with {
+                title : "Petites annonces",
+                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
+                font : "fa-solid fa-laptop",
+                href : "app_product_index",
+                img : "annoncer.jpg",
+                } %} #}
 
                 {% include "components/atoms/fontCircle.html.twig" with {
-                       title : "Actions sociales",
-                       content : "Venez retrouver nos ONG partenaires ainsi que les actions sociales dédiées à nos parents âgés que nous soutenons.",
-                       font : "fa-solid fa-hand-holding-heart",
-                       path_link : "app_assistance_share",
-                       img : "action_sociale.jpg",
-                   } %}
+                    title : "Actions sociales",
+                    content : "Venez retrouver nos ONG partenaires ainsi que les actions sociales dédiées à nos parents âgés que nous soutenons.",
+                    font : "fa-solid fa-hand-holding-heart",
+                    href : "app_assistance_social",
+                    img : "action_sociale.jpg",
+                } %}
+
+                <div type="button" id="liveToastBtn">
+                    {% block title %}
+                        <h4 class="my-3 display-5 fw-bold">{% trans %}Petites annonces{% endtrans %}</h4>
+                        <p class="text-muted mx-auto display-5">{% trans %}Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !{% endtrans %}
+                        </p>
+                    {% endblock %}
+                    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
+                        <a class="hover10">
+                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt={% trans %}"annonces"{% endtrans %} class="shadow rounded-circle bg-success border border-5 border-light">
+                            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
+                        </a>
+                    </figure>
+                </div>
 
             </div>
-        </section>
-        {# vision #}
-        <section id="vision" class="bg-warning-100 d-flex align-items-center" data-aos="fade-up" data-aos-duration="3000">
+        {% endblock %}
+    {% endembed %}
+
+    {# vision #}
+    {% embed "components/molecules/sectionHome.html.twig" with {
+        id: "vision",
+        class: "bg-warning-200"
+    } %}
+
+        {% block content %}
             <div class="row justify-content-center container-fluid">
                 <div class="col-10 col-lg-6 mb-5">
                     <h1 class="text-dark display-1 text-center js-vision fw-bold mb-5 text-font-1"></h1>
                     <div class="display-4 p-2  text-center my-5">
-                        <span class="text-success fw-bold d-block">Maison Philo</span>
-                        <span class="text-black">est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone</span>
+                        <h1 class="text-success fw-bold d-block">{% trans %}Maison Philo{% endtrans %}</h1>
+                        <span class="text-black">{% trans %}est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone{% endtrans %}</span>
                     </div>
                 </div>
-
-                <img src={{asset("images/objective.png") | imagine_filter('thumb')}} class="img-fluid col-lg-3 col-xlg-3 col-8" alt="objectif" data-aos="fade-up" data-aos-duration="3000">
+                <div class="col-lg-3 col-xlg-3 col-8 text-center">
+                    <img src={{asset("images/objective.png")}} class="img-fluid" alt={% trans %}"objectif"{% endtrans %} data-aos="fade-up" data-aos-duration="3000">
+                </div>
             </div>
-        </section>
-        {# Section about #}
-        <section id="about" class="d-flex flex-column align-items-center justify-content-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
-            <div class="text-center title">
-                {% include "components/atoms/homeTitle.html.twig" with {
-                        content : "A Propos"
-                    } %}
-                <span class="fs-1 text-muted container">« Rêvez grand, commencez petit, agissez maintenant. » Robin Sharma</span>
-            </div>
-            {% include "components/molecules/aboutDescription.html.twig" with {
-                        title : "Qui sommes nous?",
-                        content : "Elle s’appelait Philo… C’était ma Mémé.",
-                        images : "philo.jpg",
-                        alt : "Mémé Philomène",
-                        href : "app_about_who"
-                    } %}
+        {% endblock %}
 
-            {% include "components/molecules/aboutDescription.html.twig" with {
-                title : "Vieillissement dans le monde",
-                content : " Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé. ",
-                images : "monde.jpg",
-                alt : "Vieillissement dans le monde",
-                href : "app_about_world"                       
-                } %}
-            {% include "components/molecules/aboutDescription.html.twig" with {
-                title : "Vieillisement en Afrique",
-                content : " Souvent présenté comme un continent jeune, l’Afrique n’échappe cependant pas à l’augmentation du nombre de personnes âgées suivant ainsi une tendance mondiale.",
-                images : "afrique.png",
-                alt : "Vieillisement en Afrique",
-                href : "app_about_africa"
+    {% endembed %}
+    {# Section about #}
+    <section id="about" class="d-flex flex-column align-items-center text-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
+        <div class="row justify-content-center">
+            {% include "components/atoms/homeTitle.html.twig" with {
+                content : "A Propos"
             } %}
-            {% embed "components/molecules/aboutDescription.html.twig" with {
-                title : "Téléchargez notre E-Book",
-                content : "",
-                images : "logo_maison_philo2.png",
-                alt : "MaisonPhilo"
-             } %}
-                {% block src %}
-                    {{asset('doc/aging.pdf')}}
-                {% endblock %}
-                {% block target %}target="_blank"
-                {% endblock %}
-            {% endembed %}
+            <span class="fs-1 text-muted container">
+                <figure>
+                    <blockquote class="blockquote">
+                        <p>{% trans %}« Rêvez grand, commencez petit, agissez maintenant. »{% endtrans %}</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Auteur <cite title="Source Title">{% trans %}Robin Sharma{% endtrans %}</cite>
+                    </figcaption>
+                </figure>
+            </span>
+        </div>
 
-        </section>
-        {# Section commitment #}
-        <section id="commit" class="row gx-0">
-            <div class="col-12 text-center mb-5 container-fluid">
-                {% include "components/atoms/homeTitle.html.twig" with {
-                        content : "Nos engagements"
-                    } %}
-                <p class="text-muted fs-1">Pour le développement durable</p>
-            </div>
-            <div class="col-lg-4 text-center mb-5 btn-square gx-3">
+        {% embed "components/molecules/aboutDescription.html.twig" with {
+            title : "Qui sommes nous?",
+            content : "Elle s’appelait Philo… C’était ma Mémé.",
+            href : "app_about_who",
+        } %}
+            {% block content %}
+                {% embed "components/atoms/fontCircle.html.twig" with {
+                    img : "philo.jpg",
+                    content : "Mémé Philomène",
+                } %}
+                    {% block title %}{% endblock %}
+                {% endembed %}
+            {% endblock %}
 
-                <img src={{ asset('images/sante.png') | imagine_filter('thumb') }} alt="Bonne santé et bien être">
-                <p class="d-block fs-1 text-justify mx-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
-            </div>
-            <div class="col-lg-4 text-center mb-5 btn-square">
-                <img src={{ asset('images/travail.png') | imagine_filter('thumb') }} alt="Travail décent et croissance économique">
-                <p class="d-block fs-1 text-justify mx-5">yoooooooo sum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
-            </div>
-            <div class="col-lg-4 text-center mb-5 btn-square">
-                <img src={{ asset('images/ville.png') | imagine_filter('thumb')}} alt="Villes et communautés durables">
-                <p class="d-block fs-1 text-justify mx-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt voluptatibus pariatur, consequatur corrupti illo cum. Expedita pariatur corrupti nostrum ratione porro, harum, sunt cumque quia ipsum nulla culpa saepe.</p>
-            </div>
-        </section>
-        {# Section contact #}
-        <section id="contact" class="row container-fluid"></section>
-    </div>
+        {% endembed %}
+        <div class="mt-5"></div>
+        {% embed "components/molecules/aboutDescription.html.twig" with {
+            title : "Vieillissement dans le monde",
+            content : "Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé.",
+            href : "app_about_world",
+        } %}
+            {% block content %}
+                {% embed "components/atoms/fontCircle.html.twig" with {
+                    img : "monde.jpg",
+                } %}
+                    {% block title %}{% endblock %}
+                {% endembed %}
+            {% endblock %}
+
+        {% endembed %}
+        <div class="mt-5"></div>
+        {% embed "components/molecules/aboutDescription.html.twig" with {
+            title : "Vieillisement en Afrique",
+            content : "Souvent présenté comme un continent jeune, l’Afrique n’échappe cependant pas à l’augmentation du nombre de personnes âgées suivant ainsi une tendance mondiale.",
+            href : "app_about_africa",
+        } %}
+            {% block content %}
+                {% embed "components/atoms/fontCircle.html.twig" with {
+                    img : "afrique.png",
+                } %}
+                    {% block title %}{% endblock %}
+                {% endembed %}
+            {% endblock %}
+
+        {% endembed %}
+
+        <div id="contact" class="my-5"></div>
+        {% embed "components/molecules/aboutDescription.html.twig" with {
+            title : "Contactez-nous",
+            content : "",
+            href : "app_contact_index",
+        } %}
+            {% block content %}
+                {% embed "components/atoms/fontCircle.html.twig" with {
+                    img : "logo_maison_philo2.png",
+                } %}
+                    {% block title %}{% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    </section>
+    <section id="commit" class="row" data-aos="fade-up" data-aos-duration="3000">
+        <div class="col-12 text-center mb-5 container-fluid">
+            {% include "components/atoms/homeTitle.html.twig" with {
+                content : "Nos engagements"
+            } %}
+            <p class="text-muted fs-1">{% trans %}Pour le développement durable{% endtrans %}</p>
+        </div>
+
+        {% include "components/atoms/btnSquare.html.twig" with {
+            png: "sante.png",
+            alt: "Santé et bien être",
+            content: "L'objectif fixé par les Nations Unies dans le cadre de cet engagement est de permettre à tous de vivre en bonne santé et promouvoir le bien-être de tous à tout âge.",
+            hide: "Nous l'avons retenu car le vieillissement s'accompagne souvent d'une augmentation du risque d'apparition de problèmes de santé. Un des défis liés au vieillissement en Afrique est de faire évoluer les systèmes de sante afin d' améliorer l’accès de la population à la santé et aux soins de santé. Nous voulons y contribuer à travers le partage d'informations.",
+            index: 1
+        } %}
+
+        {% include "components/atoms/btnSquare.html.twig" with {
+            png: "travail.png",
+            alt: "Travail et croissance économique",
+            content: "Promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous. ",
+            hide: "L'objectif fixé par les Nations Unies dans le cadre de cet engagement est de promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous. Aujourd'hui, la prise en charge des séniors africains se fait beaucoup de manière informelle. Ainsi, ce sont souvent les \"petites bonnes\" qui sont chargées de s'occuper des grands parents âgés en perte d'autonomie alors qu'elles n'ont généralement aucune formation préalable pour cela.Notre volonté est de contribuer à la valorisation du travail des personnes qui prennent soin de nos parents âgées. Nous pensons que, le fait de favoriser leur formation contribuera non seulement à améliorer le bien être de la personne âgée mais permettra également l'amélioration des conditions de vie du personnel formé grâce à une progression des perspectives professionnelles. Nous croyons que le domaine de la prise en charge des personnes âgées présente un gros potentiel de création d'emplois. Si les bonnes mesures sont anticipées pour permettre que ces emplois soient durables et décent, une \"silver economie à l' africaine\" peut contribuer à la croissance économique des états africains.",
+            index: 2
+        } %}
+
+            {% include "components/atoms/btnSquare.html.twig" with {
+                png: "ville.png",
+                alt: "Travail et croissance économique",
+                content: "L'objectif fixé par les Nations Unies dans le cadre de cet engagement est de faire en sorte que les villes et les établissements humains soient ouverts à tous, résilients et durables.",
+                hide: "Aujourd'hui, la majorité des personnes âgées africaines vivent en zone rurale. Cependant, comme pour les autres tranches d'âge, la tendance est aussi à l'urbanisation des séniors africains. Nos villes et communautés sont elles prêtes, adaptées aux personnes âgées dont le nombre est appelé à croître ? Les transports, les infrastructures, les accès aux bâtiments ... prennent ils en compte cette évolution. Notre volonté est de participer à la prise de conscience qu'il est nécessaire d'intégrer dans les choix d'urbanisation le fait que la population âgée est appelée à augmenter dans les villes africaines.",
+                index: 3
+            } %}
+
+
+</section>
+{# Section contact #}
+<section id="contact" class="row container-fluid"></section>
+
+{# toast section #}
+{% include "components/atoms/toast.html.twig" %}
+
 {% endblock %}

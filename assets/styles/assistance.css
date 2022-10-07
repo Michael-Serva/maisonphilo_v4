@@ -1,3 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+.text-font-script {
+  font-family: Parisienne, cursive;
+}
+
+.text-font-1 {
+  font-family: Montserrat, sans-serif;
+}
+
+.text-font-2 {
+  font-family: "Courier Prime", monospace;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-warning-300 {
+  color: #ebc248;
+}
+
+.text-primary-800 {
+  color: #445c72;
+}
+
+.text-success-800 {
+  color: #043106;
+}
+
+.bg-success-800 {
+  background-color: #043106;
+}
+
+.bg-primary-200 {
+  background-color: #83a8cb;
+}
+
+.bg-warning-200 {
+  background-color: #f0dca0;
+}
+
+.bg-warning-100 {
+  background-color: #eadaac;
+}
+
+.btn-success {
+  background-color: #043106;
+}
+
+.c4-izmir {
+  --primary-color: transparent;
+  --secondary-color: #d0206e;
+  --transition-duration: 500ms;
+  --border-width: 6px;
+  --overlay-opacity: 0.5;
+  --text-color: #043106;
+}
+
+.flag {
+  height: 10vh;
+}
+
+#middle-social {
+  background-image: url("../../../public/images/africa.jpg");
+  background-size: cover;
+  height: 20vh;
+  background-position: center center;
+}
+
 .return-up {
   bottom: 5vh;
   position: fixed;
@@ -10,6 +82,10 @@
   position: fixed;
   left: 1vh;
   padding: 5px;
+}
+
+.hide {
+  display: none;
 }
 
 /*
@@ -25,14 +101,21 @@ section#country {
   background-image: url("../../public/images/country.jpg");
   background-position: center center;
   background-size: cover;
-  height: 13vh;
+  padding: 4em 0;
+}
+
+.mark li::marker {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+  content: "\f4be";
+  color: #043106;
 }
 
 @media only screen and (min-width: 1000px) {
   /* country page */
   /* section country */
-  section#country {
-    height: 25vh;
+  .hide {
+    display: block;
   }
   /*
 * share page
