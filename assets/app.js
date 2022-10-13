@@ -17,20 +17,6 @@ import "./scripts/aos";
 import "./scripts/parallax";
 import "./scripts/loginButton";
 import "./styles/app.scss";
-
+import "./scripts/slideAnimation";
 
 // app.js
-
-// the bootstrap module doesn't export/return anything
-
-$(function () {
-  for (let i = 1; i <= 3; i++) {
-    $(`.show${i}`).on("click", function (e) {
-      e.preventDefault();
-      $(`#show${i}`).toggleClass("d-none");
-      $(`.hide${i}`).toggleClass("d-none");
-    });
-  }
-});
-
-

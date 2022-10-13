@@ -2,16 +2,16 @@
     <img src={{ asset('images/' ~ png) | imagine_filter('thumb') }} alt={{alt | trans}}>
     <p role="button" class="d-block fs-1 text-justify show{{index}} pe-auto">
         {{content}}
-        <span class='d-none' id='show{{index}}'>
+        <span id='show{{index}}' style='display:none'>
             {{hide}}
         </span>
-        <span class='text-primary text-decoration-underline d-block pe-auto'>
-            <em class='d-block hide{{index}}'>{% trans %}En savoir plus{% endtrans %}
+        <span class='text-primary text-decoration-underline pe-auto  hide{{index}}'>
+            <em class='d-block'>{% trans %}En savoir plus{% endtrans %}
                 <i class='fa-solid fa-caret-down'></i>
             </em>
-            <em class='d-none hide{{index}}'>
+        {#     <em class='hide{{index}}' style='display:none'>
                 <i class='fa-solid fa-caret-up'></i>
-            </em>
+            </em> #}
         </span>
     </p>
 </div>

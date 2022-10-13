@@ -45,6 +45,5 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Produits', 'fa fa-barcode', Product::class);
         yield MenuItem::linkToCrud('Catégories', 'fa fa-atom', Category::class);
         yield MenuItem::linkToCrud('Questionnaire', 'fa fa-poll-h', Survey::class);
-        
     }
 }

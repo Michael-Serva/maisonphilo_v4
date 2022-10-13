@@ -21,16 +21,16 @@ class HospitalsType extends AbstractType
         ])
         ->add('hostDayPlacement', TextType::class, [
             "label" => "Existe-t-il localement des organismes d’accueil de jour des personnes âgées ?"
-        ])    
+        ])
         ->add('temporaryPlacement', TextType::class, [
             "label" => "Existe-t-il localement des organismes de placement (temporaire ou permanent) des
             personnes âgées ?"
-        ])  
+        ])
         ->add('dementingSyndromes', TextType::class, [
             "label" => "Existe-t-il localement des organismes de prise en charge de personnes âgées avec des
             syndromes démentiels ou des pathologies du type Alzheimer ?"
         ])
-        
+
         ;
     }
 

@@ -22,7 +22,7 @@ class SpecialistsType extends AbstractType
                     'Non' => false,
                     'Je ne sais pas' => null,
                 ]
-                
+
             ])
             ->add('name', TextType::class, [
                 "label" => "Pouvez-vous nous fournir leur nom, spécialité et contacts ?",

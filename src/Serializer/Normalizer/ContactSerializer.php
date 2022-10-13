@@ -11,7 +11,7 @@ $encoders = [new XmlEncoder(), new JsonEncoder()];
 $normalizers = [new ObjectNormalizer()];
 $serializer = new Serializer($normalizers, $encoders);
 
-class ContactSerializer 
+class ContactSerializer
 {
     public function serializeXml($object)
     {

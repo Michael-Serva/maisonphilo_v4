@@ -26,7 +26,7 @@ class MailerService extends AbstractController
      * @return Response
      * @Route("/email")
      */
-    public function sendEmail(): Void
+    public function sendEmail(): void
     {
         $email = (new Email())
             ->from('noreply-maisonphilo@servgrouptn.com')
@@ -46,7 +46,7 @@ class MailerService extends AbstractController
      * @return Response
      * @Route("/email/contact")
      */
-    public function sendContactEmail($email, $subject, $lastname, $firstName, $country, $content): Void
+    public function sendContactEmail($email, $subject, $lastname, $firstName, $country, $content): void
     {
         $email = (new Email())
             ->from('noreply-maisonphilo@servgrouptn.com')
