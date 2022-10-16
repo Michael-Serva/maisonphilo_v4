@@ -17,7 +17,7 @@ import "./scripts/aos";
 import "./scripts/parallax";
 import "./scripts/loginButton";
 import "./styles/app.scss";
-
+import "./scripts/slideAnimation";
 
 // app.js
 

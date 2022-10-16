@@ -22,7 +22,7 @@ class SurveyCrudController extends AbstractCrudController
         return Survey::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -41,5 +41,4 @@ class SurveyCrudController extends AbstractCrudController
 
         ];
     }
-   
 }

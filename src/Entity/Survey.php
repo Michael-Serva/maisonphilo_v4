@@ -31,7 +31,7 @@ class Survey
     /**
      * @ORM\Column(type="string", length=255)
      */
-    
+
     private $email;
 
     /**

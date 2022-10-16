@@ -127,7 +127,7 @@ class SurveyType extends AbstractType
                 "by_reference" => false,
                 "allow_add" => true,
             ])
-            
+
             ;
     }
 
