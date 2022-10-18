@@ -13,6 +13,7 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -20,29 +21,38 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Security\RegistrationAuthenticator
-                # "login" is the name of the route created previously
-                login_path: login
-                check_path: login
+        
+            form_login:
+                # "app_login" is the name of the route created previously
+                login_path: app_login
+                check_path: app_login
+
+                # utilisez la fonction du modèle Twig pour générer un jeton CSRF et le stocker en tant que champ masqué du formulaire. Par défaut, le champ HTML doit être appelé et la chaîne utilisée pour générer la valeur doit être :csrf_token()_csrf_tokenauthenticate
+                enable_csrf: true
+
+            # configure the maximum login attempts
+            login_throttling:
+                max_attempts: 3          # per minute ...
+                # interval: '15 minutes' # ... or in a custom period
+
+
             logout:
                 path: app_logout
                 target: app_home_index
-                # where to redirect after logout
+                # w here to redirect after logout
                 # target: app_any_route
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
-            login_throttling:
-                max_attempts: 3
-                interval: '1 minutes'
+        
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }
-         - { path: ^/login, roles: ROLE_USER }
+        # - { path: ^/login, roles: ROLE_USER }
          - { path: ^/profile, roles: ROLE_USER }
 
 when@test:

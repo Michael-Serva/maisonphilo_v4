@@ -14,14 +14,14 @@ class DigitsType extends AbstractType
     {
         $builder
             ->add('digits', TextType::class, [
-                "label" => "Disposez-vous de chiffres récents concernant des statistiques relatives aux personnes âgées ?"
+                "label"
+                => "Disposez-vous de chiffres récents concernant des statistiques relatives aux personnes âgées ?"
             ])
 
             ->add("files", FileType::class, [
                 "label" => "Connaissez-vous des documents officiels susceptibles contenant des chiffres permettant de
                 répondre à la question précédente ?"
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

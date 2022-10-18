@@ -40,6 +40,7 @@ class MailerService extends AbstractController
         $this->mailer->send($email);
     }
 
+
     /**
      * Service d'envoi de mail
      *

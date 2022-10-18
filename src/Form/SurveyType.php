@@ -78,7 +78,9 @@ class SurveyType extends AbstractType
                 'entry_type' => HospitalsType::class,
                 'attr' => ['class' => 'fw-bold'],
                 'entry_options' => [
-                    'label' => "Hôpitaux et centres spécialisés dans la prise en charge gériatrique accessibles localement",
+                    'label' =>
+                    "Hôpitaux et centres spécialisés dans la prise en 
+                    charge gériatrique accessibles localement",
                     'row_attr' => ['class' => 'fw-bold text-success'],
                     'attr' => ['class' => 'fw-normal text-dark']
                 ],
@@ -126,9 +128,7 @@ class SurveyType extends AbstractType
                 ],
                 "by_reference" => false,
                 "allow_add" => true,
-            ])
-
-            ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

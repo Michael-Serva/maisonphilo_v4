@@ -38,45 +38,38 @@
         {% block login %}
             {% if app.user is  null %}
 
-            <div class="d-flex login-button justify-content-evenly d-lg-none"> 
-                {% include "components/atoms/loginButton.html.twig" with {
-                    class: "js-login-button",
-                    font: "right-to-bracket",
-                    content: "Connexion",
-                    href: "app_register"
-                } %}
+                <div class="d-flex login-button justify-content-evenly d-lg-none">
+                    {% include "components/atoms/loginButton.html.twig" with {
+                        class: "js-login-button",
+                        font: "right-to-bracket",
+                        content: "Connexion",
+                        href: "app_login"
+                    } %}
 
-                {% include "components/atoms/loginButton.html.twig" with {
-                    class: "js-login-button",
-                    font: "user-plus",
-                    content: "Inscription",
-                    href: "app_login"
-                } %}
- 
-                <a id="js-login-button" href="#" class="text-center">
-                    <i class="fa-solid fa-fingerprint bg-light text-warning display-1 rounded-circle p-3"></i>
-                </a>
-            </div>
-
-               
-
-                {# <a href="#" class="login-button index">
-                    <i class="fa-solid fa-fingerprint bg-light text-warning display-1 rounded-circle p-3"></i>
-                </a>
-                <a href="#" class="login-button register">
-                    <i class="fa-solid fa-user bg-light text-warning display-1 rounded-circle p-3"></i>
-                </a>
-                  <a href="#" class="login-button login">
-                    <i class="fa-solid fa-right-to-bracket bg-light text-warning display-1 rounded-circle p-3"></i>
-                </a> #}
-                
-                              
+                    {% include "components/atoms/loginButton.html.twig" with {
+                        class: "js-login-button",
+                        font: "user-plus",
+                        content: "Inscription",
+                        href: "app_register"
+                    } %}
+                    <a id="js-login-button" href="#" class="text-center">
+                        <i class="fa-solid fa-fingerprint bg-light text-warning display-1 rounded-circle p-3"></i>
+                    </a>
+                </div>
+            {% else %}
+                <div class="d-flex login-button justify-content-evenly d-lg-none">
+                     <a id="js-login-button" href={{ path('app_logout') }} class="text-center">
+                        <i class="fa-solid fa-arrow-right-from-bracket bg-danger text-light display-1 rounded-circle p-3"></i>
+                    </a>
+                </div>
             {% endif %}
 
         {% endblock %}
 
         {% block header %}{% endblock %}
         {% block body %}{% endblock %}
-        {% block footer %}{% include "components/organisms/footer.html.twig" %}{% endblock %}
+        {% block footer %}
+            {% include "components/organisms/footer.html.twig" %}
+        {% endblock %}
     </body>
 </html>

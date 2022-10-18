@@ -4,50 +4,58 @@
 {% block body %}
 
 {% include "components/organisms/homeNavbar.html.twig" %}
-<div>
-    <section
-        id="top-page" class="js-parallax d-flex justify-content-evenly align-items-center flex-column">
-        {# top-page #}
-        <p class="display-1 fw-bold text-light text-center">
-            <span class="js-title"></span>
-        </p>
-        <div class="display-5 mt-3 fw-bold text-title container text-center">
-            {% trans %}Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone{% endtrans %}
-        </div>
-        <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">{% trans %}En savoir plus{% endtrans %}</a>
+<section
+    id="top-page" class="js-parallax d-flex justify-content-evenly align-items-center flex-column">
+    {# top-page #}
 
-         <div class="d-flex d-lg-none"> 
-            <div class="text-center trans">
-                <a href={{ path('app_contact_index') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
-                    <i class="fa-solid fa-envelope-open-text rounded rounded-circle bg-light display-1"></i>
-                </a>
-                <p class="fs-1 text-title">{% trans %}Contactez-nous{% endtrans %}</p>
-            </div>
-            <div class="text-center trans1">
-                <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
-                    <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
-                </a>
-                <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
-            </div>
-            <div class="text-center trans2">
-                <a href={{ path('app_assistance_social') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
-                    <i class="fas fa-hand-holding-heart rounded rounded-circle bg-light display-1"></i>
-                </a>
-                <p class="fs-1 text-title">{% trans %}Actions sociales{% endtrans %}</p>
-            </div>
+    {% for message in app.flashes('emailVerified') %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
         </div>
-    </section>
-    {# services #}
-    {% embed "components/molecules/sectionHome.html.twig" with {
+    {% endfor %}
+
+    <p class="display-1 fw-bold text-light text-center">
+        <span class="js-title"></span>
+    </p>
+    <div class="display-5 mt-3 fw-bold text-title container text-center">
+        {% trans %}Votre plateforme de partage d'information et de services concernant les personnes âgées en Afrique subsaharienne francophone{% endtrans %}
+    </div>
+    <a href="#services" class="btn btn-success mt-5 text-uppercase fs-1">{% trans %}En savoir plus{% endtrans %}</a>
+
+    <div class="d-flex d-lg-none">
+        <div class="text-center trans">
+            <a href={{ path('app_contact_index') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                <i class="fa-solid fa-envelope-open-text rounded rounded-circle bg-light display-1"></i>
+            </a>
+            <p class="fs-1 text-title">{% trans %}Contactez-nous{% endtrans %}</p>
+        </div>
+        <div class="text-center trans1">
+            <a href={{ path('app_assistance_share') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                <i class="fa-brands fa-slideshare rounded rounded-circle bg-light display-1"></i>
+            </a>
+            <p class=" fs-1 text-title">{% trans %}Partage d'informations{% endtrans %}</p>
+        </div>
+        <div class="text-center trans2">
+            <a href={{ path('app_assistance_social') }} class="btn btn-lg btn-light rounded rounded-circle p-3 shadow">
+                <i class="fas fa-hand-holding-heart rounded rounded-circle bg-light display-1"></i>
+            </a>
+            <p class="fs-1 text-title">{% trans %}Actions sociales{% endtrans %}</p>
+        </div>
+    </div>
+</section>
+{# services #}
+{% embed "components/molecules/sectionHome.html.twig" with {
         id: "services"
     } %}
-        {% block content %}
-            <div class="row justify-content-center">
-                {% include "components/atoms/homeTitle.html.twig" with {
+    {% block content %}
+        <div class="row justify-content-center">
+            {% include "components/atoms/homeTitle.html.twig" with {
                     content : "Services"
                 } %}
 
-                {% include "components/atoms/fontCircle.html.twig" with {
+            {% include "components/atoms/fontCircle.html.twig" with {
                     title : "Partage d'information",
                     content : "Vous cherchez une information pouvant aider au bien-être de nos aînés ?
                     Vous disposez d'information pas encore publiée sur ce site ?
@@ -58,15 +66,15 @@
                     img : "data_share.jpg",
                 } %}
 
-                {#          {% include "components/atoms/fontCircle.html.twig" with {
-                title : "Petites annonces",
-                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
-                font : "fa-solid fa-laptop",
-                href : "app_product_index",
-                img : "annoncer.jpg",
-                } %} #}
+            {#          {% include "components/atoms/fontCircle.html.twig" with {
+                                                                title : "Petites annonces",
+                                                                content : "Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !",
+                                                                font : "fa-solid fa-laptop",
+                                                                href : "app_product_index",
+                                                                img : "annoncer.jpg",
+                                                                } %} #}
 
-                {% include "components/atoms/fontCircle.html.twig" with {
+            {% include "components/atoms/fontCircle.html.twig" with {
                     title : "Actions sociales",
                     content : "Venez retrouver nos ONG partenaires ainsi que les actions sociales dédiées à nos parents âgés que nous soutenons.",
                     font : "fa-solid fa-hand-holding-heart",
@@ -74,134 +82,135 @@
                     img : "action_sociale.jpg",
                 } %}
 
-                <div type="button" id="liveToastBtn">
-                    {% block title %}
-                        <h4 class="my-3 display-5 fw-bold">{% trans %}Petites annonces{% endtrans %}</h4>
-                        <p class="text-muted mx-auto display-5">{% trans %}Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !{% endtrans %}
-                        </p>
-                    {% endblock %}
-                    <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
-                        <a class="hover10">
-                            <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt={% trans %}"annonces"{% endtrans %} class="shadow rounded-circle bg-success border border-5 border-light">
-                            <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
-                        </a>
-                    </figure>
-                </div>
-
+            <div type="button" id="liveToastBtn">
+                {% block title %}
+                    <h4 class="my-3 display-5 fw-bold">{% trans %}Petites annonces{% endtrans %}</h4>
+                    <p class="text-muted mx-auto display-5">{% trans %}Vous cherchez un service dédié à une personne âgée ? Vous offrez des services à destination de nos séniors ? Alors, cet espace est fait pour vous !{% endtrans %}
+                    </p>
+                {% endblock %}
+                <figure class="p-3" data-aos="fade-down" data-aos-duration="3000">
+                    <a class="hover10">
+                        <img src={{asset('images/annoncer.jpg' | imagine_filter('circle'))}} alt={% trans %} "annonces" {% endtrans %} class="shadow rounded-circle bg-success border border-5 border-light">
+                        <figcaption class="position-absolute top-50 text-success-800 d-none" style="width:7em; height:3em; left:calc(100%/2 - 3.5em)"></figcaption>
+                    </a>
+                </figure>
             </div>
-        {% endblock %}
-    {% endembed %}
 
-    {# vision #}
-    {% embed "components/molecules/sectionHome.html.twig" with {
+        </div>
+    {% endblock %}
+{% endembed %}
+
+{# vision #}
+{% embed "components/molecules/sectionHome.html.twig" with {
         id: "vision",
         class: "bg-warning-200"
     } %}
 
-        {% block content %}
-            <div class="row justify-content-center container-fluid">
-                <div class="col-10 col-lg-6 mb-5">
-                    <h1 class="text-dark display-1 text-center js-vision fw-bold mb-5 text-font-1"></h1>
-                    <div class="display-4 p-2  text-center my-5">
-                        <h1 class="text-success fw-bold d-block">{% trans %}Maison Philo{% endtrans %}</h1>
-                        <span class="text-black">{% trans %}est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone{% endtrans %}</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xlg-3 col-8 text-center">
-                    <img src={{asset("images/objective.png")}} class="img-fluid" alt={% trans %}"objectif"{% endtrans %} data-aos="fade-up" data-aos-duration="3000">
+    {% block content %}
+        <div class="row justify-content-center container-fluid">
+            <div class="col-10 col-lg-6 mb-5">
+                <h1 class="text-dark display-1 text-center js-vision fw-bold mb-5 text-font-1"></h1>
+                <div class="display-4 p-2  text-center my-5">
+                    <h1 class="text-success fw-bold d-block">{% trans %}Maison Philo{% endtrans %}</h1>
+                    <span class="text-black">{% trans %}est une entreprise sociale dédiée au partage d'information  et de services aux personnes âgées en Afrique subsaharienne francophone{% endtrans %}</span>
                 </div>
             </div>
-        {% endblock %}
+            <div class="col-lg-3 col-xlg-3 col-8 text-center">
+                <img src={{asset("images/objective.png")}} class="img-fluid" alt={% trans %} "objectif" {% endtrans %} data-aos="fade-up" data-aos-duration="3000">
+            </div>
+        </div>
+    {% endblock %}
 
-    {% endembed %}
-    {# Section about #}
-    <section id="about" class="d-flex flex-column align-items-center text-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
-        <div class="row justify-content-center">
-            {% include "components/atoms/homeTitle.html.twig" with {
+{% endembed %}
+{# Section about #}
+<section id="about" class="d-flex flex-column align-items-center text-center container-fluid" data-aos="fade-up" data-aos-duration="3000">
+    <div class="row justify-content-center">
+        {% include "components/atoms/homeTitle.html.twig" with {
                 content : "A Propos"
             } %}
-            <span class="fs-1 text-muted container">
-                <figure>
-                    <blockquote class="blockquote">
-                        <p>{% trans %}« Rêvez grand, commencez petit, agissez maintenant. »{% endtrans %}</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Auteur <cite title="Source Title">{% trans %}Robin Sharma{% endtrans %}</cite>
-                    </figcaption>
-                </figure>
-            </span>
-        </div>
+        <span class="fs-1 text-muted container">
+            <figure>
+                <blockquote class="blockquote">
+                    <p>{% trans %}« Rêvez grand, commencez petit, agissez maintenant. »{% endtrans %}</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Auteur
+                    <cite title="Source Title">{% trans %}Robin Sharma{% endtrans %}</cite>
+                </figcaption>
+            </figure>
+        </span>
+    </div>
 
-        {% embed "components/molecules/aboutDescription.html.twig" with {
+    {% embed "components/molecules/aboutDescription.html.twig" with {
             title : "Qui sommes nous?",
             content : "Elle s’appelait Philo… C’était ma Mémé.",
             href : "app_about_who",
         } %}
-            {% block content %}
-                {% embed "components/atoms/fontCircle.html.twig" with {
+        {% block content %}
+            {% embed "components/atoms/fontCircle.html.twig" with {
                     img : "philo.jpg",
                     content : "Mémé Philomène",
                 } %}
-                    {% block title %}{% endblock %}
-                {% endembed %}
-            {% endblock %}
+                {% block title %}{% endblock %}
+            {% endembed %}
+        {% endblock %}
 
-        {% endembed %}
-        <div class="mt-5"></div>
-        {% embed "components/molecules/aboutDescription.html.twig" with {
+    {% endembed %}
+    <div class="mt-5"></div>
+    {% embed "components/molecules/aboutDescription.html.twig" with {
             title : "Vieillissement dans le monde",
             content : "Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé.",
             href : "app_about_world",
         } %}
-            {% block content %}
-                {% embed "components/atoms/fontCircle.html.twig" with {
+        {% block content %}
+            {% embed "components/atoms/fontCircle.html.twig" with {
                     img : "monde.jpg",
                 } %}
-                    {% block title %}{% endblock %}
-                {% endembed %}
-            {% endblock %}
+                {% block title %}{% endblock %}
+            {% endembed %}
+        {% endblock %}
 
-        {% endembed %}
-        <div class="mt-5"></div>
-        {% embed "components/molecules/aboutDescription.html.twig" with {
+    {% endembed %}
+    <div class="mt-5"></div>
+    {% embed "components/molecules/aboutDescription.html.twig" with {
             title : "Vieillisement en Afrique",
             content : "Souvent présenté comme un continent jeune, l’Afrique n’échappe cependant pas à l’augmentation du nombre de personnes âgées suivant ainsi une tendance mondiale.",
             href : "app_about_africa",
         } %}
-            {% block content %}
-                {% embed "components/atoms/fontCircle.html.twig" with {
+        {% block content %}
+            {% embed "components/atoms/fontCircle.html.twig" with {
                     img : "afrique.png",
                 } %}
-                    {% block title %}{% endblock %}
-                {% endembed %}
-            {% endblock %}
+                {% block title %}{% endblock %}
+            {% endembed %}
+        {% endblock %}
 
-        {% endembed %}
+    {% endembed %}
 
-        <div id="contact" class="my-5"></div>
-        {% embed "components/molecules/aboutDescription.html.twig" with {
+    <div id="contact" class="my-5"></div>
+    {% embed "components/molecules/aboutDescription.html.twig" with {
             title : "Contactez-nous",
             content : "",
             href : "app_contact_index",
         } %}
-            {% block content %}
-                {% embed "components/atoms/fontCircle.html.twig" with {
+        {% block content %}
+            {% embed "components/atoms/fontCircle.html.twig" with {
                     img : "logo_maison_philo2.png",
                 } %}
-                    {% block title %}{% endblock %}
-                {% endembed %}
-            {% endblock %}
-        {% endembed %}
-    </section>
-    <section id="commit" class="row" data-aos="fade-up" data-aos-duration="3000">
-        <div class="col-12 text-center mb-5 container-fluid">
-            {% include "components/atoms/homeTitle.html.twig" with {
+                {% block title %}{% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+</section>
+<section id="commit" class="row" data-aos="fade-up" data-aos-duration="3000">
+    <div class="col-12 text-center mb-5 container-fluid">
+        {% include "components/atoms/homeTitle.html.twig" with {
                 content : "Nos engagements"
             } %}
-            <p class="text-muted fs-1">{% trans %}Pour le développement durable{% endtrans %}</p>
-        </div>
+        <p class="text-muted fs-1">{% trans %}Pour le développement durable{% endtrans %}</p>
+    </div>
 
-        {% include "components/atoms/btnSquare.html.twig" with {
+    {% include "components/atoms/btnSquare.html.twig" with {
             png: "sante.png",
             alt: "Santé et bien être",
             content: "L'objectif fixé par les Nations Unies dans le cadre de cet engagement est de permettre à tous de vivre en bonne santé et promouvoir le bien-être de tous à tout âge.",
@@ -209,7 +218,7 @@
             index: 1
         } %}
 
-        {% include "components/atoms/btnSquare.html.twig" with {
+    {% include "components/atoms/btnSquare.html.twig" with {
             png: "travail.png",
             alt: "Travail et croissance économique",
             content: "Promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous. ",

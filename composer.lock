@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fe065485e0b77bc70a50a4229a4550c",
+    "content-hash": "2a1e2ffcdfcc8a7c55c3838bbe397573",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2488,15 +2488,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/phpstan/phpdoc-parser/tree/1.11.0"
             },
             "time": "2022-10-14T13:32:28+00:00"
-=======
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.9.0"
-            },
-            "time": "2022-10-06T11:32:36+00:00"
->>>>>>> 3ace62d5eee4a879e4e623c98a5217d40db65900
         },
         {
             "name": "psr/cache",

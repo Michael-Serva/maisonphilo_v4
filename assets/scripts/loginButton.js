@@ -6,7 +6,7 @@ $(document).ready(function () {
 const indexButton = $("#js-login-button");
 const menuButton = $(".js-login-button");
     $(indexButton).on("click", function (e) { 
-        e.preventDefault();
+        //e.preventDefault();
         console.log("remove");
         //$(".js-login-button").toggleClass("d-none");
         $(".js-login-button").fadeToggle();
