@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,17 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', EmailType::class, [
+                'label' => 'Votre email',
+                'row_attr' => [
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre email'
+                ],
+            ])
+
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -30,7 +41,15 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'label' => 'Veuillez creer un mot de passe',
+                'row_attr' => [
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    'class' => 'form-control',
+                    'placeholder' => 'Veuillez creer un mot de passe'
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -42,8 +61,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

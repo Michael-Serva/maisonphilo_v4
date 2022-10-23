@@ -33,7 +33,7 @@ let clothes = $(".clothes");
 let ClothesValue = $("select#survey_clothes___name___market");
 
 function showInput(id, input, value) {
-  id.on("change", function (e) {
+  id.on("change", function () {
     console.log(value.val());
     if (value.val() == 0) {
       input.removeClass("d-none");
