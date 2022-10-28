@@ -1,12 +1,15 @@
-<section class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height:80vh">
-        <div class="container-fluid rounded shadow bg-light row p-3">
-            <div class="col">
-                <h1>{{title |trans}}</h1>
-                {% block content %}   
-                {% endblock %}
-            </div>
-            <div class="col d-none d-lg-block my-auto">
-                <img src={{asset('images/security.jpg')}} class="img-fluid" alt="">
-            </div>
+<section class="container-fluid d-flex flex-column justify-content-evenly align-items-center" style="min-height:80vh">
+    <div id="register" class="text-center display-5 lh-lg">
+        <span class="fw-bold">Bonjour!</span>
+        <span class="d-block fs-2">{{text | default('')}}</span>
+    </div>
+    <div class="container-fluid rounded shadow bg-light row p-3">
+        <div class="col">
+            <h1>{{title | default('') |trans }}</h1>
+            {% block content %}{% endblock %}
         </div>
-    </section>
+        <div class="col d-none d-lg-block my-auto">
+            <img src={{asset('images/security.jpg')}} class="img-fluid" alt="">
+        </div>
+    </div>
+</section>

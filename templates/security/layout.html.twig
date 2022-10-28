@@ -1,10 +1,20 @@
 {% extends 'base.html.twig' %}
-{% block footer %}
-    
-{% endblock %}
-{% block login %}
-    
-{% endblock %}
+{% block footer %}{% endblock %}
+{% block login %}{% endblock %}
 {% block share %}
-    
+    <section class="bg-success shadow d-flex align-items-center" style="min-height:10vh">
+        <a href={{ path('app_home_index') }} class="btn">
+            <i class="fas fa-home text-light display-1 position-absolute"></i>
+        </a>
+        <img src={{asset("images/logo_1.png") | imagine_filter("thumb")}} class="img-fluid rounded rounded-circle bg-light mx-auto" alt="">
+    </section>
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{encore_entry_link_tags('security')}}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('security') }}
 {% endblock %}
